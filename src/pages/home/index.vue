@@ -1,15 +1,90 @@
 <template>
-  <div>
-    index
+  <div class="main">
+    <indexheader></indexheader>
+    <div class="scroll-container" ref="scroller">
+      <div class="content">
+        <slider :slider="slider"></slider>
+        <classify :foodtype="foodtype"></classify>
+        <allloveto :allloveto="allloveto"></allloveto>
+        <guess :guessyoulike="guessyoulike"></guess>
+        <alldo :alldo="alldo"></alldo>
+      </div>
+    </div>
+    <tabbar></tabbar>
   </div>
 </template>
 
 <script>
-  export default{
-    name: 'index'
+  import axios from 'axios'
+  import BScroll from 'better-scroll'
+  import Indexheader from './header'
+  import Slider from './slider'
+  import Classify from './classify'
+  import Allloveto from './allLoveTo'
+  import Guess from './guesslike'
+  import Alldo from './alldo'
+  import Tabbar from './tabbar'
+
+  export default {
+    name: 'index',
+    components: {
+      Indexheader,
+      Slider,
+      Classify,
+      Allloveto,
+      Guess,
+      Alldo,
+      Tabbar
+    },
+    data () {
+      return {
+        slider: [],
+        foodtype: [],
+        allloveto: [],
+        guessyoulike: [],
+        alldo: []
+      }
+    },
+    methods: {
+      getIndexData () {
+        axios.get('/api/index.json').then(this.handleGetDataSucc.bind(this))
+         .catch(this.handleDataError.bind(this))
+      },
+      handleGetDataSucc (res) {
+        res = res ? res.data : null
+        if (res && res.ret && res.data) {
+          res.data.Slider && (this.slider = res.data.Slider)
+          res.data.foodType && (this.foodtype = res.data.foodType)
+          res.data.allLoveTo && (this.allloveto = res.data.allLoveTo)
+          res.data.guessYouLike && (this.guessyoulike = res.data.guessYouLike)
+          res.data.allDo && (this.alldo = res.data.allDo)
+        } else {
+          this.handleDataError()
+        }
+      },
+      handleDataError () {
+        console.log('error')
+      }
+    },
+    mounted () {
+      this.scroll = new BScroll(this.$refs.scroller)
+    },
+    created () {
+      this.getIndexData()
+    }
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="stylus">
+  .main
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    display:flex
+    flex-direction:column
+    .scroll-container
+      overflow: hidden
+      flex:1
 </style>

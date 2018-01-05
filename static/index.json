@@ -1,0 +1,89 @@
+{
+  "ret": true,
+  "data":{
+    "city": "北京",
+    "Slider":[{
+      "Id": "0001",
+      "bannerImg":"/static/images/banner/c468756e1d96067ab7d22f9f96081aaa94e8e26b3b991-bEdRLK_fw658@2x.png",
+      "linkUrl":""
+    }, {
+      "Id": "0002",
+      "bannerImg":"/static/images/banner/209135fe0d5ca21cb66580487cc9b6f64fd78a8b187484-8oBSNm_fw658@2x.png",
+      "linkUrl":""
+    }, {
+      "Id": "0003",
+      "bannerImg":"/static/images/banner/58129d512520e0a11ae72310074b4b85c7076d1c14d14-pP10Tp_fw658@2x.png",
+      "linkUrl":""
+    }, {
+      "Id": "0004",
+      "bannerImg":"/static/images/banner/05902a67fae3540aa02d3a16a81a35e8dce9d88112a84-HiqAXa_fw658@2x.png",
+      "linkUrl":""
+    }],
+    "foodType":[{
+      "id": "0001",
+      "linkUrl":"",
+      "foodTypeImg":"/static/images/western-food.jpg",
+      "foodTypeName": "西餐",
+      "foodTypeClassName":"western-food"
+    },{
+      "id": "0002",
+      "linkUrl":"",
+      "foodTypeImg":"/static/images/chinese-food.jpg",
+      "foodTypeName": "中餐",
+      "foodTypeClassName":"chinese-food"
+    },{
+      "id": "0003",
+      "linkUrl":"",
+      "foodTypeImg":"/static/images/baking.jpg",
+      "foodTypeName": "烘焙",
+      "foodTypeClassName": "baking"
+    },{
+      "id": "0004",
+      "linkUrl":"",
+      "foodTypeImg":"/static/images/drink.jpg",
+      "foodTypeName": "酒水",
+      "foodTypeClassName":"drink"
+    }],
+    "allLoveTo":[{
+      "id": "0001",
+      "img": "/static/images/allloveto1.jpg",
+      "name":"周记",
+      "linkUrl":""
+    },{
+      "id": "0002",
+      "img": "/static/images/allloveto2.jpg",
+      "name":"煲煲靓",
+      "linkUrl":""
+    },{
+      "id": "0003",
+      "img": "/static/images/allloveto3.jpg",
+      "name":"食尚蜜语",
+      "linkUrl":""
+    }],
+    "guessYouLike":[{
+      "id": "0001",
+      "img": "/static/images/guess1.png",
+      "linkUrl":""
+    },{
+      "id": "0002",
+      "img": "/static/images/guess2.png",
+      "linkUrl":""
+    }],
+    "allDo":[{
+      "id": "0001",
+      "img": "/static/images/alldo1.jpg",
+      "name":"杂菌丸子暖身锅",
+      "linkUrl":""
+    }, {
+      "id": "0002",
+      "img": "/static/images/alldo2.jpg",
+      "name":"三文鱼肠黎麦雪糕",
+      "linkUrl":""
+    }, {
+      "id": "0003",
+      "img": "/static/images/alldo3.jpg",
+      "name":"抹茶蜜豆毛巾卷",
+      "linkUrl":""
+    }]
+  }
+}
