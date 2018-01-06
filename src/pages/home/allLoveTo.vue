@@ -5,7 +5,7 @@
       <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper" ref="scroller">
-      <div class="item-con">
+      <div class="item-con" ref="scroll">
         <div class="item" v-for="item in allloveto">
           <div class="img-wrapper">
             <img :src="item.img" alt="" class="item-img">
@@ -29,6 +29,15 @@
         scrollX: true,
         eventPassthrough: 'vertical'
       })
+    },
+    methods: {
+      caculateWidth () {
+        const len = this.allloveto.length
+        this.$refs.scroll.style.width = len * 149 + 'px'
+      }
+    },
+    updated () {
+      this.caculateWidth()
     }
   }
 </script>
@@ -55,27 +64,25 @@
         margin-top: -0.01rem
     .item-wrapper
       white-space:nowrap
-      .item-con
-        width: 8.94rem
-        .item
-          display: inline-block
+      .item
+        display: inline-block
+        width: 2.6rem
+        height: 2.78rem
+        margin: .3rem .19rem 0 .19rem
+        position: relative
+        .img-wrapper
           width: 2.6rem
-          height: 2.78rem
-          margin: .3rem .19rem 0 .19rem
+          height: 2.4rem
+          overflow: hidden
+          border-radius: .1rem
           position: relative
-          .img-wrapper
-            width: 2.6rem
-            height: 2.4rem
-            overflow: hidden
-            border-radius: .1rem
-            position: relative
-            margin-bottom: .1rem
-            .item-img
-              width: 100%
-              position: absolute
-              bottom:0
-          .item-name
-            text-align: center
-            font-size: .32rem
-            line-height: .28rem
+          margin-bottom: .1rem
+          .item-img
+            width: 100%
+            position: absolute
+            bottom:0
+        .item-name
+          text-align: center
+          font-size: .32rem
+          line-height: .28rem
 </style>
