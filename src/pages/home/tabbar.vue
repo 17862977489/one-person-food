@@ -37,11 +37,13 @@
     background: #f2f2f2
     z-index: 2
     padding-top: .1rem
-    position: absolute
+    position: relative
     bottom:0
     .tab
       display: flex
       justify-content:space-around
+      position: relative
+      bottom:0
       .tablayout
         text-align: center
         .index
