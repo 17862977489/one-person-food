@@ -10,7 +10,7 @@
         <alldo :alldo="alldo"></alldo>
       </div>
     </div>
-    <tabbar></tabbar>
+    <tabbar src='indexClick.png' active="index"></tabbar>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
   import Allloveto from './allLoveTo'
   import Guess from './guesslike'
   import Alldo from './alldo'
-  import Tabbar from './tabbar'
+  import Tabbar from '../../components/tabbar'
 
   export default {
     name: 'index',
@@ -67,7 +67,12 @@
       }
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.scroller)
+      this.$nextTick(() => {
+        this.scroll = new BScroll(this.$refs.scroller)
+      })
+    },
+    updated () {
+      this.scroll.refresh()
     },
     created () {
       this.getIndexData()

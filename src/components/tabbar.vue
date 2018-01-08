@@ -1,32 +1,49 @@
 <template>
   <div class="tabbar">
     <div class="tab">
-      <div class="tablayout">
-        <i class="index iconfont">&#xe614;</i>
+      <router-link to='/' class="tablayout">
+        <i class="index" ref="index"></i>
         <p class="font">一人食</p>
-      </div>
-      <div class="tablayout">
-        <i class="found iconfont">&#xe615;</i>
+      </router-link>
+      <router-link to='/found' class="tablayout">
+        <i class="found" ref="found"></i>
         <p class="font">发现</p>
-      </div>
-      <div class="tablayout">
+      </router-link>
+      <router-link to='/' class="tablayout">
         <i class="add iconfont">&#xe602;</i>
-      </div>
-      <div class="tablayout">
-        <i class="message iconfont">&#xe658;</i>
+      </router-link>
+      <router-link to='/' class="tablayout">
+        <i class="message" ref="message"></i>
         <p class="font">消息</p>
-      </div>
-      <div class="tablayout">
-        <i class="my iconfont">&#xe60e;</i>
+      </router-link>
+      <router-link to='/' class="tablayout">
+        <i class="my" ref="my"></i>
         <p class="font">我的</p>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'tabbar'
+    name: 'tabbar',
+    props: ['src', 'active'],
+    data () {
+      return {
+
+      }
+    },
+    mounted () {
+      this.$refs[this.active].style.background = 'url(' + this.imgSrc + ')'
+      this.$refs[this.active].style.backgroundSize = '100% 100%'
+    },
+    computed: {
+      imgSrc () {
+        return '/static/images/' + this.src
+      }
+    },
+    methods: {
+    }
   }
 </script>
 
@@ -51,11 +68,17 @@
           width: .36rem
           height: .4rem
           font-size: .4rem
+          background: url('/static/images/indexNotClick.png')
+          background-size: 100% 100%
         .found
           display: inline-block
           width: .48rem
-          height: .4rem
+          height: .3rem
           font-size: .34rem
+          margin-top: .05rem
+          margin-bottom: 0.05rem
+          background: url('/static/images/foundNotClick.png')
+          background-size: 100% 100%
         .add
           display: inline-block
           width: .98rem
@@ -72,11 +95,15 @@
           width: .38rem
           height: .4rem
           font-size: .38rem
+          background: url('/static/images/messageNotClick.png')
+          background-size: 100% 100%
         .my
           display: inline-block
           width: .38rem
           height: .4rem
           font-size: .38rem
+          background: url('/static/images/myNotClick.png')
+          background-size: 100% 100%
         .font
           font-size: .2rem
           color:#999

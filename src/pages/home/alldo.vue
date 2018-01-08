@@ -46,7 +46,7 @@
   .alldo
     height: 3.36rem
     background: #fff
-    padding-bottom: 1.98rem
+    padding-bottom: 0.58rem
     .title-grounp
       display: flex
       margin-left: .29rem
