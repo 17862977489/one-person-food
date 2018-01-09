@@ -1,25 +1,26 @@
 <template>
   <div class="main">
-    <foundheader></foundheader>
+    <messageheader></messageheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
       </div>
     </div>
-    <tabbar src='foundClick.png' active="found"></tabbar>
+    <tabbar src='messageClick.png' active="message"></tabbar>
   </div>
 </template>
 
 <script>
-  import Foundheader from './header'
+  import Messageheader from './header'
   import Tabbar from '../../components/tabbar'
   export default {
     name: 'found',
     components: {
       Tabbar,
-      Foundheader
+      Messageheader
     }
   }
 </script>
+
 
 <style scoped lang="stylus">
   .main

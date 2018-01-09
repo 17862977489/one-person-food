@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="indexheader border-bottom">
-      <div class="position">北京</div>
-      <div class="title">一人食</div>
+      <div class="position ellipsis">北京</div>
+      <div class="title ellipsis">一人食</div>
       <div class="search"><i class="search-icon iconfont">&#xe679;</i></div>
     </div>
   </div>

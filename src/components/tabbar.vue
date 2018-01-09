@@ -3,22 +3,22 @@
     <div class="tab">
       <router-link to='/' class="tablayout">
         <i class="index" ref="index"></i>
-        <p class="font">一人食</p>
+        <p class="font ellipsis">一人食</p>
       </router-link>
       <router-link to='/found' class="tablayout">
         <i class="found" ref="found"></i>
-        <p class="font">发现</p>
+        <p class="font ellipsis">发现</p>
       </router-link>
       <router-link to='/' class="tablayout">
         <i class="add iconfont">&#xe602;</i>
       </router-link>
-      <router-link to='/' class="tablayout">
+      <router-link to='/message' class="tablayout">
         <i class="message" ref="message"></i>
-        <p class="font">消息</p>
+        <p class="font ellipsis">消息</p>
       </router-link>
-      <router-link to='/' class="tablayout">
+      <router-link to='/my' class="tablayout">
         <i class="my" ref="my"></i>
-        <p class="font">我的</p>
+        <p class="font ellipsis">我的</p>
       </router-link>
     </div>
   </div>
@@ -107,4 +107,5 @@
         .font
           font-size: .2rem
           color:#999
+          margin-top: .1rem
 </style>
