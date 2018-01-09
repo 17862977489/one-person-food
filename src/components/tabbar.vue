@@ -9,7 +9,7 @@
         <i class="found" ref="found"></i>
         <p class="font ellipsis">发现</p>
       </router-link>
-      <router-link to='/' class="tablayout">
+      <router-link to='/publish' class="tablayout">
         <i class="add iconfont">&#xe602;</i>
       </router-link>
       <router-link to='/message' class="tablayout">
@@ -28,14 +28,13 @@
   export default {
     name: 'tabbar',
     props: ['src', 'active'],
-    data () {
-      return {
-
-      }
-    },
     mounted () {
-      this.$refs[this.active].style.background = 'url(' + this.imgSrc + ')'
-      this.$refs[this.active].style.backgroundSize = '100% 100%'
+      if (this.active) {
+        this.$refs[this.active].style.background = 'url(' + this.imgSrc + ')'
+        this.$refs[this.active].style.backgroundSize = '100% 100%'
+      } else {
+        console.log('publish')
+      }
     },
     computed: {
       imgSrc () {
@@ -50,7 +49,7 @@
 <style scoped lang="stylus">
   .tabbar
     width: 100%
-    height: .88rem
+    height: .9rem
     background: #f2f2f2
     z-index: 2
     padding-top: .1rem
