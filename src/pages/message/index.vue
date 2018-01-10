@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="messageIndex">
     <messageheader></messageheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
@@ -23,7 +23,7 @@
 
 
 <style scoped lang="stylus">
-  .main
+  .messageIndex
     position: absolute
     top: 0
     left: 0

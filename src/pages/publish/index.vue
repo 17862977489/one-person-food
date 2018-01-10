@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="publishIndex">
     <div class="con">
       <div class="title">爱记录的人都是天使</div>
       <div class="camera">
@@ -24,7 +24,7 @@
 </script>
 
 <style scoped lang="stylus">
-  .main
+  .publishIndex
     position: absolute
     top: 0
     left: 0

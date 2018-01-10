@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="index">
     <indexheader></indexheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
@@ -81,7 +81,7 @@
 </script>
 
 <style scoped lang="stylus">
-  .main
+  .index
     position: absolute
     top: 0
     left: 0

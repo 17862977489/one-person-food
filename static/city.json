@@ -1,0 +1,160 @@
+{
+  "ret": true,
+  "data": {
+    "hotcity":[{
+      "id": "001",
+      "city": "大理"
+    },
+    {
+      "id": "002",
+      "city": "南京"
+    },
+    {
+      "id": "003",
+      "city": "内蒙古"
+    },
+    {
+      "id": "004",
+      "city": "天津"
+    },
+    {
+      "id": "005",
+      "city": "上海"
+    },
+    {
+      "id": "006",
+      "city": "西安"
+    },
+    {
+      "id": "007",
+      "city": "杭州"
+    },
+    {
+      "id": "008",
+      "city": "北京"
+    },
+    {
+      "id": "009",
+      "city": "厦门"
+    }],
+    "list": {
+      "A": [{
+        "name": "阿坝藏族羌族自治州",
+        "spell": " abazangzuqiangzuzizhizhou",
+        "id": 1
+      }, {
+        "name": "阿克苏地区",
+        "spell": "akesudiqu",
+        "id": 2
+      }, {
+        "name": " 阿拉尔",
+        "spell": " alaer",
+        "id": 3
+      }, {
+        "name": " 阿里",
+        "spell": "ali",
+        "id": 4
+      }, {
+        "name": "安康",
+        "spell": "ankang",
+        "id": 5
+      }, {
+        "name": "安庆",
+        "spell": "anqing",
+        "id": 6
+      }, {
+        "name": "安阳",
+        "spell": "anyang",
+        "id": 7
+      }, {
+        "name": "安顺",
+        "spell": "anshun",
+        "id": 8
+      }, {
+        "name": "澳门",
+        "spell": "aomen",
+        "id": 9
+      }],
+      "B": [{
+        "name": "巴中",
+        "spell": "bazhong",
+        "id": 10
+      }, {
+        "name": "白银",
+        "spell": "baiyin",
+        "id": 11
+      }, {
+        "name": "白山",
+        "spell": "baishan",
+        "id": 12
+      }, {
+        "name": "百色",
+        "spell": "baise",
+        "id": 13
+      }, {
+        "name": "白城",
+        "spell": "baicheng",
+        "id": 14
+      }],
+      "C":[{
+        "name": "沧州",
+        "spell": "cangzhou",
+        "id": 15
+      }, {
+        "name": "昌平",
+        "spell": "changping",
+        "id": 16
+      }, {
+        "name": "成都",
+        "spell": "chengdou",
+        "id": 17
+      }, {
+        "name": "朝阳",
+        "spell": "chaoyang",
+        "id": 18
+      }],
+      "D":[{
+        "name": "大理",
+        "spell": "dali",
+        "id": 19
+      }, {
+        "name": "大连",
+        "spell": "dalian",
+        "id": 20
+      }, {
+        "name": "大庆",
+        "spell": "daqing",
+        "id": 21
+      }, {
+        "name": "大同",
+        "spell": "datong",
+        "id": 22
+      }, {
+        "name": "大兴安岭",
+        "spell": "daxinganling",
+        "id": 23
+      }],
+      "E": [{
+        "name": "鄂尔多斯",
+        "spell": "eerduosi",
+        "id": 24
+      }, {
+        "name": "鄂州",
+        "spell": "ezhou",
+        "id": 25
+      }, {
+        "name": "恩施",
+        "spell": "enshi",
+        "id": 26
+      }, {
+        "name": "厄多斯",
+        "spell": "eduosi",
+        "id": 27
+      }, {
+        "name": "鄂州市",
+        "spell": "ezhoushi",
+        "id": 28
+      }]
+    }
+  }
+}

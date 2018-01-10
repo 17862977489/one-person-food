@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="foundIndex">
     <foundheader></foundheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
@@ -60,7 +60,7 @@
 </script>
 
 <style scoped lang="stylus">
-  .main
+  .foundIndex
     position: absolute
     top: 0
     left: 0

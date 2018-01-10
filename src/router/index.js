@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from 'pages/home/index'
+import City from 'pages/city/index'
 import Found from 'pages/found/index'
 import Message from 'pages/message/index'
 import My from 'pages/my/index'
@@ -14,6 +15,10 @@ export default new Router({
     path: '/',
     name: 'index',
     component: Index
+  }, {
+    path: '/city',
+    name: 'city',
+    component: City
   }, {
     path: '/found',
     name: 'found',
