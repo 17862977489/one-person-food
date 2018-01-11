@@ -1,44 +1,99 @@
 <template>
   <div class="login-con">
-    <div class="login-header border-bottom">
+    <div class="login-header">
       <div class="login">
-        <span class="back iconfont">&#xe624;</span>
-        <span class="login-text">登录</span>
+        <span class="close iconfont">&#xe849;</span>
       </div>
-      <router-link class="rigister">注册</router-link>
     </div>
     <div class="form">
+      <div class="topic">{{topicText}}</div>
       <form action="" method="post" >
-        <div class="user">
-          <input id ="user-name" type="text" placeholder="用户名"/>
+        <div class="user border-bottom">
+          <input id ="user-name" type="text" placeholder="请输入手机号" v-model="userNameDate" @input="handelUsernameInput" />
         </div>
-        <div class="pwd">
-          <input id ="password" type="text" placeholder="密码"/>
+        <div class="pwd border-bottom">
+          <input id ="password" type="text" placeholder="请输入密码" v-model="pwdData" @input="handelPasswordInput" />
         </div>
         <div class="about-pwd">
-          <p class="remmber"><input type="radio" class="remmber-pwd" value="记住密码"> 记住密码</p>
-          <p class="forget">忘记密码</p>
+          <p class="forget">忘记密码?</p>
         </div>
-        <input type="button" value="登录" class="sub"/>
+        <input type="button" value="登录" class="sub" @click="handelLoginClick"/>
+        <router-link :to="{path:'register'}" class="register" tag="p">注册</router-link>
       </form>
     </div>
     <div class="login-type">
       <div class="login-type-header">
         <p class="login-line border-bottom"></p>
-        <p class="login-text">其他账号登录</p>
+        <p class="login-text">第三方登录</p>
       </div>
       <div class="login-type-con">
-        <span class="qq iconfont">&#xe600;</span>
-        <span class="wb iconfont">&#xe73c;</span>
-        <span class="wx iconfont">&#xe631;</span>
+        <span class="qq iconfont"><a href="javascript:;" class="qq-icon">&#xe61b;</a></span>
+        <span class="wb iconfont"><a href="javascript:;" class="wb-icon">&#xe67e;</a></span>
+        <span class="wx iconfont"><a href="javascript:;" class="wx-icon">&#xe611;</a></span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import axios from 'axios'
   export default{
-    name: 'login'
+    name: 'login',
+    data () {
+      return {
+        topicText: '',
+        userNameDate: '',
+        pwdData: ''
+      }
+    },
+    methods: {
+      handelUsernameInput () {
+        var reg = /^1(3|5|6|8)\d{9}$/
+        if (!reg.test(this.userNameDate)) {
+          this.topicText = '请输入11位手机号'
+        } else {
+          this.topicText = ''
+        }
+      },
+      handelPasswordInput () {
+        var reg = /^[a-zA-Z\d]{6,16}$/
+        if (!reg.test(this.pwdData)) {
+          this.topicText = '请输入6-16位字母或数字密码'
+        } else {
+          this.topicText = ''
+        }
+      },
+      handelLoginClick () {
+        this.getLoginData()
+      },
+      getLoginData () {
+        if (this.pwdData && this.userNameDate) {
+          axios.post('/api/login.json', {
+            params: {
+              username: this.userNameDate,
+              pwd: this.pwdData
+            }
+          })
+          .then(this.handleGetLoginDataSucc.bind(this))
+          .catch(this.handleGetLoginDataErr.bind(this))
+        } else if (!this.userNameDate) {
+          this.topicText = '用户名不能为空'
+        } else if (!this.pwdData) {
+          this.topicText = '密码不能为空'
+        }
+      },
+      handleGetLoginDataSucc (res) {
+        res && (res = res.data)
+        if (res && res.data && res.ret && res.data.login) {
+          this.$router.push({path: '/'})
+        } else {
+          this.topicText = '用户名或密码错误'
+        }
+      },
+      handleGetLoginDataErr () {
+        console.log('服务器错误')
+      }
+    }
   }
 </script>
 
@@ -51,79 +106,108 @@
     right: 0
     background: #fff
     .login-header
-      display: flex
-      line-height: .8rem
-      padding: .25rem
-      justify-content: space-between;
-      &::before
-        transform: scale(1);
+      margin-top: .68rem
+      margin-bottom: 2.26rem
       .login
-        .back
-          margin-right: .5rem
+        .close
+          font-size: .32rem
+          margin-left: .2rem
           color: #333
           font-weight: 900
-        .login-text
-          font-weight: 900
-          color: #000
-          font-size: .4rem
-      .rigister
-        font-weight: 700
-        color: #999;
-        font-size: .4rem
     .form
       display: flex
-      justify-content: center
-      margin-top: 1.65rem
-      #user-name
-        width: 5rem
-        height: .7rem
-        text-indent: .4rem
-        font-size: .26rem
-      #password
-        width: 5rem
-        height: .7rem
-        margin-top: .5rem
-        text-indent: .4rem
-        font-size: .26rem
-      .about-pwd
-        margin: .24rem 0 .46rem
-        display: flex
-        justify-content: space-between
+      flex-direction: column
+      width: 5.26rem
+      align-items: center
+      margin: auto
+      .topic
+        width: 100%
+        height: .24rem
+        font-size: .24rem
+        margin-bottom: .61rem
+        line-height: .24rem
         text-align: center
-        font-size: .18rem
+        color: #f15353
+      .user
+        padding-bottom: .19rem
+        &::before
+            border-color: #666
+        input::-webkit-input-placeholder{ 
+          color: #999;
+        }
+        #user-name
+          width: 100%
+          font-size: .24rem
+          line-height: .24rem
+          border: 0 
+          color: #999
+      .pwd
+        padding: .5rem 0 .19rem
+        &::before
+            border-color: #666
+        input::-webkit-input-placeholder{
+          color: #999;
+        }
+        #password
+          width: 100%
+          font-size: .24rem
+          line-height: .24rem
+          border: 0
+          color: #999
+      .about-pwd 
+        .forget
+          margin: .20rem 0 .61rem 3.84rem
+          font-size: .16rem
+          color: #999
       .sub
-        width: 5rem
+        width: 5.26rem
         height: .7rem
         text-align: center
+        font-size: .3rem
+        border-radius: .5rem
         border: none
-        background: #666
+        background: #303030
         color: #fff
+      .register
+        text-align: center
+        margin: .5rem 0 1.31rem
+        font-size: .3rem
+        color: #303030
     .login-type
       over-flow: hidden
       .login-type-header
+        width: 6.3rem
+        text-align: center
         position: relative
-        margin-top: 2.4rem
-        padding-bottom: .58rem
+        margin: auto
+        padding-bottom: 1.19rem
         .login-line
           &::before
             transform: scale(1)
-            border-color: #000
+            border-color: #aaa
         .login-text
-          padding: 0 .65rem
+          padding: 0 .17rem
           position: absolute
           left: 50%
           transform: translateX(-50%)
           top: -.12rem
           background: #fff
-          font-size: .2rem
+          font-size: .24rem
+          color: #999
       .login-type-con
         text-align: center
         .qq
-          margin-right: .8rem
-          font-size: .5rem
+          margin-right: .9rem
+          .qq-icon
+            font-size: .44rem
+            color: #4a90e2
         .wb
-          margin-right: .8rem
-          font-size: .5rem
+          margin-right: .94rem
+          .wb-icon
+            font-size: .42rem
+            color: #f16853
         .wx
-          font-size: .5rem
+          .wx-icon
+            font-size: .38rem
+            color: #56aa00
 </style>
