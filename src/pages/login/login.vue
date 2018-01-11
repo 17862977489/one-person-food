@@ -12,7 +12,7 @@
           <input id ="user-name" type="text" placeholder="请输入手机号" v-model="userNameDate" @input="handelUsernameInput" />
         </div>
         <div class="pwd border-bottom">
-          <input id ="password" type="text" placeholder="请输入密码" v-model="pwdData" @input="handelPasswordInput" />
+          <input id ="password" type="password" placeholder="请输入密码" v-model="pwdData" @input="handelPasswordInput" />
         </div>
         <div class="about-pwd">
           <p class="forget">忘记密码?</p>
@@ -43,23 +43,29 @@
       return {
         topicText: '',
         userNameDate: '',
-        pwdData: ''
+        pwdData: '',
+        userNameStatus: false,
+        pwdStatus: false
       }
     },
     methods: {
       handelUsernameInput () {
         var reg = /^1(3|5|6|8)\d{9}$/
         if (!reg.test(this.userNameDate)) {
+          this.userNameStatus = false
           this.topicText = '请输入11位手机号'
         } else {
+          this.userNameStatus = true
           this.topicText = ''
         }
       },
       handelPasswordInput () {
         var reg = /^[a-zA-Z\d]{6,16}$/
         if (!reg.test(this.pwdData)) {
+          this.pwdStatus = false
           this.topicText = '请输入6-16位字母或数字密码'
         } else {
+          this.pwdStatus = true
           this.topicText = ''
         }
       },
@@ -67,7 +73,7 @@
         this.getLoginData()
       },
       getLoginData () {
-        if (this.pwdData && this.userNameDate) {
+        if (this.pwdStatus && this.userNameStatus) {
           axios.post('/api/login.json', {
             params: {
               username: this.userNameDate,
@@ -76,9 +82,11 @@
           })
           .then(this.handleGetLoginDataSucc.bind(this))
           .catch(this.handleGetLoginDataErr.bind(this))
-        } else if (!this.userNameDate) {
+        } else if (!this.userNameDate ) {
           this.topicText = '用户名不能为空'
-        } else if (!this.pwdData) {
+        } else if ( !this.userNameStatus) {
+          this.topicText = '用户名格式不正确'
+        } else if (!this.pwdData || !this.pwdStatus) {
           this.topicText = '密码不能为空'
         }
       },

@@ -13,7 +13,7 @@
         </div>
         <authcode-template :phoneNum="usernameData" v-on:userNameNull="userNameNull" :usernameStatus="usernameStatus" v-on:userNameError="userNameError" ref="authcode"></authcode-template>
         <div class="pwd border-bottom">
-          <input id ="password" type="text" placeholder="请输入6-16位字母或数字密码" @input="handelPwdInput"  v-model="pwdData"/>
+          <input id ="password" type="password" placeholder="请输入6-16位字母或数字密码" @input="handelPwdInput"  v-model="pwdData"/>
         </div>
         <div class="agreement"><span class="agree-left">注册视为同意</span><span class="agree-right">一人食用户协议</span></div>
         <input type="button" value="注册" class="sub" @click="handelRegisterClick"/>
@@ -64,9 +64,11 @@ export default {
       var authcodedata = this.$refs.authcode.getAuthCodeData()
       if (authcodedata && this.usernameStatus && this.pwdStatus) {
         axios.post('/api/register.json', {
-          username: this.usernameData,
-          authcodedata: authcodedata,
-          pwd: this.pwdData
+          params: {
+            username: this.usernameData,
+            authcodedata: authcodedata,
+            pwd: this.pwdData
+          }
         })
         .then(this.handelRegisterSucc.bind(this))
         .catch(this.handelRegisterError.bind(this))
