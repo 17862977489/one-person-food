@@ -4,8 +4,8 @@
       <div class="sidebar-item"
            v-for="(item, index) in alphabet"
            :key="item"
-           @touchstart="handleTouchStart(item)"
-           @touchmove="handleTouchMove">
+           @click="handleTouchStart(index)"
+           ref="side">
         {{item}}
        </div>
     </div>
@@ -17,6 +17,11 @@
     name: 'city-sidebar',
     props: {
       list: Object
+    },
+    data () {
+      return {
+        len: []
+      }
     },
     computed: {
       alphabet () {
@@ -31,14 +36,15 @@
       }
     },
     methods: {
-      handleTouchStart (item) {
-        this.$emit('changeLetter', item)
-      },
-      handleTouchMove (e) {
-        let index = (Math.floor((e.touches[0].clientY - this.areaTop) / 20))
-        index = index < 0 ? 0 : index
-        index = (index >= this.alphabet.length) ? (this.alphabet.length - 1) : index
-        this.$emit('changeLetter', this.alphabet[index])
+      handleTouchStart (index) {
+        this.$emit('changeLetter', index)
+        this.len = this.$refs.side.length
+        for (let i = 0; i < this.len; i++) {
+          this.$refs.side[i].style.background = '#fff'
+          this.$refs.side[i].style.color = '#333'
+        }
+        this.$refs.side[index].style.background = '#333'
+        this.$refs.side[index].style.color = '#fff'
       }
     }
   }
@@ -48,7 +54,7 @@
   .sidebar
     position: absolute
     right: 0
-    top: 1.62rem
+    top: .88rem
     bottom: 0
     width: .4rem
     .sidebar-list
@@ -62,4 +68,5 @@
         text-align: center
         line-height: .36rem
         color: #666
+        border-radius: 50%
 </style>

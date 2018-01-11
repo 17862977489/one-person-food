@@ -3,6 +3,7 @@
     <messageheader></messageheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
+        <systeminforms></systeminforms>
       </div>
     </div>
     <tabbar src='messageClick.png' active="message"></tabbar>
@@ -11,12 +12,14 @@
 
 <script>
   import Messageheader from './header'
+  import Systeminforms from './systemInforms'
   import Tabbar from '../../components/tabbar'
   export default {
     name: 'found',
     components: {
       Tabbar,
-      Messageheader
+      Messageheader,
+      Systeminforms
     }
   }
 </script>

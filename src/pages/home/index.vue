@@ -17,6 +17,7 @@
 <script>
   import axios from 'axios'
   import BScroll from 'better-scroll'
+  import { mapState, mapMutations } from 'vuex'
   import Indexheader from './header'
   import Slider from './slider'
   import Classify from './classify'
@@ -45,9 +46,18 @@
         alldo: []
       }
     },
+    computed: {
+      ...mapState(['city'])
+    },
+    watch: {
+      city () {
+        this.getIndexData()
+      }
+    },
     methods: {
+      ...mapMutations(['changeCity']),
       getIndexData () {
-        axios.get('/api/index.json').then(this.handleGetDataSucc.bind(this))
+        axios.get('/api/index.json?city=' + this.city).then(this.handleGetDataSucc.bind(this))
          .catch(this.handleDataError.bind(this))
       },
       handleGetDataSucc (res) {

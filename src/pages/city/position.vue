@@ -2,16 +2,30 @@
   <div class="position">
     <div class="position-title">定位/最近访问</div>
     <div class="position-show">
-      <div class="place border">北京</div>
-      <div class="place border">上海</div>
-      <div class="place border">哈尔滨</div>
+      <div class="place border ellipsis" 
+           @click="handleCityClick(city)">{{city}}</div>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
-    name: 'position'
+    name: 'position',
+    computed: {
+      ...mapState({
+        city (state) {
+          return state.city || '北京'
+        }
+      })
+    },
+    methods: {
+      ...mapMutations(['changeCity']),
+      handleCityClick (city) {
+        this.changeCity(city)
+        this.$router.push('/')
+      }
+    }
   }
 </script>
 

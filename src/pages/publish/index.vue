@@ -4,7 +4,7 @@
       <div class="title">爱记录的人都是天使</div>
       <div class="camera">
         <div class="img-wrapper">
-          <img src="/static/images/camera.png" alt="" class="camera-img">
+          <img src="../../assets/images/camera.png" alt="" class="camera-img">
         </div>
       </div>
       <router-link to="/editor" tag="div" class="editor">上传一日三餐</router-link>

@@ -1,4 +1,4 @@
 export default {
-  city: '北京',
+  city: window.context.city,
   showDownload: localStorage ? (!localStorage.download) : true
 }

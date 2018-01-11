@@ -1,14 +1,18 @@
 <template>
   <div class="indexheader border-bottom">
-    <router-link to="/city" class="position ellipsis" tag="div">北京</router-link>
+    <router-link to="/city" class="position ellipsis" tag="div">{{city}}</router-link>
     <div class="title ellipsis">一人食</div>
     <div class="search"><i class="search-icon iconfont">&#xe679;</i></div>
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
   export default{
-    name: 'indexheader'
+    name: 'indexheader',
+    computed: {
+      ...mapState(['city'])
+    }
   }
 </script>
 
