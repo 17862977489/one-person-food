@@ -9,7 +9,7 @@
           <div class="username">{{item.userId}}</div>
           <div class="sign">{{item.userSign}}</div>
         </div>
-        <div class="focus">+关注</div>
+        <div class="focus" @click="handleFocusClick">+关注</div>
       </div>
       <div class="desc">{{item.foodDesc}}</div>
       <div class="img-wrapper">
@@ -25,6 +25,11 @@
     name: 'nearby',
     props: {
       found: Array
+    },
+    methods: {
+      handleFocusClick () {
+        console.log('关注')
+      }
     }
   }
 </script>

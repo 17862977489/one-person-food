@@ -4,6 +4,7 @@
     <div class="scroll-container" ref="scroller">
       <div class="content">
         <nearby :found="found"></nearby>
+        <focus></focus>
       </div>
     </div>
     <tabbar src='foundClick.png' active="found"></tabbar>
@@ -15,13 +16,15 @@
   import BScroll from 'better-scroll'
   import Foundheader from './header'
   import Nearby from './nearby'
+  import Focus from './focus'
   import Tabbar from '../../components/tabbar'
   export default {
     name: 'found',
     components: {
       Tabbar,
       Foundheader,
-      Nearby
+      Nearby,
+      Focus
     },
     data () {
       return {

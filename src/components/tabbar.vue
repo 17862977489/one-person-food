@@ -1,22 +1,22 @@
 <template>
   <div class="tabbar">
     <div class="tab">
-      <router-link to='/' class="tablayout">
+      <router-link to='/' class="tablayout" tag="div">
         <i class="index" ref="index"></i>
         <p class="font ellipsis">一人食</p>
       </router-link>
-      <router-link to='/found' class="tablayout">
+      <router-link to='/found' class="tablayout" tag="div">
         <i class="found" ref="found"></i>
         <p class="font ellipsis">发现</p>
       </router-link>
       <router-link to='/publish' class="tablayout">
         <i class="add iconfont">&#xe602;</i>
       </router-link>
-      <router-link to='/message' class="tablayout">
+      <router-link to='/message' class="tablayout" tag="div">
         <i class="message" ref="message"></i>
         <p class="font ellipsis">消息</p>
       </router-link>
-      <router-link to='/my' class="tablayout">
+      <router-link to='/my' class="tablayout" tag="div">
         <i class="my" ref="my"></i>
         <p class="font ellipsis">我的</p>
       </router-link>
@@ -59,6 +59,7 @@
       position: relative
       bottom:0
       .tablayout
+        height: .8rem
         text-align: center
         .index
           display: inline-block

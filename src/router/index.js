@@ -7,6 +7,7 @@ import Message from 'pages/message/index'
 import My from 'pages/my/index'
 import Publish from 'pages/publish/index'
 import Editor from 'pages/publish/editor'
+import Search from 'pages/search/search'
 
 Vue.use(Router)
 
@@ -39,5 +40,9 @@ export default new Router({
     path: '/editor',
     name: 'editor',
     component: Editor
+  }, {
+    path: '/search',
+    name: 'search',
+    component: Search
   }]
 })
