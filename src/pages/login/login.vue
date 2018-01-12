@@ -82,9 +82,9 @@
           })
           .then(this.handleGetLoginDataSucc.bind(this))
           .catch(this.handleGetLoginDataErr.bind(this))
-        } else if (!this.userNameDate ) {
+        } else if (!this.userNameDate) {
           this.topicText = '用户名不能为空'
-        } else if ( !this.userNameStatus) {
+        } else if (!this.userNameStatus) {
           this.topicText = '用户名格式不正确'
         } else if (!this.pwdData || !this.pwdStatus) {
           this.topicText = '密码不能为空'
