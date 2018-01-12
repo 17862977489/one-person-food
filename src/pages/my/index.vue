@@ -32,13 +32,20 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import Myheader from './header'
   import Tabbar from '../../components/tabbar'
+
   export default {
-    name: 'found',
+    name: 'my',
     components: {
       Tabbar,
       Myheader
+    },
+    mounted () {
+      if (window.localStorage.login === '1') {
+        
+      }
     }
   }
 </script>

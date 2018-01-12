@@ -2,7 +2,7 @@
   <div class="login-con">
     <div class="login-header">
       <div class="login">
-        <span class="close iconfont">&#xe849;</span>
+        <router-link class="close iconfont" tag="span" to="/my">&#xe849;</router-link>
       </div>
     </div>
     <div class="form">
@@ -74,7 +74,7 @@
       },
       getLoginData () {
         if (this.pwdStatus && this.userNameStatus) {
-          axios.post('/api/login.json', {
+          axios.post('/api/login', {
             params: {
               username: this.userNameDate,
               pwd: this.pwdData
@@ -93,6 +93,7 @@
       handleGetLoginDataSucc (res) {
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.login) {
+          window.localStorage.login = 1
           this.$router.push({path: '/'})
         } else {
           this.topicText = '用户名或密码错误'
