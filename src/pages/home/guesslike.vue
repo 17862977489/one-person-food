@@ -1,7 +1,7 @@
 <template>
   <div class="guess">
     <div class="title-grounp">
-      <span class="title">猜你喜欢</span>
+      <span class="title ellipsis">猜你喜欢</span>
       <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper">
@@ -44,6 +44,7 @@
         color:#231815
         margin-top: -0.01rem
     .item-wrapper
+      overflow: hidden
       .item
         width: 7.1rem
         height: 3.14rem

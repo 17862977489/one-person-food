@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="index">
     <indexheader></indexheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
@@ -10,20 +10,21 @@
         <alldo :alldo="alldo"></alldo>
       </div>
     </div>
-    <tabbar></tabbar>
+    <tabbar src='indexClick.png' active="index"></tabbar>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
   import BScroll from 'better-scroll'
+  import { mapState, mapMutations } from 'vuex'
   import Indexheader from './header'
   import Slider from './slider'
   import Classify from './classify'
   import Allloveto from './allLoveTo'
   import Guess from './guesslike'
   import Alldo from './alldo'
-  import Tabbar from './tabbar'
+  import Tabbar from '../../components/tabbar'
 
   export default {
     name: 'index',
@@ -45,9 +46,18 @@
         alldo: []
       }
     },
+    computed: {
+      ...mapState(['city'])
+    },
+    watch: {
+      city () {
+        this.getIndexData()
+      }
+    },
     methods: {
+      ...mapMutations(['changeCity']),
       getIndexData () {
-        axios.get('/api/index.json').then(this.handleGetDataSucc.bind(this))
+        axios.get('/api/index.json?city=' + this.city).then(this.handleGetDataSucc.bind(this))
          .catch(this.handleDataError.bind(this))
       },
       handleGetDataSucc (res) {
@@ -67,7 +77,12 @@
       }
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.scroller)
+      this.$nextTick(() => {
+        this.scroll = new BScroll(this.$refs.scroller)
+      })
+    },
+    updated () {
+      this.scroll.refresh()
     },
     created () {
       this.getIndexData()
@@ -76,7 +91,7 @@
 </script>
 
 <style scoped lang="stylus">
-  .main
+  .index
     position: absolute
     top: 0
     left: 0

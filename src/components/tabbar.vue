@@ -1,22 +1,22 @@
 <template>
   <div class="tabbar">
     <div class="tab">
-      <router-link to='/' class="tablayout">
+      <router-link to='/' class="tablayout" tag="div">
         <i class="index" ref="index"></i>
         <p class="font ellipsis">一人食</p>
       </router-link>
-      <router-link to='/found' class="tablayout">
+      <router-link to='/found' class="tablayout" tag="div">
         <i class="found" ref="found"></i>
         <p class="font ellipsis">发现</p>
       </router-link>
       <router-link to='/publish' class="tablayout">
         <i class="add iconfont">&#xe602;</i>
       </router-link>
-      <router-link to='/message' class="tablayout">
+      <router-link to='/message' class="tablayout" tag="div">
         <i class="message" ref="message"></i>
         <p class="font ellipsis">消息</p>
       </router-link>
-      <router-link to='/my' class="tablayout">
+      <router-link to='/my' class="tablayout" tag="div">
         <i class="my" ref="my"></i>
         <p class="font ellipsis">我的</p>
       </router-link>
@@ -38,10 +38,8 @@
     },
     computed: {
       imgSrc () {
-        return '/src/assets/images/' + this.src
+        return '/static/images/icons/' + this.src
       }
-    },
-    methods: {
     }
   }
 </script>
@@ -62,12 +60,13 @@
       bottom:0
       .tablayout
         text-align: center
+        height: .8rem
         .index
           display: inline-block
           width: .36rem
           height: .4rem
           font-size: .4rem
-          background: url('../assets/images/indexNotClick.png')
+          background: url('../../static/images/icons/indexNotClick.png')
           background-size: 100% 100%
         .found
           display: inline-block
@@ -76,7 +75,7 @@
           font-size: .34rem
           margin-top: .05rem
           margin-bottom: 0.05rem
-          background: url('../assets/images/foundNotClick.png')
+          background: url('../../static/images/icons/foundNotClick.png')
           background-size: 100% 100%
         .add
           display: inline-block
@@ -94,14 +93,14 @@
           width: .38rem
           height: .4rem
           font-size: .38rem
-          background: url('../assets/images/messageNotClick.png')
+          background: url('../../static/images/icons/messageNotClick.png')
           background-size: 100% 100%
         .my
           display: inline-block
           width: .38rem
           height: .4rem
           font-size: .38rem
-          background: url('../assets/images/myNotClick.png')
+          background: url('../../static/images/icons/myNotClick.png')
           background-size: 100% 100%
         .font
           font-size: .2rem

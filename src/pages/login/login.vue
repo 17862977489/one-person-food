@@ -50,7 +50,7 @@
     },
     methods: {
       handelUsernameInput () {
-        var reg = /^1(3|5|6|8)\d{9}$/
+        var reg = /^1(3|5|7|8)\d{9}$/
         if (!reg.test(this.userNameDate)) {
           this.userNameStatus = false
           this.topicText = '请输入11位手机号'

@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     handelUsernameInput () {
-      var reg = /^1(3|5|6|8)(\d){9}$/
+      var reg = /^1(3|5|7|8)(\d){9}$/
       if (!reg.test(this.usernameData)) {
         this.usernameStatus = false
         this.topicText = '请输入有效的11位手机号'
@@ -63,7 +63,7 @@ export default {
     handelRegisterClick () {
       var authcodedata = this.$refs.authcode.getAuthCodeData()
       if (authcodedata && this.usernameStatus && this.pwdStatus) {
-        axios.post('/api/register.json', {
+        axios.post('/api/register', {
           params: {
             username: this.usernameData,
             authcodedata: authcodedata,

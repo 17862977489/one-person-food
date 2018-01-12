@@ -22,66 +22,66 @@
     "foodType":[{
       "id": "0001",
       "linkUrl":"",
-      "foodTypeImg":"/static/images/western-food.jpg",
+      "foodTypeImg":"/static/images/foodtype/western-food.jpg",
       "foodTypeName": "西餐",
       "foodTypeClassName":"western-food"
     },{
       "id": "0002",
       "linkUrl":"",
-      "foodTypeImg":"/static/images/chinese-food.jpg",
+      "foodTypeImg":"/static/images/foodtype/chinese-food.jpg",
       "foodTypeName": "中餐",
       "foodTypeClassName":"chinese-food"
     },{
       "id": "0003",
       "linkUrl":"",
-      "foodTypeImg":"/static/images/baking.jpg",
+      "foodTypeImg":"/static/images/foodtype/baking.jpg",
       "foodTypeName": "烘焙",
       "foodTypeClassName": "baking"
     },{
       "id": "0004",
       "linkUrl":"",
-      "foodTypeImg":"/static/images/drink.jpg",
+      "foodTypeImg":"/static/images/foodtype/drink.jpg",
       "foodTypeName": "酒水",
       "foodTypeClassName":"drink"
     }],
     "allLoveTo":[{
       "id": "0001",
-      "img": "/static/images/allloveto1.jpg",
+      "img": "/static/images/allloveto/allloveto1.jpg",
       "name":"周记",
       "linkUrl":""
     },{
       "id": "0002",
-      "img": "/static/images/allloveto2.jpg",
+      "img": "/static/images/allloveto/allloveto2.jpg",
       "name":"煲煲靓",
       "linkUrl":""
     },{
       "id": "0003",
-      "img": "/static/images/allloveto3.jpg",
+      "img": "/static/images/allloveto/allloveto3.jpg",
       "name":"食尚蜜语",
       "linkUrl":""
     }],
     "guessYouLike":[{
       "id": "0001",
-      "img": "/static/images/guess1.png",
+      "img": "/static/images/guess/guess1.png",
       "linkUrl":""
     },{
       "id": "0002",
-      "img": "/static/images/guess2.png",
+      "img": "/static/images/guess/guess2.png",
       "linkUrl":""
     }],
     "allDo":[{
       "id": "0001",
-      "img": "/static/images/alldo1.jpg",
+      "img": "/static/images/alldo/alldo1.jpg",
       "name":"杂菌丸子暖身锅",
       "linkUrl":""
     }, {
       "id": "0002",
-      "img": "/static/images/alldo2.jpg",
+      "img": "/static/images/alldo/alldo2.jpg",
       "name":"三文鱼肠黎麦雪糕",
       "linkUrl":""
     }, {
       "id": "0003",
-      "img": "/static/images/alldo3.jpg",
+      "img": "/static/images/alldo/alldo3.jpg",
       "name":"抹茶蜜豆毛巾卷",
       "linkUrl":""
     }]

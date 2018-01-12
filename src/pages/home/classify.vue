@@ -5,7 +5,7 @@
         <div class="img-wrapper">
           <img :src="item.foodTypeImg" alt="" :class=item.foodTypeClassName>
         </div>
-        <span class="foodTypeName">{{item.foodTypeName}}</span>
+        <span class="foodTypeName ellipsis">{{item.foodTypeName}}</span>
       </router-link>
     </div>
   </div>
@@ -25,6 +25,7 @@
     height: 1.2rem
     display: flex
     background: #fff
+    margin-top: .2rem
     .classify-wrapper
       flex: 1
       .classify

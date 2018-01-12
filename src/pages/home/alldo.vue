@@ -1,7 +1,7 @@
 <template>
   <div class="alldo">
     <div class="title-grounp">
-      <span class="title">大家都爱做</span>
+      <span class="title ellipsis">大家都爱做</span>
       <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper" ref="scroller">
@@ -10,7 +10,7 @@
           <div class="img-wrapper">
             <img :src="item.img" alt="" class="item-img">
           </div>
-          <div class="item-name">{{item.name}}</div>
+          <div class="item-name ellipsis">{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
   .alldo
     height: 3.36rem
     background: #fff
-    padding-bottom: 1.98rem
+    padding-bottom: 0.58rem
     .title-grounp
       display: flex
       margin-left: .29rem

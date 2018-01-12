@@ -5,6 +5,7 @@
         <img  class="banner-img" :src="item.bannerImg"/>
       </div>
     </swiper-slide>
+    <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
 </template>
 
@@ -18,6 +19,7 @@
       return {
         swiperOption: {
           loop: true,
+          autoplay: 3000,
           loopedSlides: 20,
           pagination: '.swiper-pagination'
         }
@@ -27,6 +29,13 @@
 </script>
 
 <style scoped lang="stylus">
+  .banner >>> .swiper-pagination-bullet
+    background: #ccc
+    opacity: 1
+  .banner >>> .swiper-pagination-bullet-active
+    background: #fff
+  .banner >>> .swiper-pagination-bullets
+    bottom: 0.4rem
   .banner
     height: 4.22rem
     background: #fff
