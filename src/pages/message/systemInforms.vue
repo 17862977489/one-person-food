@@ -3,28 +3,28 @@
     <div class="systemInforms">
       <div class="inform system border-bottom">
         <div class="img-wrapper">
-          <img src="../../assets/images/system.png" alt="" class="system-img">
+          <img src="../../../static/images/icons/system.png" alt="" class="system-img">
         </div>
         <div class="title">系统通知</div>
         <i class="enter iconfont">&#xe6f8;</i>
       </div>
       <div class="inform praise border-bottom">
         <div class="img-wrapper">
-          <img src="../../assets/images/praise.png" alt="" class="praise-img">
+          <img src="../../../static/images/icons/praise.png" alt="" class="praise-img">
         </div>
         <div class="title">点赞</div>
         <i class="enter iconfont">&#xe6f8;</i>
       </div>
       <div class="inform comment border-bottom">
         <div class="img-wrapper">
-          <img src="../../assets/images/comment.png" alt="" class="comment-img">
+          <img src="../../../static/images/icons/comment.png" alt="" class="comment-img">
         </div>
         <div class="title">讨论</div>
         <i class="enter iconfont">&#xe6f8;</i>
       </div>
       <div class="inform foucs border-bottom">
         <div class="img-wrapper">
-          <img src="../../assets/images/foucs.png" alt="" class="foucs-img">
+          <img src="../../../static/images/icons/foucs.png" alt="" class="foucs-img">
         </div>
         <div class="title">关注</div>
         <i class="enter iconfont">&#xe6f8;</i>

@@ -38,10 +38,8 @@
     },
     computed: {
       imgSrc () {
-        return '/src/assets/images/' + this.src
+        return '/static/images/icons/' + this.src
       }
-    },
-    methods: {
     }
   }
 </script>
@@ -67,7 +65,7 @@
           width: .36rem
           height: .4rem
           font-size: .4rem
-          background: url('../assets/images/indexNotClick.png')
+          background: url('../../static/images/icons/indexNotClick.png')
           background-size: 100% 100%
         .found
           display: inline-block
@@ -76,7 +74,7 @@
           font-size: .34rem
           margin-top: .05rem
           margin-bottom: 0.05rem
-          background: url('../assets/images/foundNotClick.png')
+          background: url('../../static/images/icons/foundNotClick.png')
           background-size: 100% 100%
         .add
           display: inline-block
@@ -94,14 +92,14 @@
           width: .38rem
           height: .4rem
           font-size: .38rem
-          background: url('../assets/images/messageNotClick.png')
+          background: url('../../static/images/icons/messageNotClick.png')
           background-size: 100% 100%
         .my
           display: inline-block
           width: .38rem
           height: .4rem
           font-size: .38rem
-          background: url('../assets/images/myNotClick.png')
+          background: url('../../static/images/icons/myNotClick.png')
           background-size: 100% 100%
         .font
           font-size: .2rem

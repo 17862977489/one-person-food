@@ -1,9 +1,9 @@
 <template>
   <div class="messageHeader border-bottom">
-    <img class="search-img" src="../../assets/images/search.png" alt="">
+    <img class="search-img" src="/static/images/icons/search.png" alt="">
     <div class="message">消息</div>
     <div>
-      <img class="my-img" src="../../assets/images/myNotClick.png" alt="">
+      <img class="my-img" src="/static/images/icons/myNotClick.png" alt="">
     </div>
   </div>
 </template>

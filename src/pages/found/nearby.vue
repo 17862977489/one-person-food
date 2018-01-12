@@ -84,7 +84,7 @@
           bottom:-0.06rem
           width: .4rem
           height: .34rem
-          background: url('../../assets/images/comments.png')
+          background: url('../../../static/images/icons/comments.png')
           background-size: 100% 100%
         .like
           position: absolute
@@ -93,6 +93,6 @@
           bottom:0
           width: .38rem
           height: .36rem
-          background: url('../../assets/images/like.png')
+          background: url('../../../static/images/icons/like.png')
           background-size: 100% 100%
 </style>

@@ -114,12 +114,18 @@
         resize: none
     .editor-img
       margin: 0 .2rem
+      display: flex
       .img-wrapper
         width: 2rem
         height: 1.98rem
-        display: inline-block
+        line-height: 1.98rem
         margin: 0 .16rem .16rem 0
+        background: #f3f5f8
+        text-align: center
         .img
           width: 100%
           height: 100%
+        .add-img
+          color: #666
+          font-size: 1rem
 </style>
