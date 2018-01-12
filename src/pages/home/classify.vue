@@ -25,7 +25,7 @@
     height: 1.2rem
     display: flex
     background: #fff
-    margin-top: .22rem
+    margin-top: .2rem
     .classify-wrapper
       flex: 1
       .classify

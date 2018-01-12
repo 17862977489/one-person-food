@@ -3,14 +3,17 @@
     <div class="editor-header border-bottom">
       <div class="cancle" @click="handleBackClick">取消</div>
       <div class="title">发布</div>
-      <div class="publish">确定</div>
+      <div class="publish" ref="determine" @click="handlePublishClick">确定</div>
     </div>
     <div class="editor-con">
-      <div class="editor-desc">请添加文字...</div>
+      <textarea class="editor-desc" v-model="editorCon" ref="textCon" placeholder='请输入文字...'></textarea>
     </div>
     <div class="editor-img">
       <div class="img-wrapper">
-        <img src="/static/images/found/foodimg1.png" alt="" class="img">
+        <img src="/static/images/alldo/alldo1.jpg" alt="" class="img">
+      </div>
+      <div class="img-wrapper">
+        <span class="add-img">+</span>
       </div>
     </div>
   </div>
@@ -21,7 +24,22 @@
     name: 'editor',
     data () {
       return {
-        date: ''
+        date: '',
+        editorCon: '',
+        publishFlag: false
+      }
+    },
+    watch: {
+      editorCon: function (e) {
+        if (e.length > 0) {
+          this.$refs.determine.style.background = '#333'
+          this.$refs.determine.style.color = '#fff'
+          this.publishFlag = true
+        } else {
+          this.$refs.determine.style.background = '#f3f5f8'
+          this.$refs.determine.style.color = '#666'
+          this.publishFlag = false
+        }
       }
     },
     methods: {
@@ -31,6 +49,11 @@
       },
       handleBackClick () {
         this.$router.go(-1)
+      },
+      handlePublishClick () {
+        if (this.publishFlag) {
+
+        }
       }
     },
     created () {
@@ -74,23 +97,29 @@
         line-height: .46rem
         text-align: center
         font-size: .32rem
-        background: #333
-        color:#fff
+        background: #f3f5f8
+        color:#666
         border-radius: .06rem
     .editor-con
       height: 1.88rem
       overflow: auto
       margin: .32rem .2rem
       .editor-desc
+        width: 94%
+        height: 1.88rem
         color: #666
         font-size: .32rem
         padding-right: .4rem
+        border: 0
+        resize: none
     .editor-img
-      height: 2rem
       margin: 0 .2rem
       .img-wrapper
         width: 2rem
         height: 1.98rem
+        display: inline-block
+        margin: 0 .16rem .16rem 0
         .img
           width: 100%
+          height: 100%
 </style>
