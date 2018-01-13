@@ -1,10 +1,10 @@
 <template>
   <div class="foundIndex">
-    <foundheader></foundheader>
+    <foundheader @tab="handleSwitch"></foundheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
-        <nearby :found="found"></nearby>
-        <focus></focus>
+        <nearby :found="found" v-show="show"></nearby>
+        <focus :focus="focus" v-show="!show"></focus>
       </div>
     </div>
     <tabbar src='foundClick.png' active="found"></tabbar>
@@ -28,7 +28,9 @@
     },
     data () {
       return {
-        found: []
+        found: [],
+        focus: [],
+        show: true
       }
     },
     methods: {
@@ -39,13 +41,21 @@
       handleGetDataSucc (res) {
         res = res ? res.data : null
         if (res && res.ret && res.data) {
-          res.data.user && (this.found = res.data.user)
+          res.data.nearby && (this.found = res.data.nearby)
+          res.data.focus && (this.focus = res.data.focus)
         } else {
           this.handleDataError()
         }
       },
       handleDataError () {
         console.log('error')
+      },
+      handleSwitch (target) {
+        if (target === 'focus') {
+          this.show = false
+        } else {
+          this.show = true
+        }
       }
     },
     mounted () {

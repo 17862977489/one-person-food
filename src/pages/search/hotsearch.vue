@@ -2,24 +2,24 @@
   <div class="hotsearch">
     <h2 class="title">热门搜索</h2>
     <div class="search-con" ref="search">
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
-      <div class="search-item border">北京</div>
+      <div class="search-item border" v-for="item in arr" @click="handleClick(item)">{{item}}</div>
     </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'hotsearch'
+    name: 'hotsearch',
+    data () {
+      return {
+        arr: ['北京', '西餐', '面条', '火锅', '周记', '麻辣烫', '马记', '胖子', '烤肉', '烤鱼']
+      }
+    },
+    methods: {
+      handleClick (item) {
+        this.$emit('hotsearch', item)
+      }
+    }
   }
 </script>
 
@@ -33,8 +33,7 @@
     .search-con
       .search-item
         display: inline-block
-        width: 1.3rem
-        height: .52rem
+        padding: 0 .36rem
         text-align: center
         line-height: .52rem
         margin-right: .2rem

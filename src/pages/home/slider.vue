@@ -37,7 +37,6 @@
   .banner >>> .swiper-pagination-bullets
     bottom: 0.4rem
   .banner
-    height: 4.22rem
     background: #fff
     padding-top: .2rem
     .banner-img-wrapper

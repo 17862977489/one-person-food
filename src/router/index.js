@@ -8,12 +8,18 @@ import My from 'pages/my/index'
 import Publish from 'pages/publish/index'
 import Editor from 'pages/publish/editor'
 import Search from 'pages/search/search'
+import Start from 'pages/start/start'
+import Detail from 'pages/detail/index'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [{
     path: '/',
+    name: 'start',
+    component: Start
+  }, {
+    path: '/index',
     name: 'index',
     component: Index
   }, {
@@ -44,5 +50,9 @@ export default new Router({
     path: '/search',
     name: 'search',
     component: Search
+  }, {
+    path: '/detail',
+    name: 'detail',
+    component: Detail
   }]
 })

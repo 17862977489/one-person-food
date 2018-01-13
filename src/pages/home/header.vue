@@ -2,7 +2,7 @@
   <div class="indexheader border-bottom">
     <router-link to="/city" class="position ellipsis" tag="div">{{city}}</router-link>
     <div class="title ellipsis">一人食</div>
-    <div class="search"><i class="search-icon iconfont">&#xe679;</i></div>
+    <router-link to="/search" tag="div" class="search"><i class="search-icon iconfont">&#xe679;</i></router-link>
   </div>
 </template>
 

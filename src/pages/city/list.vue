@@ -31,7 +31,7 @@
       ...mapMutations(['changeCity']),
       handleCityClick (city) {
         this.changeCity(city)
-        this.$router.push('/')
+        this.$router.push('/index')
       },
       setCityStart (e) {
         const area = (e + 10).toString(36).toUpperCase()

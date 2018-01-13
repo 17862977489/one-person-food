@@ -1,9 +1,9 @@
 <template>
-  <div class="search">
-    <searchheader></searchheader>
+  <div class="searchMain">
+    <searchheader ref="searchInput" @historysearch="addHistorySearch"></searchheader>
     <div class="havesearch">
-      <hotsearch></hotsearch>
-      <historysearch></historysearch>
+      <hotsearch @hotsearch="handleHotSearch"></hotsearch>
+      <historysearch ref="addhistory" @historysearch="handleHistorySearch"></historysearch>
     </div>
   </div>
 </template>
@@ -18,6 +18,17 @@
       Searchheader,
       Hotsearch,
       Historysearch
+    },
+    methods: {
+      handleHotSearch (Hotitem) {
+        this.$refs.searchInput.handleHotSearch(Hotitem)
+      },
+      addHistorySearch (item) {
+        this.$refs.addhistory.AddHistoryRecord(item)
+      },
+      handleHistorySearch (Historyitem) {
+        this.$refs.searchInput.handleHotSearch(Historyitem)
+      }
     }
   }
 </script>
