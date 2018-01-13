@@ -8,7 +8,9 @@ import Found from 'pages/found/index'
 import Message from 'pages/message/index'
 import My from 'pages/my/index'
 import Publish from 'pages/publish/index'
+import myPublish from 'pages/publish/publish'
 import Editor from 'pages/publish/editor'
+import EditInfo from 'pages/editInfo/index'
 
 Vue.use(Router)
 
@@ -42,6 +44,10 @@ export default new Router({
       name: 'publish',
       component: Publish
     }, {
+      path: '/mypublish',
+      name: 'myPublish',
+      component: myPublish
+    }, {
       path: '/message',
       name: 'message',
       component: Message
@@ -53,5 +59,9 @@ export default new Router({
       path: '/editor',
       name: 'editor',
       component: Editor
+    }, {
+      path: '/editInfo',
+      name: 'editInfo',
+      component: EditInfo
     }]
 })

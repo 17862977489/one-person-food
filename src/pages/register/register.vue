@@ -11,7 +11,11 @@
         <div class="user border-bottom">
           <input id ="user-name" type="text" placeholder="请输入手机号" @input="handelUsernameInput" v-model="usernameData" />
         </div>
-        <authcode-template :phoneNum="usernameData" v-on:userNameNull="userNameNull" :usernameStatus="usernameStatus" v-on:userNameError="userNameError" ref="authcode"></authcode-template>
+        <authcode-template :phoneNum="usernameData" :usernameStatus="usernameStatus"
+          v-on:getAuthCodeErr="getAuthCodeErr" v-on:getAuthCodeSucc="getAuthCodeSucc" 
+          v-on:userNameNull="userNameNull" v-on:userNameError="userNameError"
+          ref="authcode">
+        </authcode-template>
         <div class="pwd border-bottom">
           <input id ="password" type="password" placeholder="请输入6-16位字母或数字密码" @input="handelPwdInput"  v-model="pwdData"/>
         </div>
@@ -33,7 +37,8 @@ export default {
       pwdData: '',
       topicText: '',
       usernameStatus: false,
-      pwdStatus: false
+      pwdStatus: false,
+      authCodeStatus: false
     }
   },
   components: {
@@ -60,10 +65,16 @@ export default {
         this.topicText = ''
       }
     },
+    userNameNull () {
+      this.topicText = '手机号不能为空'
+    },
+    userNameError () {
+      this.topicText = '手机号不正确'
+    },
     handelRegisterClick () {
       var authcodedata = this.$refs.authcode.getAuthCodeData()
-      if (authcodedata && this.usernameStatus && this.pwdStatus) {
-        axios.post('/api/register', {
+      if (authcodedata && this.usernameStatus && this.pwdStatus && this.authCodeStatus) {
+        axios.post('/api/register.json', {
           params: {
             username: this.usernameData,
             authcodedata: authcodedata,
@@ -84,19 +95,26 @@ export default {
       res && (res = res.data)
       if (res && res.data && res.ret && res.data.register) {
         this.$router.push({path: '/login'})
+      } else if (res && res.data && res.ret && !res.data.register) {
+        this.topicText = '验证码不正确'
       }
     },
     handelRegisterError (error) {
-      console.log(error)
+      console.log('注册时服务器错误' + error)
     },
     handelBackClick () {
       this.$router.push({path: '/login'})
     },
-    userNameNull () {
-      this.topicText = '手机号不能为空'
+    getAuthCodeSucc () {
+      this.authCodeStatus = true
     },
-    userNameError () {
-      this.topicText = '请输入正确的手机号'
+    getAuthCodeErr (authCodeRes) {
+      if (authCodeRes === 1) {
+        this.topicText = '用户名已存在'
+      }
+      if (authCodeRes === 2) {
+        this.topicText = '获取验证码失败'
+      }
     }
   }
 }

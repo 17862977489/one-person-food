@@ -52,7 +52,7 @@
       },
       handlePublishClick () {
         if (this.publishFlag) {
-
+          this.$router.push({path: '/myPublish'})
         }
       }
     },

@@ -10,7 +10,7 @@
   import axios from 'axios'
   export default {
     name: 'register-auth',
-    props: ['phoneNum', 'usernameStatus'],
+    props: ['phoneNum', 'usernameStatus', 'verifyPhoneStatus'],
     data () {
       return {
         getAuthCodeStatus: true,
@@ -23,7 +23,7 @@
       handelGetAuthCodeClick () {
         if (this.phoneNum && this.getAuthCodeStatus && this.usernameStatus) {
           this.getAuthCodeStatus = false
-          axios.post('/api/getAuthCode', {
+          axios.post('/api/getAuthCode.json', {
             params: {
               username: this.phoneNum
             }
@@ -38,20 +38,24 @@
       },
       handelGetAuthCodeSucc (res) {
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.authCode) {
+        if (res && res.data && res.ret && res.data.authCodeRes === 0) {
+          this.$emit('getAuthCodeSucc')
           this.timer = setInterval(this.handelTimeDown.bind(this), 1000)
+        } else if (res && res.data && res.ret && res.data.authCodeRes !== 0) {
+          this.$emit('getAuthCodeErr', res.data.authCodeRes)
         }
       },
       handelGetAuthCodeErr () {
-        console.log('验证码获取失败')
+        console.log('验证码接口发送错误')
       },
       handelTimeDown () {
         this.num -= 1
-        this.authCode = this.num
+        this.authCode = this.num + 's'
         if (this.num <= 0) {
           clearInterval(this.timer)
           this.authCode = '获取验证码'
           this.getAuthCodeStatus = true
+          this.num = 60
         }
       },
       getAuthCodeData () {

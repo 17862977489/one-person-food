@@ -74,7 +74,7 @@
       },
       getLoginData () {
         if (this.pwdStatus && this.userNameStatus) {
-          axios.post('/api/login', {
+          axios.get('/api/login.json', {
             params: {
               username: this.userNameDate,
               pwd: this.pwdData
@@ -93,7 +93,7 @@
       handleGetLoginDataSucc (res) {
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.login) {
-          window.localStorage.login = 1
+          window.localStorage.sessionId = res.data.sessionId
           this.$router.push({path: '/'})
         } else {
           this.topicText = '用户名或密码错误'
