@@ -2,12 +2,12 @@
   <div class="publishIndex">
     <div class="con">
       <div class="title">爱记录的人都是天使</div>
-      <router-link to="/editor" class="camera" tag="div">
+      <router-link to="/publish/editor" class="camera" tag="div">
         <div class="img-wrapper">
           <img src="/static/images/icons/camera.png" alt="" class="camera-img">
         </div>
       </router-link>
-      <router-link to="/editor" tag="div" class="editor">上传一日三餐</router-link>
+      <router-link to="/publish/editor" tag="div" class="editor">上传一日三餐</router-link>
     </div>
     <tabbar></tabbar>
   </div>

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="my-header border-bottom">我的</div>
-    <div class="my-infophoto" v-bind:style="{background:  '#e0e0e0 url('+ titlePhotoBjUrl +') no-repeat center center'}">
-      <router-link class="info-box" to="/login" tag="div">
+    <div class="my-infophoto" v-bind:style="{background:  '#e0e0e0 url('+ titlePhotoBjUrl +') no-repeat center center '}">
+      <router-link class="info-box" to="/my/login" tag="div">
         <img v-bind:src="headPhotoUrl" alt="" class="img-box">
         <div class="user-name ellipsis">{{userName}}</div>
         <div class="img-sign ellipsis">{{userSign}}</div>
@@ -21,7 +21,7 @@
       </div>
       <div class="edit" @click="handelClick">
         <span class="iconfont edit-icon">&#xe62b;</span>
-        <router-link class="edit-text" tag="span" to="/editInfo" >编辑资料</router-link>                     
+        <router-link class="edit-text" tag="span" to="/my/editInfo" >编辑资料</router-link>                     
       </div> 
     </div>
   </div>
@@ -99,14 +99,14 @@
     position: absolute
     left: 0
     bottom: 0
-    width: 90%
+    width: 100%
     display: flex
     justify-content: space-between
     height: .86rem
-    padding: 0 .2rem 0 .6rem
     background: rgba(249,249,249,.7)
     .fans-and-attention
       display: flex
+      margin-left: .5rem
       .attention
         display: flex
         flex-direction: column
@@ -137,4 +137,5 @@
     .edit
       height: .86rem
       line-height: .86rem
+      margin-right: .2rem
 </style>

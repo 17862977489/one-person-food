@@ -70,12 +70,13 @@
 
 <style scoped lang="stylus">
   .header
+    width: 100%
     line-height: .88rem
     position: relative
     text-align: center
     font-size: .33rem
     &::before
-        border-color: #333
+      border-color: #333
     .back
       position: absolute
       left: .2rem
@@ -84,6 +85,7 @@
       font-size: .38rem
       color: #231815
   .content
+    width: 100%
     .line
       position: relative
       display: flex

@@ -18,7 +18,7 @@
           <p class="forget">忘记密码?</p>
         </div>
         <input type="button" value="登录" class="sub" @click="handelLoginClick"/>
-        <router-link :to="{path:'register'}" class="register" tag="p">注册</router-link>
+        <router-link :to="{path:'/my/login/register'}" class="register" tag="p">注册</router-link>
       </form>
     </div>
     <div class="login-type">

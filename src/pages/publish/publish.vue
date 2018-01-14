@@ -5,9 +5,9 @@
     </div>
     <div class="scroll-container" ref="scroller">
       <div class="content">
-        <div class="publish-con" v-for="(item,index) in publishInfo.publishInfo" >
+        <div class="publish-con" v-for="(item,index) in publishInfo" :key="item.id">
           <div class="publish-header">
-            <div class="head-photo-con"><img :src="publishInfo.headPhoto" alt="" class="head-photo"></div>
+            <div class="head-photo-con"><img :src="item.headPhoto" alt="" class="head-photo"></div>
             <dl class="user-info">
               <dt class="user-name">{{publishInfo.userName}}</dt>
               <dd class="publish-time">{{item.time}}</dd>
@@ -15,7 +15,7 @@
           </div>
           <div class="publish-text">{{item.content}}</div>
           <div class="img-con">
-            <div class="publish-imgs-con" v-for="(itemImg,indexImg) in item.imgs">
+            <div class="publish-imgs-con" v-for="(itemImg,indexImg) in item.imgs" :key="indexImg">
               <img :src="itemImg" alt="" class="publish-imgs-big" v-if="item.imgs.length < 2 ">
               <img :src="itemImg" alt="" class="publish-imgs-small" v-else>
             </div>
@@ -35,11 +35,12 @@
     name: 'myPublish',
     data () {
       return {
-        publishInfo: '',
+        publishInfo: [],
         bigStyle: true,
         smallStyle: false,
         isFreshing: false,
-        isLoading: false
+        isLoading: true,
+        pagination: 0
       }
     },
     computed: {
@@ -52,7 +53,8 @@
         if (window.localStorage.sessionId) {
           axios.get('/api/getPublishInfoData.json', {
             params: {
-              sessionId: window.localStorage.sessionId
+              sessionId: window.localStorage.sessionId,
+              pagination: this.pagination
             }
           })
           .then(this.handleGetPublishInfoDataSucc.bind(this))
@@ -60,9 +62,13 @@
         }
       },
       handleGetPublishInfoDataSucc (res) {
+        console.log(221)
+        this.pagination += 1
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.publishInfoData) {
-          this.publishInfo = JSON.parse(JSON.stringify(res.data.publishInfoData))
+          console.log(this.publishInfo)
+          this.publishInfo = this.publishInfo.concat(JSON.parse(JSON.stringify(res.data.publishInfoData)))
+          console.log(this.publishInfo)
         }
       },
       handleGetPublishInfoDataErr (error) {
@@ -72,31 +78,26 @@
         this.scroll.on('scroll', this.handelScrollEvent.bind(this))
         this.scroll.on('scrollEnd', this.handleScrollEnd.bind(this))
       },
-      handelScrollEvent () {
-        if (e.y > 60 && !this.isFreshing) {
-          this.getListInfo()
-          this.isFreshing = true
-        } else if (((this.scroller.y) <= (this.scroller.maxScrollY - 50)) && this.isLoading) {
+      handelScrollEvent (e) {
+        if (((this.scroll.y) <= (this.scroll.maxScrollY - 50)) && this.isLoading) {
           this.getMoreListInfo()
           this.isLoading = false
         }
       },
-      getListInfo () {
-
-      },
       getMoreListInfo () {
-
+        console.log(222)
+        this.getPublishInfoData()
       },
       handleScrollEnd () {
-
+        this.isLoading = true
       }
     },
     mounted () {
-      this.$nextTick(() => {
-        this.scroll = new BScroll(this.$refs.scroller, {
-          probeType: 3
-        })
+      // this.$nextTick(() => {
+      this.scroll = new BScroll(this.$refs.scroller, {
+        probeType: 3
       })
+      // })
       this.getPublishInfoData()
       this.bindEvents()
     },

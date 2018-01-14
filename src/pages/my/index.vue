@@ -4,27 +4,28 @@
     <div class="scroll-container" ref="scroller">
       <div class="content">
         <div class="my-title border-bottom">
-          <router-link class="my-publish" @click="handelClick" tag="dl" to="/myPublish">
+          <router-link class="my-publish" @click.native="handelClick" tag="dl" to="/my/myPublish">
             <dt class="publish-img"></dt>
             <dd class="publish-text">我的发布</dd>
           </router-link>
-          <dl class="my-friends" @click="handelClick">
+          <router-link class="my-friends" @click.native="handelClick" tag="dl" to="/my/myFriends">
             <dt class="friends-img"></dt>
             <dd class="friends-text">我的好友</dd>
-          </dl>
-          <dl class="my-footmark" @click="handelClick">
+          </router-link>
+          <router-link class="my-footmark" @click.native="handelClick" tag="dl" to="/my/myFootmark">
             <dt class="footmark-img"></dt>
             <dd class="footmark-text">我的足迹</dd>
-          </dl>
+          </router-link>
         </div>
-        <div class="drafts-box border-bottom" @click="handelClick">
+        <router-link class="drafts-box border-bottom" @click.native="handelClick" tag="div"
+         to="/my/myDrafts">
           <span class="drafts-icon iconfont">&#xe678;</span>
           <span class="drafts-text">草稿箱</span>
-        </div>
-        <div class="setting-box border-bottom" @click="handelClick">
+        </router-link>
+        <router-link class="setting-box border-bottom" @click.native="handelClick" tag="div" to="/my/mySetting">
           <span class="setting-icon iconfont">&#xe65c;</span>
           <span class="setting-text">设置</span>
-        </div>
+        </router-link>
       </div>
     </div>
     <tabbar src='myClick.png' active="my"></tabbar>
@@ -69,7 +70,7 @@
       },
       handelClick () {
         if (!window.localStorage.sessionId) {
-          this.$router.push({path: '/login'})
+          this.$router.push({path: '/my/login'})
         }
       }
     },
@@ -127,9 +128,9 @@
               background-size: 100%
               margin-bottom: .23rem
         .drafts-box
-          width: 7.1rem
+          margin: 0 .2rem
           line-height: 1.1rem
-          margin: auto
+          display: flex
           &::before
             border-color: #cdcdcd
           .drafts-icon
@@ -139,9 +140,9 @@
             font-size: .3rem
             color: #333
         .setting-box
-          width: 7.1rem
           line-height: 1.1rem
-          margin: auto
+          display: flex
+          margin: 0 .2rem
           &::before
             border-color: #cdcdcd
           .setting-icon

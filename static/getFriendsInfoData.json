@@ -1,0 +1,38 @@
+{
+	"ret":true,
+	"data":{
+		"fiendsInfoData":[{
+			"id":"0001",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Alina"
+			}, {
+			"id":"0002",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Bell"
+			}, {
+			"id":"0003",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Dell"
+			}, {
+			"id":"0004",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Bob"
+			}, {
+			"id":"0005",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Mozali"
+			}, {
+			"id":"0006",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Keo"
+			}, {
+			"id":"0007",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Doo"
+			}, {
+			"id":"0008",
+			"headPhotoUrl":"/static/images/my/headPhoto.jpg",
+			"userName":"Firesds"
+			}]
+		}
+}

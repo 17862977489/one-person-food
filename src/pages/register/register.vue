@@ -94,7 +94,7 @@ export default {
     handelRegisterSucc (res) {
       res && (res = res.data)
       if (res && res.data && res.ret && res.data.register) {
-        this.$router.push({path: '/login'})
+        this.$router.push({path: '/my/login'})
       } else if (res && res.data && res.ret && !res.data.register) {
         this.topicText = '验证码不正确'
       }
@@ -103,7 +103,7 @@ export default {
       console.log('注册时服务器错误' + error)
     },
     handelBackClick () {
-      this.$router.push({path: '/login'})
+      this.$router.push({path: '/my/login'})
     },
     getAuthCodeSucc () {
       this.authCodeStatus = true

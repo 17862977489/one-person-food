@@ -11,6 +11,10 @@ import Publish from 'pages/publish/index'
 import myPublish from 'pages/publish/publish'
 import Editor from 'pages/publish/editor'
 import EditInfo from 'pages/editInfo/index'
+import MyFriends from 'pages/myFriends/index'
+import MyFootmark from 'pages/myFootmark/index'
+import MyDrafts from 'pages/myDrafts/index'
+import MySetting from 'pages/mySetting/index'
 
 Vue.use(Router)
 
@@ -22,12 +26,12 @@ export default new Router({
       component: Index
     },
     {
-      path: '/login',
+      path: '/my/login',
       name: 'login',
       component: Login
     },
     {
-      path: '/register',
+      path: '/my/login/register',
       name: 'register',
       component: Register
     },
@@ -44,7 +48,7 @@ export default new Router({
       name: 'publish',
       component: Publish
     }, {
-      path: '/mypublish',
+      path: '/my/mypublish',
       name: 'myPublish',
       component: myPublish
     }, {
@@ -56,12 +60,28 @@ export default new Router({
       name: 'my',
       component: My
     }, {
-      path: '/editor',
+      path: '/publish/editor',
       name: 'editor',
       component: Editor
     }, {
-      path: '/editInfo',
+      path: '/my/editInfo',
       name: 'editInfo',
       component: EditInfo
+    }, {
+      path: '/my/myFootmark',
+      name: 'myFootmark',
+      component: MyFootmark
+    }, {
+      path: '/my/myFriends',
+      name: 'myFriends',
+      component: MyFriends
+    }, {
+      path: '/my/myDrafts',
+      name: 'myDrafts',
+      component: MyDrafts
+    }, {
+      path: '/my/mySetting',
+      name: 'mySetting',
+      component: MySetting
     }]
 })

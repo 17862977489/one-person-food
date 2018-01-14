@@ -1,0 +1,54 @@
+{
+	"ret":true,
+	"data":{
+		"footmarkInfoData":[{
+			"id":"0001",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto1.jpg",
+			"merchantName":"周记",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月14日08:00:25"
+			}, {
+			"id":"0002",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto2.jpg",
+			"merchantName":"煲煲靓",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月13日18:05:30"
+			}, {
+			"id":"0003",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto1.jpg",
+			"merchantName":"周记",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月13日08:00:25"
+			}, {
+			"id":"0004",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto3.jpg",
+			"merchantName":"食尚蜜语",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月12日08:00:25"
+			}, {
+			"id":"0005",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto2.jpg",
+			"merchantName":"煲煲靓",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月11日08:00:25"
+			}, {
+			"id":"0006",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto3.jpg",
+			"merchantName":"食尚蜜语",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月10日08:00:25"
+			}, {
+			"id":"0007",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto1.jpg",
+			"merchantName":"周记",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月10日08:00:25"
+			}, {
+			"id":"0008",
+			"merchantPhotoUrl":"/static/images/allloveto/allloveto3.jpg",
+			"merchantName":"食尚蜜语",
+			"merchantAddress":"北京市海淀区",
+			"merchantTime":"2018年1月09日08:00:25"
+			}]
+		}
+}
