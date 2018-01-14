@@ -2,7 +2,7 @@
   <div class="guess">
     <div class="title-grounp">
       <span class="title ellipsis">猜你喜欢</span>
-      <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
+      <router-link to="/index/list" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper">
       <div class="item" v-for="item in guessyoulike" :key="item.id">
@@ -30,13 +30,14 @@
     .title-grounp
       display: flex
       margin-left: .29rem
-      height: .28rem
-      line-height: .28rem
+      height: .32rem
+      line-height: .32rem
       color:#303030
       margin-bottom: .3rem
       .title
         flex: 1
         font-size: .32rem
+        line-height: .32rem
       .right
         display: inline-block
         font-size: .42rem

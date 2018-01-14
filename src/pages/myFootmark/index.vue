@@ -60,7 +60,6 @@
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.footmarkInfoData) {
           this.footmarkInfo = this.footmarkInfo.concat(JSON.parse(JSON.stringify(res.data.footmarkInfoData)))
-          console.log(this.footmarkInfo)
         }
       },
       handleGetFootmarkInfoDataErr (error) {
@@ -77,7 +76,6 @@
         }
       },
       getMoreListInfo () {
-        console.log(222)
         this.getFootmarkInfoData()
       },
       handleScrollEnd () {

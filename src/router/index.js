@@ -18,22 +18,25 @@ import MySetting from 'pages/mySetting/index'
 import Search from 'pages/search/search'
 import Start from 'pages/start/start'
 import Detail from 'pages/detail/index'
+import List from 'pages/list/index'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'start',
+      component: Start
+    }, {
       path: '/my/login',
       name: 'login',
       component: Login
-    },
-    {
+    }, {
       path: '/my/login/register',
       name: 'register',
       component: Register
-    },
-    {
+    }, {
       path: '/city',
       name: 'city',
       component: City
@@ -82,24 +85,24 @@ export default new Router({
       name: 'mySetting',
       component: MySetting
     }, {
-    path: '/',
-    name: 'start',
-    component: Start
-  }, {
-    path: '/index',
-    name: 'index',
-    component: Index
-  }, {
-    path: '/found',
-    name: 'found',
-    component: Found
-  }, {
-    path: '/search',
-    name: 'search',
-    component: Search
-  }, {
-    path: '/detail',
-    name: 'detail',
-    component: Detail
-  }]
+      path: '/index',
+      name: 'index',
+      component: Index
+    }, {
+      path: '/found',
+      name: 'found',
+      component: Found
+    }, {
+      path: '/search',
+      name: 'search',
+      component: Search
+    }, {
+      path: '/detail',
+      name: 'detail',
+      component: Detail
+    }, {
+      path: '/index/list',
+      name: 'list',
+      component: List
+    }]
 })

@@ -2,7 +2,7 @@
   <div class="allLoveTo">
     <div class="title-grounp">
       <span class="title ellipsis">大家都爱去</span>
-      <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
+      <router-link to="/index/list" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
@@ -50,12 +50,13 @@
     .title-grounp
       display: flex
       margin-left: .29rem
-      height: .28rem
-      line-height: .28rem
+      height: .32rem
+      line-height: .32rem
       color:#303030
       .title
         flex: 1
         font-size: .32rem
+        line-height: .32rem
       .right
         display: inline-block
         font-size: .42rem

@@ -1,7 +1,7 @@
 <template>
   <div class="classify-main">
     <div class="classify-wrapper" v-for="item in foodtype">
-      <router-link to="/" class="classify">
+      <router-link to="/index/list" class="classify">
         <div class="img-wrapper">
           <img :src="item.foodTypeImg" alt="" :class=item.foodTypeClassName>
         </div>

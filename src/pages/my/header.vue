@@ -2,7 +2,7 @@
   <div>
     <div class="my-header border-bottom">我的</div>
     <div class="my-infophoto" v-bind:style="{background:  '#e0e0e0 url('+ titlePhotoBjUrl +') no-repeat center center '}">
-      <router-link class="info-box" to="/my/login" tag="div">
+      <router-link class="info-box" @click.native="handelLogin" to="/my/login" tag="div">
         <img v-bind:src="headPhotoUrl" alt="" class="img-box">
         <div class="user-name ellipsis">{{userName}}</div>
         <div class="img-sign ellipsis">{{userSign}}</div>
@@ -59,6 +59,11 @@
     methods: {
       handelClick () {
         this.$emit('handelClick')
+      },
+      handelLogin () {
+        if (window.localStorage.sessionId){
+          this.$router.push({path:'/my/mySetting'})
+        }
       }
     }
   }

@@ -34,6 +34,7 @@
 
 <script>
   import axios from 'axios'
+  import BScroll from 'better-scroll'
   import Myheader from './header'
   import Tabbar from '../../components/tabbar'
   export default {
@@ -76,6 +77,10 @@
     },
     mounted () {
       this.getLoginedData()
+      this.scroll = new BScroll(this.$refs.scroller)
+    },
+    updated () {
+      this.scroll.refresh()
     }
   }
 </script>
