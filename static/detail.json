@@ -1,0 +1,26 @@
+{
+  "ret": true,
+  "data": {
+    "detail":{
+      "id":"0001",
+      "imgUrl": "/static/images/detail/detailimg.jpg"
+    },
+    "praise":[{
+      "id":"0001",
+      "imgUrl":"/static/images/detail/praise1.png",
+      "title": "虾鳗"
+    }, {
+      "id":"0002",
+      "imgUrl":"/static/images/detail/praise2.png",
+      "title": "大海的味道"
+    }, {
+      "id":"0003",
+      "imgUrl":"/static/images/detail/praise3.png",
+      "title": "春天春天春天春天"
+    }, {
+      "id":"0004",
+      "imgUrl":"/static/images/detail/praise4.png",
+      "title": "艳阳"
+    }]
+  }
+}

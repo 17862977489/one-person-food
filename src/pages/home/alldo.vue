@@ -6,7 +6,7 @@
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <div class="item" v-for="item in alldo">
+        <div class="item" v-for="item in alldo" :key="item.id">
           <div class="img-wrapper">
             <img :src="item.img" alt="" class="item-img">
           </div>

@@ -23,7 +23,7 @@
       ...mapMutations(['changeCity']),
       handleCityClick (city) {
         this.changeCity(city)
-        this.$router.push('/')
+        this.$router.push('/index')
       }
     }
   }

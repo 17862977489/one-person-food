@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="foundheader border-bottom">
-      <div class="search"><i class="search-icon iconfont">&#xe679;</i></div>
+      <router-link to="/search" tag="div" class="search"><i class="search-icon iconfont">&#xe679;</i></router-link>
       <div class="title">
-        <ul class="title-con">
-          <li class="title-item ellipsis">附近<i class="active"></i></li>
-          <li class="title-item ellipsis">关注<i class=""></i></li>
+        <ul class="title-con" ref="title">
+          <li class="title-item ellipsis" name="nearby" @click="handleClick">附近<i class="active"></i></li>
+          <li class="title-item ellipsis" name="focus" @click="handleClick">关注<i class=""></i></li>
         </ul>
       </div>
       <div class="omit"><i class="omit-icon iconfont">&#xe609;</i></div>
@@ -15,7 +15,17 @@
 
 <script>
   export default {
-    name: 'foundheader'
+    name: 'foundheader',
+    methods: {
+      handleClick (e) {
+        const li = this.$refs.title.children
+        for (var i = 0; i < li.length; i++) {
+          li[i].children[0].removeAttribute('class')
+        }
+        e.target.children[0].setAttribute('class', 'active')
+        this.$emit('tab', e.target.getAttribute('name'))
+      }
+    }
   }
 </script>
 

@@ -1,7 +1,7 @@
 {
   "ret": true,
   "data":{
-    "user": [{
+    "nearby": [{
       "userId":"小小的幸福",
       "userImg":"/static/images/found/userimg1.png",
       "userSign":"去美丽的地方发现美丽的事物",
@@ -21,6 +21,14 @@
       "userSign":"去美丽的地方发现美丽的事物",
       "foodDesc":"美味的西餐厅，美味的海鲜。",
       "foodImg":"/static/images/found/foodimg2.png",
+      "date":"2018 1 9"
+    }],
+    "focus": [{
+      "userId":"小小的幸福",
+      "userImg":"/static/images/found/userimg1.png",
+      "userSign":"去美丽的地方发现美丽的事物",
+      "foodDesc":"橘香蜜汁火腿,超级美味,赞！赞！赞！",
+      "foodImg":"/static/images/found/foodimg1.png",
       "date":"2018 1 9"
     }]
   }

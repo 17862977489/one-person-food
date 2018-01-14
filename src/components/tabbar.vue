@@ -1,7 +1,7 @@
 <template>
   <div class="tabbar">
     <div class="tab">
-      <router-link to='/' class="tablayout" tag="div">
+      <router-link to='/index' class="tablayout" tag="div">
         <i class="index" ref="index"></i>
         <p class="font ellipsis">一人食</p>
       </router-link>
@@ -59,6 +59,7 @@
       position: relative
       bottom:0
       .tablayout
+        height: .8rem
         text-align: center
         height: .8rem
         .index
