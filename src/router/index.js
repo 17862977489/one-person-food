@@ -22,66 +22,7 @@ import Detail from 'pages/detail/index'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/my/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/my/login/register',
-      name: 'register',
-      component: Register
-    },
-    {
-      path: '/city',
-      name: 'city',
-      component: City
-    }, {
-      path: '/found',
-      name: 'found',
-      component: Found
-    }, {
-      path: '/publish',
-      name: 'publish',
-      component: Publish
-    }, {
-      path: '/my/mypublish',
-      name: 'myPublish',
-      component: myPublish
-    }, {
-      path: '/message',
-      name: 'message',
-      component: Message
-    }, {
-      path: '/my',
-      name: 'my',
-      component: My
-    }, {
-      path: '/publish/editor',
-      name: 'editor',
-      component: Editor
-    }, {
-      path: '/my/editInfo',
-      name: 'editInfo',
-      component: EditInfo
-    }, {
-      path: '/my/myFootmark',
-      name: 'myFootmark',
-      component: MyFootmark
-    }, {
-      path: '/my/myFriends',
-      name: 'myFriends',
-      component: MyFriends
-    }, {
-      path: '/my/myDrafts',
-      name: 'myDrafts',
-      component: MyDrafts
-    }, {
-      path: '/my/mySetting',
-      name: 'mySetting',
-      component: MySetting
-    }, {
+  routes: [{
     path: '/',
     name: 'start',
     component: Start
@@ -90,9 +31,61 @@ export default new Router({
     name: 'index',
     component: Index
   }, {
+    path: '/my/login',
+    name: 'login',
+    component: Login
+  }, {
+    path: '/my/login/register',
+    name: 'register',
+    component: Register
+  }, {
+    path: '/city',
+    name: 'city',
+    component: City
+  }, {
     path: '/found',
     name: 'found',
     component: Found
+  }, {
+    path: '/publish',
+    name: 'publish',
+    component: Publish
+  }, {
+    path: '/my/mypublish',
+    name: 'myPublish',
+    component: myPublish
+  }, {
+    path: '/message',
+    name: 'message',
+    component: Message
+  }, {
+    path: '/my',
+    name: 'my',
+    component: My
+  }, {
+    path: '/publish/editor',
+    name: 'editor',
+    component: Editor
+  }, {
+    path: '/my/editInfo',
+    name: 'editInfo',
+    component: EditInfo
+  }, {
+    path: '/my/myFootmark',
+    name: 'myFootmark',
+    component: MyFootmark
+  }, {
+    path: '/my/myFriends',
+    name: 'myFriends',
+    component: MyFriends
+  }, {
+    path: '/my/myDrafts',
+    name: 'myDrafts',
+    component: MyDrafts
+  }, {
+    path: '/my/mySetting',
+    name: 'mySetting',
+    component: MySetting
   }, {
     path: '/search',
     name: 'search',

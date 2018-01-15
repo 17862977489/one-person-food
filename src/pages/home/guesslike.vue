@@ -30,13 +30,14 @@
     .title-grounp
       display: flex
       margin-left: .29rem
-      height: .28rem
-      line-height: .28rem
+      height: .32rem
+      line-height: .32rem
       color:#303030
       margin-bottom: .3rem
       .title
         flex: 1
         font-size: .32rem
+        line-height: .32rem
       .right
         display: inline-block
         font-size: .42rem

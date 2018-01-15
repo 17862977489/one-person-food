@@ -4,10 +4,10 @@
       <img :src="detail.imgUrl" alt="" class="detail-img">
     </div>
     <div class="merchants border-bottom">
-      <div class="name">第乃舍</div>
+      <div class="name">{{detail.name}}</div>
       <div class="address">
         <i class="address-icon"></i>
-        <span class="detail-address">北京昌平区沙河沙阳路26号</span>
+        <span class="detail-address">{{detail.address}}</span>
         <i class="tel-icon"></i>
       </div>
     </div>

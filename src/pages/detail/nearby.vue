@@ -1,16 +1,14 @@
 <template>
-  <div class="allLoveTo">
+  <div class="nearby">
     <div class="title-grounp">
-      <span class="title ellipsis">大家都爱去</span>
-      <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
+      <span class="title ellipsis">附近推荐</span>
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <div class="item" v-for="item in allloveto" :key="item.id">
+        <div class="item" v-for="item in nearby" :key="item.id">
           <div class="img-wrapper">
-            <img :src="item.img" alt="" class="item-img">
+            <img :src="item.imgUrl" alt="" class="item-img">
           </div>
-          <div class="item-name ellipsis">{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -20,9 +18,9 @@
 <script>
   import BScroll from 'better-scroll'
   export default {
-    name: 'allloveto',
+    name: 'nearby',
     props: {
-      allloveto: Array
+      nearby: Array
     },
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
@@ -32,8 +30,8 @@
     },
     methods: {
       caculateWidth () {
-        const len = this.allloveto.length
-        this.$refs.scroll.style.width = len * 149 + 'px'
+        const len = this.nearby.length
+        this.$refs.scroll.style.width = len * 2.34 + 'rem'
       }
     },
     updated () {
@@ -43,47 +41,32 @@
 </script>
 
 <style scoped lang="stylus">
-  .allLoveTo
+  .nearby
     height: 3.36rem
     background: #fff
-    margin-bottom: .4rem
+    margin: 0 0 0 .2rem
+    padding-bottom: 0.08rem
     .title-grounp
       display: flex
-      margin-left: .29rem
       height: .32rem
       line-height: .32rem
       color:#303030
       .title
-        flex: 1
         font-size: .32rem
         line-height: .32rem
-      .right
-        display: inline-block
-        font-size: .42rem
-        margin-right:.2rem
-        color:#231815
-        margin-top: -0.01rem
     .item-wrapper
       white-space:nowrap
       .item
         display: inline-block
-        width: 2.6rem
-        height: 2.78rem
-        margin: .3rem .19rem 0 .19rem
+        width: 2.14rem
+        height: 2.34rem
+        margin: .3rem .2rem 0 0
         position: relative
         .img-wrapper
-          width: 2.6rem
-          height: 2.4rem
+          width: 2.14rem
+          height: 2.34rem
           overflow: hidden
-          border-radius: .1rem
-          position: relative
           margin-bottom: .1rem
           .item-img
             width: 100%
-            position: absolute
-            bottom:0
-        .item-name
-          text-align: center
-          font-size: .32rem
-          line-height: .28rem
 </style>

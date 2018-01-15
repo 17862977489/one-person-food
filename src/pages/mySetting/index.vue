@@ -22,7 +22,6 @@
 </template>
 
 <script>
-  import axios from 'axios'
   import BScroll from 'better-scroll'
   export default {
     name: 'mySetting',
@@ -43,7 +42,7 @@
     },
     methods: {
       handelLogOut () {
-        window.localStorage.removeItem("sessionId")
+        window.localStorage.removeItem('sessionId')
         this.$router.go(-1)
       }
     },
