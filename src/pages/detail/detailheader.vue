@@ -1,7 +1,7 @@
 <template>
   <div class="detailheader" ref="header">
-    <div class="back iconfont" @click="handleBackClick">&#xe60f;</div>
-    <div class="header-title" v-show="showName">{{name}}</div>
+    <div class="back iconfont" @click="handleBackClick" ref="back">&#xe60f;</div>
+    <div class="header-title" v-show="scrolltop">{{name}}</div>
   </div>
 </template>
 
@@ -10,7 +10,18 @@
     name: 'detailheader',
     props: {
       name: String,
-      showName: false
+      scrolltop: false
+    },
+    watch: {
+      scrolltop () {
+        if (this.scrolltop) {
+          this.$refs.header.style.background = 'rgba(255, 255, 255, 1)'
+          this.$refs.back.style.color = '#333'
+        } else {
+          this.$refs.header.style.background = 'rgba(255, 255, 255, 0)'
+          this.$refs.back.style.color = '#dedede'
+        }
+      }
     },
     methods: {
       handleBackClick () {

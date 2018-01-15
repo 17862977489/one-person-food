@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <detailheader :name="name"></detailheader>
+    <detailheader :name="name" :scrolltop="scrolltop"></detailheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
         <detailinfo :detail="detail"></detailinfo>
@@ -28,7 +28,8 @@
         name: '',
         praise: [],
         comments: [],
-        nearby: []
+        nearby: [],
+        scrolltop: false
       }
     },
     components: {
@@ -43,7 +44,19 @@
         axios.get('/api/detail.json').then(this.handleGetDataSucc.bind(this)).catch(this.handleDataError.bind(this))
       },
       createScroller () {
-        this.scroll = new BScroll(this.$refs.scroller)
+        this.scroll = new BScroll(this.$refs.scroller, {
+          probeType: 2
+        })
+      },
+      bindEvents () {
+        this.scroll.on('scroll', this.handleScroll.bind(this))
+      },
+      handleScroll (e) {
+        if (e.y < -232) {
+          this.scrolltop = true
+        } else {
+          this.scrolltop = false
+        }
       },
       handleGetDataSucc (res) {
         res = res ? res.data : null
@@ -63,6 +76,7 @@
     },
     mounted () {
       this.createScroller()
+      this.bindEvents()
     },
     updated () {
       this.scroll.refresh()
