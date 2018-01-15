@@ -55,7 +55,6 @@
           })
           .then(this.handleGetDraftsInfoDataSucc.bind(this))
           .catch(this.handleGetDraftsInfoDataErr.bind(this))
-          console.log(this.pagination)
         }
       },
       handleGetDraftsInfoDataSucc (res) {
@@ -63,7 +62,6 @@
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.draftsInfoData) {
           this.draftsInfo = this.draftsInfo.concat(JSON.parse(JSON.stringify(res.data.draftsInfoData)))
-          console.log(this.draftsInfo)
         }
       },
       handleGetDraftsInfoDataErr (error) {
@@ -80,7 +78,6 @@
         }
       },
       getMoreListInfo () {
-        console.log(222)
         this.getDraftsInfoData()
       },
       handleScrollEnd () {
