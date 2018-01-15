@@ -29,7 +29,7 @@
       return {
         list: {},
         hotcity: [],
-        showSidebar: true
+        showSidebar: 0
       }
     },
     components: {
@@ -68,11 +68,7 @@
         this.scroll.on('scroll', this.handleScroll.bind(this))
       },
       handleScroll (e) {
-        if (e.y > -360) {
-          this.showSidebar = false
-        } else {
-          this.showSidebar = true
-        }
+        this.showSidebar = Math.abs(Math.round(e.y))
       }
     },
     mounted () {

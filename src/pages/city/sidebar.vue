@@ -17,11 +17,22 @@
     name: 'city-sidebar',
     props: {
       list: Object,
-      showSidebar: false
+      showSidebar: Number
     },
     data () {
       return {
         len: []
+      }
+    },
+    watch: {
+      showSidebar () {
+        if (this.showSidebar < 360) {
+          this.len = this.$refs.side.length
+          for (let i = 0; i < this.len; i++) {
+            this.$refs.side[i].style.background = '#fff'
+            this.$refs.side[i].style.color = '#333'
+          }
+        }
       }
     },
     computed: {

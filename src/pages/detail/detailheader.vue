@@ -1,7 +1,7 @@
 <template>
-  <div class="detailheader" ref="header">
-    <div class="back iconfont" @click="handleBackClick" ref="back">&#xe60f;</div>
-    <div class="header-title" v-show="scrolltop">{{name}}</div>
+  <div class="detailheader headeractive">
+    <div class="back iconfont backactive" @click="handleBackClick" ref="back">&#xe60f;</div>
+    <div class="header-title nameactive ellipsis">{{name}}</div>
   </div>
 </template>
 
@@ -10,17 +10,10 @@
     name: 'detailheader',
     props: {
       name: String,
-      scrolltop: false
+      scrolltop: Number
     },
     watch: {
       scrolltop () {
-        if (this.scrolltop) {
-          this.$refs.header.style.background = 'rgba(255, 255, 255, 1)'
-          this.$refs.back.style.color = '#333'
-        } else {
-          this.$refs.header.style.background = 'rgba(255, 255, 255, 0)'
-          this.$refs.back.style.color = '#dedede'
-        }
       }
     },
     methods: {
@@ -37,7 +30,9 @@
     width: 100%
     height: .88rem
     background: rgba(255, 255, 255, 0)
-    z-index: 10
+    z-index: 2
+  .headeractive
+    background: rgba(255, 255, 255, 1)
     .back
       position: absolute
       left: .2rem
@@ -45,9 +40,14 @@
       line-height: .62rem
       color: #dedede
       line-height: .88rem
+    .backactive
+      color: #333
     .header-title
+      display: none
       line-height: .88rem
       text-align: center
       font-size: .36rem
       color: #333
+    .nameactive
+      display: block
 </style>

@@ -29,7 +29,7 @@
         praise: [],
         comments: [],
         nearby: [],
-        scrolltop: false
+        scrolltop: 0
       }
     },
     components: {
@@ -45,18 +45,15 @@
       },
       createScroller () {
         this.scroll = new BScroll(this.$refs.scroller, {
-          probeType: 1
+          probeType: 2,
+          click: true
         })
       },
       bindEvents () {
         this.scroll.on('scroll', this.handleScroll.bind(this))
       },
       handleScroll (e) {
-        if (e.y < -232) {
-          this.scrolltop = true
-        } else {
-          this.scrolltop = false
-        }
+        this.scrolltop = Math.abs(Math.round(e.y))
       },
       handleGetDataSucc (res) {
         res = res ? res.data : null
