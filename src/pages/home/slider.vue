@@ -43,6 +43,9 @@
     bottom: 0.4rem
   .banner
     background: #fff
+    overflow: hidden
+    height: 0
+    padding-bottom: 53.33%
     padding-top: .2rem
     .banner-img-wrapper
       overflow: hidden

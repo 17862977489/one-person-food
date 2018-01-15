@@ -45,7 +45,7 @@
       },
       createScroller () {
         this.scroll = new BScroll(this.$refs.scroller, {
-          probeType: 2
+          probeType: 1
         })
       },
       bindEvents () {
@@ -75,8 +75,10 @@
       }
     },
     mounted () {
-      this.createScroller()
-      this.bindEvents()
+      this.$nextTick(() => {
+        this.createScroller()
+        this.bindEvents()
+      })
     },
     updated () {
       this.scroll.refresh()

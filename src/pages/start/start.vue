@@ -25,6 +25,9 @@
 
 <style scoped lang="stylus">
   .start-wrapper
+    overflow: hidden
+    height: 0
+    padding-bottom: 136.53%
     margin-bottom: .1rem
     .start-img
       width: 100%

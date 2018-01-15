@@ -99,7 +99,7 @@
         .my
           display: inline-block
           width: .38rem
-          height: .4rem
+          height: .42rem
           font-size: .38rem
           background: url('../../static/images/icons/myNotClick.png')
           background-size: 100% 100%
@@ -107,4 +107,5 @@
           font-size: .2rem
           color:#999
           margin-top: .1rem
+          line-height: .24rem
 </style>

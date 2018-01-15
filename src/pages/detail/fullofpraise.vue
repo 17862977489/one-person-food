@@ -21,7 +21,7 @@
 
 <style scoped lang="stylus">
   .fullofpraise
-    height: 9.2rem
+    height: 9.5rem
     overflow: hidden
     .praise
       margin: .3rem 0 .3rem .2rem

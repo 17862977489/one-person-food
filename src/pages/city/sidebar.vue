@@ -16,7 +16,8 @@
   export default {
     name: 'city-sidebar',
     props: {
-      list: Object
+      list: Object,
+      showSidebar: false
     },
     data () {
       return {

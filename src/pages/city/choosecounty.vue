@@ -2,7 +2,7 @@
   <div>
     <div class="chooseCountyHeader">
       <div class="current ellipsis">你正在看: {{city}}</div>
-      <div class="choose" @click="handlechooseClick">选择县区<i class="down iconfont" ref="icon">&#xe73a;</i></div>
+      <div class="choose" @touchstart="handlechooseClick">选择县区<i class="down iconfont" ref="icon">&#xe73a;</i></div>
     </div>
     <div class="chooseCounty" v-show="showCounty">
       <div class="county border">全城</div>
