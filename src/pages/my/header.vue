@@ -21,7 +21,7 @@
       </div>
       <div class="edit" @click="handelClick">
         <span class="iconfont edit-icon">&#xe62b;</span>
-        <router-link class="edit-text" tag="span" to="/my/editInfo" >编辑资料</router-link>                     
+        <router-link class="edit-text" tag="span" to="/my/editInfo" >编辑资料</router-link>
       </div> 
     </div>
   </div>
@@ -61,8 +61,8 @@
         this.$emit('handelClick')
       },
       handelLogin () {
-        if (window.localStorage.sessionId){
-          this.$router.push({path:'/my/mySetting'})
+        if (window.localStorage.sessionId) {
+          this.$router.push({path: '/my/mySetting'})
         }
       }
     }

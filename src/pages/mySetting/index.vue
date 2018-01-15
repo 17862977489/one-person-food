@@ -22,28 +22,16 @@
 </template>
 
 <script>
-  import axios from 'axios'
   import BScroll from 'better-scroll'
   export default {
     name: 'mySetting',
     data () {
       return {
-        friendsInfo: [],
-        bigStyle: true,
-        smallStyle: false,
-        isFreshing: false,
-        isLoading: true,
-        pagination: 0
-      }
-    },
-    computed: {
-      headPhoto () {
-        return (this.userInfo.headPhotoUrl || '../../../static/images/my/headPhoto.jpg')
       }
     },
     methods: {
       handelLogOut () {
-        window.localStorage.removeItem("sessionId")
+        window.localStorage.removeItem('sessionId')
         this.$router.go(-1)
       }
     },

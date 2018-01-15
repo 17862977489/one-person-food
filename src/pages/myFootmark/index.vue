@@ -52,7 +52,6 @@
           })
           .then(this.handleGetFootmarkInfoDataSucc.bind(this))
           .catch(this.handleGetFootmarkInfoDataErr.bind(this))
-          console.log(this.pagination)
         }
       },
       handleGetFootmarkInfoDataSucc (res) {
@@ -89,13 +88,8 @@
       this.getFootmarkInfoData()
       this.bindEvents()
     },
-    watch: {
-      footmarkInfo: {
-        handler: function () {
-          this.scroll.refresh()
-        },
-        deep: true
-      }
+    updated () {
+      this.scroll.refresh()
     }
   }
 </script>

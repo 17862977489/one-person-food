@@ -62,13 +62,10 @@
         }
       },
       handleGetPublishInfoDataSucc (res) {
-        console.log(221)
         this.pagination += 1
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.publishInfoData) {
-          console.log(this.publishInfo)
           this.publishInfo = this.publishInfo.concat(JSON.parse(JSON.stringify(res.data.publishInfoData)))
-          console.log(this.publishInfo)
         }
       },
       handleGetPublishInfoDataErr (error) {
@@ -85,7 +82,6 @@
         }
       },
       getMoreListInfo () {
-        console.log(222)
         this.getPublishInfoData()
       },
       handleScrollEnd () {
@@ -100,14 +96,6 @@
       // })
       this.getPublishInfoData()
       this.bindEvents()
-    },
-    watch: {
-      publishInfo: {
-        handler: function () {
-          this.scroll.refresh()
-        },
-        deep: true
-      }
     }
   }
 </script>

@@ -89,10 +89,6 @@ export default new Router({
       name: 'index',
       component: Index
     }, {
-      path: '/found',
-      name: 'found',
-      component: Found
-    }, {
       path: '/search',
       name: 'search',
       component: Search

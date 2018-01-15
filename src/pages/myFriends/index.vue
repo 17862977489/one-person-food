@@ -49,7 +49,6 @@
           })
           .then(this.handleGetFriendsInfoDataSucc.bind(this))
           .catch(this.handleGetFriendsInfoDataErr.bind(this))
-          console.log(this.pagination)
         }
       },
       handleGetFriendsInfoDataSucc (res) {
@@ -57,7 +56,6 @@
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.fiendsInfoData) {
           this.friendsInfo = this.friendsInfo.concat(JSON.parse(JSON.stringify(res.data.fiendsInfoData)))
-          console.log(this.friendsInfo)
         }
       },
       handleGetFriendsInfoDataErr (error) {
@@ -74,7 +72,6 @@
         }
       },
       getMoreListInfo () {
-        console.log(222)
         this.getFriendsInfoData()
       },
       handleScrollEnd () {
@@ -88,13 +85,8 @@
       this.getFriendsInfoData()
       this.bindEvents()
     },
-    watch: {
-      friendsInfo: {
-        handler: function () {
-          this.scroll.refresh()
-        },
-        deep: true
-      }
+    updated () {
+      this.scroll.refresh()
     }
   }
 </script>
