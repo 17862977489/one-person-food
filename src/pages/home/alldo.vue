@@ -6,12 +6,12 @@
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <div class="item" v-for="item in alldo" :key="item.id">
+        <router-link class="item" v-for="item in alldo" :key="item.id" :to="'/detail/' + item.id" tag="div">
           <div class="img-wrapper">
             <img :src="item.img" alt="" class="item-img">
           </div>
           <div class="item-name ellipsis">{{item.name}}</div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>

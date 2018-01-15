@@ -3,24 +3,51 @@
   "data": {
     "detail":{
       "id":"0001",
-      "imgUrl": "/static/images/detail/detailimg.jpg"
-    },
-    "praise":[{
-      "id":"0001",
-      "imgUrl":"/static/images/detail/praise1.png",
-      "title": "虾鳗"
-    }, {
-      "id":"0002",
-      "imgUrl":"/static/images/detail/praise2.png",
-      "title": "大海的味道"
-    }, {
-      "id":"0003",
-      "imgUrl":"/static/images/detail/praise3.png",
-      "title": "春天春天春天春天"
-    }, {
-      "id":"0004",
-      "imgUrl":"/static/images/detail/praise4.png",
-      "title": "艳阳"
-    }]
+      "imgUrl": "/static/images/detail/detailimg.jpg",
+      "name":"第乃舍",
+      "address":"北京昌平区沙河沙阳路26号",
+      "praise":[{
+        "id":"0001",
+        "imgUrl":"/static/images/detail/praise1.png",
+        "title": "虾鳗"
+      }, {
+        "id":"0002",
+        "imgUrl":"/static/images/detail/praise2.png",
+        "title": "大海的味道"
+      }, {
+        "id":"0003",
+        "imgUrl":"/static/images/detail/praise3.png",
+        "title": "春天春天春天春天"
+      }, {
+        "id":"0004",
+        "imgUrl":"/static/images/detail/praise4.png",
+        "title": "艳阳"
+      }],
+      "comments":[{
+        "userid":"行尸走肥肉",
+        "userimg":"/static/images/detail/userimg.png",
+        "commentsDate":"2018年1月14日",
+        "commentsCon":"好下回还来好吃下回还来",
+        "commentsImg":"/static/images/detail/comments.jpg"
+      }, {
+        "userid":"行尸走肥肉",
+        "userimg":"/static/images/detail/userimg.png",
+        "commentsDate":"2018年1月14日",
+        "commentsCon":"好下回还来好吃下回还来"
+      }],
+      "nearby":[{
+        "id": "0001",
+        "imgUrl":"/static/images/detail/nearby1.jpg"
+      }, {
+        "id": "0002",
+        "imgUrl":"/static/images/detail/nearby2.jpg"
+      }, {
+        "id": "0003",
+        "imgUrl":"/static/images/detail/nearby3.jpg"
+      }, {
+        "id": "0004",
+        "imgUrl":"/static/images/detail/nearby4.jpg"
+      }]
+    }
   }
 }
