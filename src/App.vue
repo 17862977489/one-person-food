@@ -1,5 +1,5 @@
 <template>
-  <keep-alive include="index">
+  <keep-alive>
     <transition :name="transitionName">
       <router-view class="child-view"></router-view>
   </transition>

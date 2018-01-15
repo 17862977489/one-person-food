@@ -5,7 +5,7 @@
       <router-link to="/" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper">
-      <div class="item" v-for="item in guessyoulike" :key="item.id">
+      <div class="item" v-for="item in guessyoulike" :key="item.id" @click="handleGuessClick(item.id)">
         <div class="img-wrapper">
           <img :src="item.img" alt="" class="item-img">
         </div>
@@ -19,6 +19,13 @@
     name: 'guess',
     props: {
       guessyoulike: Array
+    },
+    methods: {
+      handleGuessClick (id) {
+        this.$nextTick(() => {
+          this.$router.push({path: '/detail/' + id})
+        })
+      }
     }
   }
 </script>

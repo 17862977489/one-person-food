@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <detailheader></detailheader>
+    <detailheader :name="name"></detailheader>
     <div class="scroll-container" ref="scroller">
       <div class="content">
         <detailinfo :detail="detail"></detailinfo>
@@ -25,6 +25,7 @@
     data () {
       return {
         detail: {},
+        name: '',
         praise: [],
         comments: [],
         nearby: []
@@ -41,11 +42,14 @@
       getIndexData () {
         axios.get('/api/detail.json').then(this.handleGetDataSucc.bind(this)).catch(this.handleDataError.bind(this))
       },
+      createScroller () {
+        this.scroll = new BScroll(this.$refs.scroller)
+      },
       handleGetDataSucc (res) {
-        console.log(res.data)
         res = res ? res.data : null
         if (res && res.ret && res.data) {
           res.data.detail && (this.detail = res.data.detail)
+          res.data.detail.name && (this.name = res.data.detail.name)
           res.data.detail.praise && (this.praise = res.data.detail.praise)
           res.data.detail.comments && (this.comments = res.data.detail.comments)
           res.data.detail.nearby && (this.nearby = res.data.detail.nearby)
@@ -58,9 +62,7 @@
       }
     },
     mounted () {
-      this.$nextTick(() => {
-        this.scroll = new BScroll(this.$refs.scroller)
-      })
+      this.createScroller()
     },
     updated () {
       this.scroll.refresh()

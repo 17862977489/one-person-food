@@ -1,6 +1,6 @@
 <template>
   <swiper class="banner" :options="swiperOption">
-    <swiper-slide v-for="item of slider" :key="item.Id">
+    <swiper-slide v-for="item of slider" :key="item.Id" @click="handleBannerClick(item.Id)">
       <div class="banner-img-wrapper">
         <img  class="banner-img" :src="item.bannerImg"/>
       </div>
@@ -23,6 +23,11 @@
           loopedSlides: 20,
           pagination: '.swiper-pagination'
         }
+      }
+    },
+    methods: {
+      handleBannerClick (id) {
+        this.$router.push({path: '/detail/' + id})
       }
     }
   }

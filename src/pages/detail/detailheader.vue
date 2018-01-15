@@ -1,12 +1,17 @@
 <template>
-  <div class="detailheader">
-    <div class="back iconfont" @click="handleBackClick">&#xe60f;</div>  
+  <div class="detailheader" ref="header">
+    <div class="back iconfont" @click="handleBackClick">&#xe60f;</div>
+    <div class="header-title" v-show="showName">{{name}}</div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'detailheader',
+    props: {
+      name: String,
+      showName: false
+    },
     methods: {
       handleBackClick () {
         this.$router.go(-1)
@@ -29,4 +34,9 @@
       line-height: .62rem
       color: #dedede
       line-height: .88rem
+    .header-title
+      line-height: .88rem
+      text-align: center
+      font-size: .36rem
+      color: #333
 </style>
