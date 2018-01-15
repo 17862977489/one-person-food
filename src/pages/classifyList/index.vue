@@ -53,7 +53,6 @@
             if (this.$route.params.id === item) {
               var obj = JSON.parse(JSON.stringify(res.data.classifyInfoData[item]))
               this.classifyInfo = Object.assign(this.classifyInfo, obj)
-              console.log(this.classifyInfo)
             }
           }
         }
@@ -70,9 +69,6 @@
         probeType: 3
       })
       this.getClassifyInfoData()
-    },
-    activated() {
-      console.log("activated")
     }
   }
 </script>
