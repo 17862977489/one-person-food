@@ -5,6 +5,7 @@ import Login from 'pages/login/login'
 import Register from 'pages/register/register'
 import City from 'pages/city/index'
 import Found from 'pages/found/index'
+import FoundDetail from 'pages/foundDetail/index'
 import Message from 'pages/message/index'
 import My from 'pages/my/index'
 import Publish from 'pages/publish/index'
@@ -97,12 +98,16 @@ export default new Router({
     name: 'detail',
     component: Detail
   }, {
-      path: '/index/list',
-      name: 'list',
-      component: List
-    }, {
-      path: '/index/classifyList:id',
-      name: 'classifyList',
-      component: ClassifyList
+    path: '/index/list',
+    name: 'list',
+    component: List
+  }, {
+    path: '/index/classifyList:id',
+    name: 'classifyList',
+    component: ClassifyList
+  }, {
+    path: '/found/detail/:id/:userimg/:sign/:desc/:foodimg',
+    name: 'foundDetail',
+    component: FoundDetail
   }]
 })

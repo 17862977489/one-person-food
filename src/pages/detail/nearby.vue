@@ -5,11 +5,11 @@
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <div class="item" v-for="item in nearby" :key="item.id">
+        <router-link to="/found" tag="div" class="item" v-for="item in nearby" :key="item.id">
           <div class="img-wrapper">
             <img :src="item.imgUrl" alt="" class="item-img">
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -25,7 +25,8 @@
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
         scrollX: true,
-        eventPassthrough: 'vertical'
+        eventPassthrough: 'vertical',
+        click: true
       })
     },
     methods: {

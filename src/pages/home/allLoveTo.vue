@@ -6,7 +6,7 @@
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <router-link class="item" v-for="item in allloveto" :key="item.id" :to="'/detail/' + item.id" tag="div">
+        <router-link class="item" v-for="item in allloveto" :key="item.id" :to="{path:'/detail/' + item.id}" tag="div">
           <div class="img-wrapper">
             <img :src="item.img" alt="" class="item-img">
           </div>
@@ -27,7 +27,8 @@
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
         scrollX: true,
-        eventPassthrough: 'vertical'
+        eventPassthrough: 'vertical',
+        click: true
       })
     },
     methods: {
@@ -71,6 +72,7 @@
         height: 2.78rem
         margin: .3rem .19rem 0 .19rem
         position: relative
+        z-index: 50
         .img-wrapper
           width: 2.6rem
           height: 2.4rem
@@ -85,5 +87,5 @@
         .item-name
           text-align: center
           font-size: .32rem
-          line-height: .28rem
+          line-height: .34rem
 </style>

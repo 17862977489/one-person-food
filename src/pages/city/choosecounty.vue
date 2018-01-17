@@ -2,7 +2,7 @@
   <div>
     <div class="chooseCountyHeader">
       <div class="current ellipsis">你正在看: {{city}}</div>
-      <div class="choose" @click="handlechooseClick">选择县区<i class="down iconfont" ref="icon">&#xe73a;</i></div>
+      <div class="choose" @touchstart="handlechooseClick">选择县区<i class="down iconfont" v-html="icon"></i></div>
     </div>
     <div class="chooseCounty" v-show="showCounty">
       <div class="county border">全城</div>
@@ -24,15 +24,16 @@
     },
     data () {
       return {
-        showCounty: false
+        showCounty: false,
+        icon: '&#xe73a;'
       }
     },
     methods: {
       handlechooseClick () {
         if (!this.showCounty) {
-          this.$refs.icon.innerHTML = '&#xe600;'
+          this.icon = '&#xe600;'
         } else {
-          this.$refs.icon.innerHTML = '&#xe73a;'
+          this.icon = '&#xe73a;'
         }
         this.showCounty = !this.showCounty
       }

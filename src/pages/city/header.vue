@@ -69,7 +69,9 @@
       }
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.list)
+      this.scroll = new BScroll(this.$refs.list, {
+        click: true
+      })
     }
   }
 </script>

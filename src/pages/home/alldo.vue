@@ -27,7 +27,8 @@
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
         scrollX: true,
-        eventPassthrough: 'vertical'
+        eventPassthrough: 'vertical',
+        click: true
       })
     },
     methods: {
@@ -86,5 +87,5 @@
         .item-name
           text-align: center
           font-size: .32rem
-          line-height: .28rem
+          line-height: .34rem
 </style>

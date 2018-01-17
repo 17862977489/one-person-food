@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="comments-con">
-          <div class="userid">{{item.userid}}<span class="comments-date">{{item.commentsDate}}</span></div>
+          <div class="userid ellipsis">{{item.userid}}<span class="comments-date">{{item.commentsDate}}</span></div>
           <div class="user-comments">{{item.commentsCon}}</div>
           <div class="comments-img-list" v-if="item.commentsImg">
             <div class="img-wrapper">

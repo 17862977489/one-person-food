@@ -29,7 +29,8 @@
         praise: [],
         comments: [],
         nearby: [],
-        scrolltop: false
+        scrolltop: 0,
+        scrollend: 0
       }
     },
     components: {
@@ -45,18 +46,16 @@
       },
       createScroller () {
         this.scroll = new BScroll(this.$refs.scroller, {
-          probeType: 2
+          probeType: 3,
+          click: true,
+          deceleration: 0.008
         })
       },
       bindEvents () {
         this.scroll.on('scroll', this.handleScroll.bind(this))
       },
       handleScroll (e) {
-        if (e.y < -232) {
-          this.scrolltop = true
-        } else {
-          this.scrolltop = false
-        }
+        this.scrolltop = Math.abs(Math.round(e.y))
       },
       handleGetDataSucc (res) {
         res = res ? res.data : null
@@ -75,8 +74,10 @@
       }
     },
     mounted () {
-      this.createScroller()
-      this.bindEvents()
+      this.$nextTick(() => {
+        this.createScroller()
+        this.bindEvents()
+      })
     },
     updated () {
       this.scroll.refresh()

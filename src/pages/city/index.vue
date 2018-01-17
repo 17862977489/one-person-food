@@ -10,7 +10,7 @@
         <citylist :list="list" ref="lists" @scrollTo="handleScrollTo"></citylist>
       </div>
     </div>
-    <sidebar :list="list" @changeLetter="handleLetterChange"></sidebar>
+    <sidebar :list="list" :showSidebar="showSidebar" @changeLetter="handleLetterChange"></sidebar>
   </div>
 </template>
 
@@ -28,7 +28,8 @@
     data () {
       return {
         list: {},
-        hotcity: []
+        hotcity: [],
+        showSidebar: 0
       }
     },
     components: {
@@ -62,11 +63,20 @@
       },
       handleScrollTo (res) {
         this.scroll.scrollToElement(res.dom)
+      },
+      bindEvents () {
+        this.scroll.on('scroll', this.handleScroll.bind(this))
+      },
+      handleScroll (e) {
+        this.showSidebar = Math.abs(Math.round(e.y))
       }
     },
     mounted () {
       this.$nextTick(() => {
-        this.scroll = new BScroll(this.$refs.scroller)
+        this.scroll = new BScroll(this.$refs.scroller, {
+          probeType: 3
+        })
+        this.bindEvents()
       })
     },
     activated () {
