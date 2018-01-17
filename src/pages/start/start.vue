@@ -24,21 +24,29 @@
 </script>
 
 <style scoped lang="stylus">
-  .start-wrapper
-    overflow: hidden
-    height: 0
-    padding-bottom: 136.53%
-    margin-bottom: .1rem
-    .start-img
-      width: 100%
-  .logo-wrapper
-    width: 1.9rem
-    height: 1.9rem
-    margin: 0 auto .12rem
-    .logo-img
-      width: 100%
-  .start-theme
-    font-size: .33rem
-    color: #333
-    text-align: center
+  #start
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    display:flex
+    flex-direction:column
+    .start-wrapper
+      overflow: hidden
+      height: 0
+      padding-bottom: 136.53%
+      margin-bottom: .1rem
+      .start-img
+        width: 100%
+    .logo-wrapper
+      width: 1.9rem
+      height: 1.9rem
+      margin: 0 auto .12rem
+      .logo-img
+        width: 100%
+    .start-theme
+      font-size: .33rem
+      color: #333
+      text-align: center
 </style>

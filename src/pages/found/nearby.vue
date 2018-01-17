@@ -12,7 +12,7 @@
         <div class="focus" @click="handleFocusClick">+关注</div>
       </div>
       <div class="desc">{{item.foodDesc}}</div>
-      <div class="img-wrapper">
+      <div class="img-wrapper" @click="handleDesClick(item.userId,item.userImg,item.userSign,item.foodDesc,item.foodImg)">
         <img :src="item.foodImg" alt="" class="img">
       </div>
       <div class="date">{{item.date}} <i class="comments"></i> <i class="like"></i></div>
@@ -29,6 +29,9 @@
     methods: {
       handleFocusClick () {
         console.log('关注')
+      },
+      handleDesClick (id, userimg, sign, desc, foodimg) {
+        this.$router.push({name: 'foundDetail', params: {id: id, userimg: userimg, sign: sign, desc: desc, foodimg: foodimg}})
       }
     }
   }
@@ -69,6 +72,7 @@
           border: 0.02rem solid #adadad
           color:#4e4e4e
           margin-top: 0.36rem
+          z-index: 2
       .desc
         font-size: .32rem
         color: #333

@@ -4,7 +4,7 @@
       <div class="sidebar-item"
            v-for="(item, index) in alphabet"
            :key="item"
-           @click="handleTouchStart(index)"
+           @click="handleTouchStart($event, index)"
            ref="side">
         {{item}}
        </div>
@@ -19,16 +19,10 @@
       list: Object,
       showSidebar: Number
     },
-    data () {
-      return {
-        len: []
-      }
-    },
     watch: {
       showSidebar () {
         if (this.showSidebar < 360) {
-          this.len = this.$refs.side.length
-          for (let i = 0; i < this.len; i++) {
+          for (let i = 0; i < this.alphabet.length; i++) {
             this.$refs.side[i].style.background = '#fff'
             this.$refs.side[i].style.color = '#333'
           }
@@ -48,15 +42,14 @@
       }
     },
     methods: {
-      handleTouchStart (index) {
+      handleTouchStart (e, index) {
         this.$emit('changeLetter', index)
-        this.len = this.$refs.side.length
-        for (let i = 0; i < this.len; i++) {
+        for (let i = 0; i < this.alphabet.length; i++) {
           this.$refs.side[i].style.background = '#fff'
           this.$refs.side[i].style.color = '#333'
         }
-        this.$refs.side[index].style.background = '#333'
-        this.$refs.side[index].style.color = '#fff'
+        e.target.style.background = '#333'
+        e.target.style.color = '#fff'
       }
     }
   }
@@ -81,4 +74,7 @@
         line-height: .36rem
         color: #666
         border-radius: 50%
+      .side
+        background: #333
+        color: #fff
 </style>

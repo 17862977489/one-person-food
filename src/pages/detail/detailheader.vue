@@ -1,7 +1,7 @@
 <template>
-  <div class="detailheader headeractive">
-    <div class="back iconfont backactive" @click="handleBackClick" ref="back">&#xe60f;</div>
-    <div class="header-title nameactive ellipsis">{{name}}</div>
+  <div class="detailheader" ref="detailheader">
+      <div class="back iconfont" @click="handleBackClick" ref="back">&#xe60f;</div>
+      <div class="header-title ellipsis" ref="headertitle">{{name}}</div>
   </div>
 </template>
 
@@ -10,10 +10,20 @@
     name: 'detailheader',
     props: {
       name: String,
-      scrolltop: Number
+      scrolltop: Number,
+      scrollend: Number
     },
     watch: {
       scrolltop () {
+        if (this.scrolltop > 230) {
+          this.$refs.headertitle.style.display = 'block'
+          this.$refs.back.style.color = '#333'
+          this.$refs.detailheader.style.background = 'rgba(255, 255, 255, 1)'
+        } else {
+          this.$refs.headertitle.style.display = 'none'
+          this.$refs.back.style.color = '#dedede'
+          this.$refs.detailheader.style.background = 'rgba(255, 255, 255, 0)'
+        }
       }
     },
     methods: {
@@ -31,8 +41,6 @@
     height: .88rem
     background: rgba(255, 255, 255, 0)
     z-index: 2
-  .headeractive
-    background: rgba(255, 255, 255, 1)
     .back
       position: absolute
       left: .2rem
@@ -48,6 +56,4 @@
       text-align: center
       font-size: .36rem
       color: #333
-    .nameactive
-      display: block
 </style>

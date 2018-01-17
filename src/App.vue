@@ -1,9 +1,9 @@
 <template>
-  <keep-alive>
     <transition :name="transitionName">
+     <keep-alive exclude="founddetail">
       <router-view class="child-view"></router-view>
-  </transition>
-  </keep-alive>
+      </keep-alive>
+    </transition>
 </template>
 
 <script>

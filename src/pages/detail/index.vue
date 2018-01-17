@@ -29,7 +29,8 @@
         praise: [],
         comments: [],
         nearby: [],
-        scrolltop: 0
+        scrolltop: 0,
+        scrollend: 0
       }
     },
     components: {
@@ -45,8 +46,9 @@
       },
       createScroller () {
         this.scroll = new BScroll(this.$refs.scroller, {
-          probeType: 2,
-          click: true
+          probeType: 3,
+          click: true,
+          deceleration: 0.008
         })
       },
       bindEvents () {
