@@ -77,14 +77,13 @@
     },
     mounted () {
       this.getLoginedData()
-      this.scroll = new BScroll(this.$refs.scroller)
+      this.scroll = new BScroll(this.$refs.scroller, {click: true})
     },
     updated () {
       this.scroll.refresh()
     }
   }
 </script>
-
 
 <style scoped lang="stylus">
   .myIndex

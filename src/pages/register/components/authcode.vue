@@ -2,7 +2,7 @@
   <div class="auth-code border-bottom">
     <input id ="auth-text" type="text" placeholder="请输入验证码" v-model="authCodeData"/>
     <!-- <input /> -->
-    <button type="button" id ="auth-btn"  class="border" @click="handelGetAuthCodeClick">{{authCode}}</button>
+    <button type="button" id ="auth-btn"  class="border-bottom" @click="handelGetAuthCodeClick">{{authCode}}</button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   import axios from 'axios'
   export default {
     name: 'register-auth',
-    props: ['phoneNum', 'usernameStatus', 'verifyPhoneStatus'],
+    props: ['phoneNum', 'usernameStatus'],
     data () {
       return {
         getAuthCodeStatus: true,
@@ -23,7 +23,7 @@
       handelGetAuthCodeClick () {
         if (this.phoneNum && this.getAuthCodeStatus && this.usernameStatus) {
           this.getAuthCodeStatus = false
-          axios.post('/api/getAuthCode.json', {
+          axios.get('/api/getAuthCode.json', {
             params: {
               username: this.phoneNum
             }
@@ -38,10 +38,10 @@
       },
       handelGetAuthCodeSucc (res) {
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.authCodeRes === 0) {
+        if (res && res.data && res.ret && (res.data.authCodeRes === 0)) {
           this.$emit('getAuthCodeSucc')
           this.timer = setInterval(this.handelTimeDown.bind(this), 1000)
-        } else if (res && res.data && res.ret && res.data.authCodeRes !== 0) {
+        } else if (res && res.data && res.ret && (res.data.authCodeRes !== 0)) {
           this.$emit('getAuthCodeErr', res.data.authCodeRes)
         }
       },

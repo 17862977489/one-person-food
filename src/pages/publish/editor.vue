@@ -8,20 +8,18 @@
     <div class="editor-con">
       <textarea class="editor-desc" v-model="editorCon" ref="textCon" placeholder='请输入文字...'></textarea>
     </div>
-    <div class="editor-img">
-      <div class="img-wrapper">
-        <img src="/static/images/alldo/alldo1.jpg" alt="" class="img">
-      </div>
-      <div class="img-wrapper">
-        <span class="add-img">+</span>
-      </div>
-    </div>
+    <up-loader ref="uploader"></up-loader>
   </div>
 </template>
 
 <script>
+  import upLoader from './uploader'
+  import axios from 'axios'
   export default {
     name: 'editor',
+    components: {
+      upLoader
+    },
     data () {
       return {
         date: '',
@@ -52,8 +50,27 @@
       },
       handlePublishClick () {
         if (this.publishFlag) {
+          if (window.localStorage.sessionId) {
+            axios.get('/api/sendPublishInfoData.json', {
+              params: {
+                sessionId: window.localStorage.sessionId,
+                imgs: this.$refs.uploader.getFormData()
+              }
+            })
+            .then(this.handleSendPublishInfoDataSucc.bind(this))
+            .catch(this.handleSendPublishInfoDataErr.bind(this))
+          }
+        }
+      },
+      handleSendPublishInfoDataSucc (res) {
+        console.log(res)
+        res && (res = res.data)
+        if (res && res.data && res.ret && res.data.sendPublish) {
           this.$router.push({path: '/my/myPublish'})
         }
+      },
+      handleSendPublishInfoDataErr (error) {
+        console.log('获取数据错误' + error)
       }
     },
     created () {
@@ -112,20 +129,5 @@
         padding-right: .4rem
         border: 0
         resize: none
-    .editor-img
-      margin: 0 .2rem
-      display: flex
-      .img-wrapper
-        width: 2rem
-        height: 1.98rem
-        line-height: 1.98rem
-        margin: 0 .16rem .16rem 0
-        background: #f3f5f8
-        text-align: center
-        .img
-          width: 100%
-          height: 100%
-        .add-img
-          color: #666
-          font-size: 1rem
+    
 </style>

@@ -214,9 +214,9 @@
           margin-right: .94rem
           .wb-icon
             font-size: .42rem
-            color: #f16853
+            color: #56aa00
         .wx
           .wx-icon
             font-size: .38rem
-            color: #56aa00
+            color: #f16853
 </style>

@@ -2,21 +2,21 @@
   <div class="classify-container">
   	<div class="header border-bottom">
       <router-link class="iconfont back" tag="div" to="/index">&#xe60f;</router-link>
-      <span>{{classifyInfo.title}}</span>
+      <span class="title">{{classifyInfo.title}}</span>
     </div>
 
   	<div class="scroll-container" ref="scroller">
       <div class="content">
-        <div class="friends-con border-bottom">
-            <div class="head-photo-con">
-              <img src="" alt="" class="head-photo">
-              <span class="user-name"></span>
-            </div>
-            <div class="iconfont more-icon">&#xe6f8;</div>  
+        <div class="list-con" v-for="(item, index) in classifyInfo.lists">
+          <div class="head-photo-con">
+            <img :src="item.merchantPhotoUrl" alt="" class="head-photo">
+          </div> 
+           <div class="user-name">{{item.merchantName}}</div>
+           <div class="user-con" v-if="(item.merchantCon)">{{item.merchantCon}}</div>
+           <div class="user-con" v-if="(item.merchantAddress)">{{item.merchantAddress}}</div>
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -27,23 +27,20 @@
     name: 'classifyList',
     data () {
       return {
-        classifyInfo: {},
+        classifyInfo: '',
         pagination: 0
       }
     },
     methods: {
       getClassifyInfoData () {
-        if (window.localStorage.sessionId) {
-          axios.get('/api/getClassifyInfoData.json', {
-            params: {
-              sessionId: window.localStorage.sessionId,
-              pagination: this.pagination
-            }
-          })
-          .then(this.handleGetClassifyInfoDataSucc.bind(this))
-          .catch(this.handleGetClassifyInfoDataErr.bind(this))
-          console.log(this.pagination)
-        }
+        axios.get('/api/getClassifyInfoData.json', {
+          params: {
+            sessionId: window.localStorage.sessionId,
+            pagination: this.pagination
+          }
+        })
+        .then(this.handleGetClassifyInfoDataSucc.bind(this))
+        .catch(this.handleGetClassifyInfoDataErr.bind(this))
       },
       handleGetClassifyInfoDataSucc (res) {
         this.pagination += 1
@@ -66,7 +63,8 @@
     },
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
-        probeType: 3
+        probeType: 3,
+        click: true
       })
       this.getClassifyInfoData()
     }
@@ -87,8 +85,10 @@
       position: relative
       text-align: center
       font-size: .33rem
-      &::before
-        border-color: #333
+      height: 0
+      padding-bottom: .88rem
+      .title
+        height: .8rem
       .back
         position: absolute
         left: .2rem
@@ -99,4 +99,23 @@
     .scroll-container
       overflow: hidden
       flex:1
+      .content
+        .list-con
+          padding: .2rem
+          .head-photo-con
+            height: 2rem
+            .head-photo
+              width: 100%
+              height: 100%
+              border-radius: .1rem
+          .user-name
+            font-size: .3rem
+            color: #333
+            font-weight: 900
+            margin: .2rem 0
+          .user-con
+            height: .3rem
+            font-size: .24rem
+            color: #666
+          
 </style>
