@@ -19,7 +19,6 @@ import MySetting from 'pages/mySetting/index'
 import Search from 'pages/search/search'
 import Start from 'pages/start/start'
 import Detail from 'pages/detail/index'
-import List from 'pages/list/index'
 import ClassifyList from 'pages/classifyList/index'
 
 Vue.use(Router)
@@ -109,5 +108,9 @@ export default new Router({
     path: '/found/detail/:id/:userimg/:sign/:desc/:foodimg',
     name: 'foundDetail',
     component: FoundDetail
+  }, {
+    path: '/index/classifyList:id',
+    name: 'classifyList',
+    component: ClassifyList
   }]
 })
