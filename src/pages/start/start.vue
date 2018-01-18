@@ -19,6 +19,9 @@
           vm.$router.push({path: '/index'})
         }, 3000)
       })
+    },
+    created () {
+      console.log()
     }
   }
 </script>
