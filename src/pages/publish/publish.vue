@@ -20,7 +20,6 @@
               <img :src="itemImg" alt="" class="publish-imgs-small" v-else>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

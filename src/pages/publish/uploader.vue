@@ -35,9 +35,15 @@ export default {
       if (!files.length) {
         return
       }
-      this.formData = new FormData()
-      this.formData.append('imgs', files[0])
-      this.createImage(files)
+      if ((/(?:jpg|gif|png|jpeg)$/i.test(e.target.value))) {
+        this.formData = new FormData()
+        var date = new Date().toLocaleString()
+        this.formData.append('imgs', files[0])
+        this.formData.append('date', date)
+        this.createImage(files)
+      } else {
+        alert('只能上传图片')
+      }
     },
     createImage (file) {
       var vm = this
@@ -66,6 +72,13 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+  .el-message
+    width: 2rem
+    height: 5rem
+    text-align: center
+    background: #ccc
+    .el-message__content
+      color: red
   .editor-img
       margin: 0 .2rem
       display: flex
@@ -100,4 +113,5 @@ export default {
           .add-img
             color: #666
             font-size: 1rem
+  
 </style>

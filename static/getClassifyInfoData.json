@@ -60,17 +60,17 @@
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0002",
-					"merchantPhotoUrl":"/static/images/list/westernfood2.jpg",
+					"merchantPhotoUrl":"/static/images/list/westernfood1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0003",
-					"merchantPhotoUrl":"/static/images/list/westernfood3.jpg",
+					"merchantPhotoUrl":"/static/images/list/westernfood1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0004",
-					"merchantPhotoUrl":"/static/images/list/westernfood4.jpg",
+					"merchantPhotoUrl":"/static/images/list/westernfood1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
@@ -80,12 +80,12 @@
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0006",
-					"merchantPhotoUrl":"/static/images/list/westernfood2.jpg",
+					"merchantPhotoUrl":"/static/images/list/westernfood1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0007",
-					"merchantPhotoUrl":"/static/images/list/westernfood3.jpg",
+					"merchantPhotoUrl":"/static/images/list/westernfood1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				}]
@@ -148,7 +148,7 @@
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0004",
-					"merchantPhotoUrl":"/static/images/list/drink4.jpg",
+					"merchantPhotoUrl":"/static/images/list/drink1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
@@ -158,17 +158,17 @@
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0006",
-					"merchantPhotoUrl":"/static/images/list/drink2.jpg",
+					"merchantPhotoUrl":"/static/images/list/drink1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0007",
-					"merchantPhotoUrl":"/static/images/list/drink3.jpg",
+					"merchantPhotoUrl":"/static/images/list/drink1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				},{
 					"id":"0008",
-					"merchantPhotoUrl":"/static/images/list/drink4.jpg",
+					"merchantPhotoUrl":"/static/images/list/drink1.jpg",
 					"merchantName":"Phomein",
 					"merchantCon":"美味尽在phomenu"
 				}]

@@ -102,9 +102,11 @@
       overflow: hidden
       flex:1
       .content
+        // height: auto
         .list-con
           padding: .2rem
           .head-photo-con
+            height: auto
             height: 3rem
             overflow: hidden
             .head-photo
