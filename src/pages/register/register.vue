@@ -74,7 +74,7 @@ export default {
     handelRegisterClick () {
       var authcodedata = this.$refs.authcode.getAuthCodeData()
       if (authcodedata && this.usernameStatus && this.pwdStatus && this.authCodeStatus) {
-        axios.get('/api/register.json', {
+        axios.get('/static/register.json', {
           params: {
             username: this.usernameData,
             authcodedata: authcodedata,

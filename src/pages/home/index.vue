@@ -57,7 +57,7 @@
     methods: {
       ...mapMutations(['changeCity']),
       getIndexData () {
-        axios.get('/api/index.json?city=' + this.city).then(this.handleGetDataSucc.bind(this))
+        axios.get('/static/index.json?city=' + this.city).then(this.handleGetDataSucc.bind(this))
          .catch(this.handleDataError.bind(this))
       },
       handleGetDataSucc (res) {

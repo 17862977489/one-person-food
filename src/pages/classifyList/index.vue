@@ -33,7 +33,7 @@
     },
     methods: {
       getClassifyInfoData () {
-        axios.get('/api/getClassifyInfoData.json', {
+        axios.get('/static/getClassifyInfoData.json', {
           params: {
             sessionId: window.localStorage.sessionId,
             pagination: this.pagination
@@ -103,10 +103,8 @@
         .list-con
           padding: .2rem
           .head-photo-con
-            height: 2rem
             .head-photo
               width: 100%
-              height: 100%
               border-radius: .1rem
           .user-name
             font-size: .3rem

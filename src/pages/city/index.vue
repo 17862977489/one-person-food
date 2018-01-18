@@ -42,7 +42,7 @@
     },
     methods: {
       getListInfo () {
-        axios.get('/api/city.json')
+        axios.get('/static/city.json')
           .then(this.handleGetListSucc.bind(this))
           .catch(this.handleGetListErr.bind(this))
       },

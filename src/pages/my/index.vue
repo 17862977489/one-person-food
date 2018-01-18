@@ -51,7 +51,7 @@
     methods: {
       getLoginedData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getLoginedData.json', {
+          axios.get('/static/getLoginedData.json', {
             params: {
               sessionId: window.localStorage.sessionId
             }

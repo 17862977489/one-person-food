@@ -51,7 +51,7 @@
       handlePublishClick () {
         if (this.publishFlag) {
           if (window.localStorage.sessionId) {
-            axios.get('/api/sendPublishInfoData.json', {
+            axios.get('/static/sendPublishInfoData.json', {
               params: {
                 sessionId: window.localStorage.sessionId,
                 imgs: this.$refs.uploader.getFormData()

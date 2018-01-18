@@ -41,7 +41,7 @@
     methods: {
       getFriendsInfoData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getFriendsInfoData.json', {
+          axios.get('/static/getFriendsInfoData.json', {
             params: {
               sessionId: window.localStorage.sessionId,
               pagination: this.pagination

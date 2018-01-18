@@ -42,7 +42,7 @@
     },
     methods: {
       getIndexData () {
-        axios.get('/api/detail.json').then(this.handleGetDataSucc.bind(this)).catch(this.handleDataError.bind(this))
+        axios.get('/static/detail.json').then(this.handleGetDataSucc.bind(this)).catch(this.handleDataError.bind(this))
       },
       createScroller () {
         this.scroll = new BScroll(this.$refs.scroller, {

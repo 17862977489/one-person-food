@@ -51,7 +51,7 @@
     methods: {
       getPublishInfoData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getPublishInfoData.json', {
+          axios.get('/static/getPublishInfoData.json', {
             params: {
               sessionId: window.localStorage.sessionId,
               pagination: this.pagination

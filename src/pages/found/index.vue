@@ -35,7 +35,7 @@
     },
     methods: {
       getIndexData () {
-        axios.get('/api/found.json').then(this.handleGetDataSucc.bind(this))
+        axios.get('/static/found.json').then(this.handleGetDataSucc.bind(this))
          .catch(this.handleDataError.bind(this))
       },
       handleGetDataSucc (res) {

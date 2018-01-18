@@ -42,7 +42,7 @@
     methods: {
       getEditInfoData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getEditInfoData.json', {
+          axios.get('/static/getEditInfoData.json', {
             params: {
               sessionId: window.localStorage.sessionId
             }

@@ -1,7 +1,9 @@
 <template>
   <div id="start">
-    <div class="start-wrapper">
-      <img src="../../../static/images/splash/splash.jpg" class="start-img"/>
+    <div class="img-layout" ref="layout">
+      <div class="start-wrapper">
+        <img src="../../../static/images/splash/splash.jpg" class="start-img"/>
+      </div>
     </div>
     <div class="logo-wrapper">
       <img src="../../../static/images/splash/logo.png" alt="" class="logo-img">
@@ -13,6 +15,12 @@
 <script>
   export default {
     name: 'start',
+    data () {
+      return {
+        width: 0,
+        height: 0
+      }
+    },
     beforeRouteEnter (to, from, next) {
       next(vm => {
         setTimeout(() => {
@@ -21,7 +29,13 @@
       })
     },
     created () {
-      console.log()
+      this.height = document.documentElement.clientHeight
+      this.height = this.height * 512 / 667
+      this.width = this.height * 750 / 1024
+    },
+    mounted () {
+      this.$refs.layout.style.height = this.height + 'px'
+      this.$refs.layout.style.width = this.width + 'px'
     }
   }
 </script>
@@ -35,13 +49,14 @@
     right: 0
     display:flex
     flex-direction:column
-    .start-wrapper
-      overflow: hidden
-      height: 0
-      padding-bottom: 136.53%
-      margin-bottom: .1rem
-      .start-img
+    .img-layout
+      margin: 0 auto
+      .start-wrapper
         width: 100%
+        height: 100%
+        margin-bottom: .1rem
+        .start-img
+          width: 100%
     .logo-wrapper
       width: 1.9rem
       height: 1.9rem
@@ -52,4 +67,5 @@
       font-size: .33rem
       color: #333
       text-align: center
+      padding-bottom: .2rem
 </style>

@@ -74,7 +74,7 @@
       },
       getLoginData () {
         if (this.pwdStatus && this.userNameStatus) {
-          axios.get('/api/login.json', {
+          axios.get('/static/login.json', {
             params: {
               username: this.userNameDate,
               pwd: this.pwdData

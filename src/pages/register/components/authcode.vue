@@ -23,7 +23,7 @@
       handelGetAuthCodeClick () {
         if (this.phoneNum && this.getAuthCodeStatus && this.usernameStatus) {
           this.getAuthCodeStatus = false
-          axios.get('/api/getAuthCode.json', {
+          axios.get('/static/getAuthCode.json', {
             params: {
               username: this.phoneNum
             }

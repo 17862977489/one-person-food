@@ -47,7 +47,7 @@
     methods: {
       getDraftsInfoData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getDraftsInfoData.json', {
+          axios.get('/static/getDraftsInfoData.json', {
             params: {
               sessionId: window.localStorage.sessionId,
               pagination: this.pagination
@@ -84,7 +84,7 @@
         this.isLoading = true
       },
       handelClearClick () {
-        axios.get('/api/ClearDrafts.json', {
+        axios.get('/static/ClearDrafts.json', {
           params: {
             sessionId: window.localStorage.sessionId
           }
