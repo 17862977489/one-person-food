@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="header border-bottom">
-      <router-link class="iconfont back" tag="div" to="/my">&#xe60f;</router-link>我的好友
+      <div class="iconfont back" @click="handelBackClick">&#xe60f;</div>我的好友
     </div>
     <div class="scroll-container" ref="scroller">
       <div class="content">
@@ -76,6 +76,9 @@
       },
       handleScrollEnd () {
         this.isLoading = true
+      },
+      handelBackClick () {
+        this.$router.go(-1)
       }
     },
     mounted () {

@@ -15,6 +15,7 @@
 <script>
   import upLoader from './uploader'
   import axios from 'axios'
+
   export default {
     name: 'editor',
     components: {
@@ -63,7 +64,6 @@
         }
       },
       handleSendPublishInfoDataSucc (res) {
-        console.log(res)
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.sendPublish) {
           this.$router.push({path: '/my/myPublish'})

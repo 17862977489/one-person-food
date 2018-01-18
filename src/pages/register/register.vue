@@ -84,16 +84,19 @@ export default {
         .then(this.handelRegisterSucc.bind(this))
         .catch(this.handelRegisterError.bind(this))
       } else if (!this.usernameStatus) {
-        this.topicText = '手机号不能为空'
+        this.topicText = '手机号不正确'
       } else if (!authcodedata) {
         this.topicText = '验证码不能为空'
-      } else if (!this.pwdStatus) {
+      } else if (!this.pwdData) {
         this.topicText = '密码不能为空'
+      } else if (!this.pwdStatus) {
+        this.topicText = '密码不正确'
       }
     },
     handelRegisterSucc (res) {
       res && (res = res.data)
       if (res && res.data && res.ret && res.data.register) {
+        this.topicText = ''
         this.$router.push({path: '/my/login'})
       } else if (res && res.data && res.ret && !res.data.register) {
         this.topicText = '验证码不正确'

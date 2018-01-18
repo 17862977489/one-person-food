@@ -1,6 +1,6 @@
 <template>
     <transition :name="transitionName">
-     <keep-alive exclude="founddetail">
+     <keep-alive include="index">
       <router-view class="child-view"></router-view>
       </keep-alive>
     </transition>

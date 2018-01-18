@@ -100,13 +100,15 @@
       overflow: hidden
       flex:1
       .content
+        // height: auto
         .list-con
           padding: .2rem
           .head-photo-con
-            height: 2rem
+            height: auto
+            height: 3rem
+            overflow: hidden
             .head-photo
               width: 100%
-              height: 100%
               border-radius: .1rem
           .user-name
             font-size: .3rem

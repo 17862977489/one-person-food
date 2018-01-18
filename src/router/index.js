@@ -97,10 +97,6 @@ export default new Router({
     name: 'detail',
     component: Detail
   }, {
-    path: '/index/list',
-    name: 'list',
-    component: List
-  }, {
     path: '/index/classifyList:id',
     name: 'classifyList',
     component: ClassifyList
@@ -108,9 +104,5 @@ export default new Router({
     path: '/found/detail/:id/:userimg/:sign/:desc/:foodimg',
     name: 'foundDetail',
     component: FoundDetail
-  }, {
-    path: '/index/classifyList:id',
-    name: 'classifyList',
-    component: ClassifyList
   }]
 })
