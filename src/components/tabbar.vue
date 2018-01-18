@@ -49,7 +49,7 @@
     width: 100%
     height: .9rem
     background: #f2f2f2
-    z-index: 2
+    z-index: 20
     padding-top: .1rem
     position: relative
     bottom:0

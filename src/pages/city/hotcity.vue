@@ -4,7 +4,7 @@
     <div class="hotcity-con">
       <div class="place border" 
            v-for="item in hotcity" 
-           @touchstart="handleCityClick(item.city)">{{item.city}}</div>
+           @click="handleCityClick(item.city)">{{item.city}}</div>
     </div>
   </div>
 </template>

@@ -27,8 +27,8 @@
       found: Array
     },
     methods: {
-      handleFocusClick () {
-        console.log('关注')
+      handleFocusClick (e) {
+        e.target.innerHTML = '已关注'
       },
       handleDesClick (id, userimg, sign, desc, foodimg) {
         this.$router.push({name: 'foundDetail', params: {id: id, userimg: userimg, sign: sign, desc: desc, foodimg: foodimg}})

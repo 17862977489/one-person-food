@@ -59,7 +59,9 @@
       }
     },
     updated () {
-      this.scroll.refresh()
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     },
     mounted () {
       this.scroll = new BScroll(this.$refs.scroller, {
@@ -103,10 +105,10 @@
         .list-con
           padding: .2rem
           .head-photo-con
-            height: 2rem
+            height: 3rem
+            overflow: hidden
             .head-photo
               width: 100%
-              height: 100%
               border-radius: .1rem
           .user-name
             font-size: .3rem

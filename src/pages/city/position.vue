@@ -3,7 +3,7 @@
     <div class="position-title">定位/最近访问</div>
     <div class="position-show">
       <div class="place border ellipsis" 
-           @touchstart="handleCityClick(city)">{{city}}</div>
+           @click="handleCityClick(city)">{{city}}</div>
     </div>
   </div>
 </template>

@@ -24,8 +24,8 @@
       detailInfo: Object
     },
     methods: {
-      handleFocusClick () {
-        console.log('关注')
+      handleFocusClick (e) {
+        e.target.innerHTML = '已关注'
       }
     }
   }

@@ -2,7 +2,7 @@
   <div class="comments">
     <div class="comments-title">
       <div class="comments-name">评论<span class="comments-num">(23456+)</span></div>
-      <router-link to="/" class="right iconfont" tag="div">&#xe6f8;</router-link>
+      <div class="right iconfont">&#xe6f8;</div>
     </div>
     <div class="comments-main">
       <div class="comments-item" v-for="item in comments">
