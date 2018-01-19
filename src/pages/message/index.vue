@@ -4,6 +4,7 @@
     <div class="scroll-container" ref="scroller">
       <div class="content">
         <systeminforms></systeminforms>
+        <friendmessage v-show="showfriend"></friendmessage>
       </div>
     </div>
     <tabbar src='messageClick.png' active="message"></tabbar>
@@ -13,13 +14,27 @@
 <script>
   import Messageheader from './header'
   import Systeminforms from './systemInforms'
+  import Friendmessage from './friendMessage'
   import Tabbar from '../../components/tabbar'
   export default {
     name: 'found',
+    data () {
+      return {
+        showfriend: false
+      }
+    },
     components: {
       Tabbar,
       Messageheader,
-      Systeminforms
+      Systeminforms,
+      Friendmessage
+    },
+    created () {
+      if (window.localStorage.sessionId) {
+        this.showfriend = true
+      } else {
+        this.showfriend = false
+      }
     }
   }
 </script>
@@ -35,6 +50,7 @@
     display:flex
     flex-direction:column
     .scroll-container
+      margin: 0 .2rem
       overflow: hidden
       flex:1
 </style>
