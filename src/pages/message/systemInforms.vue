@@ -30,65 +30,53 @@
         <i class="enter iconfont">&#xe6f8;</i>
       </div>
     </div>
-    <friendmessage></friendmessage>
   </div>
 </template>
 
 <script>
-  import Friendmessage from './friendMessage'
   export default {
-    name: 'systemInforms',
-    components: {
-      Friendmessage
-    }
+    name: 'systemInforms'
   }
 </script>
 
 <style scoped lang="stylus">
-  .messageMain
-    margin: 0 .2rem
-    .systemInforms
-      .inform
-        display: flex
-        height: 1.28rem
-        &::before
-          border-color: #cdcdcd
-        .img-wrapper
-          margin-top: .32rem
-          width: .64rem
-          height: .64rem
-          background: #333
-          border-radius: 50%
-          text-align: center
-          .system-img
-            width: 56.25%
-            height: 62.5%
-            padding-top: .12rem
-          .praise-img
-            width: 59.375%
-            height: 54.6875%
-            padding-top: .14rem
-          .comment-img
-            width: 59.375%
-            height: 59.375%
-            padding-top: .14rem
-          .foucs-img
-            width: 56.25%
-            height: 59.375%
-            padding-top: .12rem
-        .title
-          flex: 1
-          color: #333
-          font-size: .3rem
-          line-height: 1.28rem
-          margin-left: .32rem
-        .enter
-          line-height: 1.28rem
-          font-size: .34rem
-          margin-right: .16rem
-    .friendMessage
-      .friend-item
+  .systemInforms
+    .inform
+      display: flex
+      height: 1.28rem
+      &::before
+        border-color: #cdcdcd
+      .img-wrapper
+        margin-top: .32rem
+        width: .64rem
+        height: .64rem
+        background: #333
+        border-radius: 50%
+        text-align: center
+        .system-img
+          width: 56.25%
+          height: 62.5%
+          padding-top: .12rem
+        .praise-img
+          width: 59.375%
+          height: 54.6875%
+          padding-top: .14rem
+        .comment-img
+          width: 59.375%
+          height: 59.375%
+          padding-top: .14rem
+        .foucs-img
+          width: 56.25%
+          height: 59.375%
+          padding-top: .12rem
+      .title
+        flex: 1
+        color: #333
+        font-size: .3rem
         line-height: 1.28rem
-        &::before
-          border-color: #cdcdcd
+        margin-left: .32rem
+      .enter
+        line-height: 1.28rem
+        font-size: .34rem
+        margin-right: .16rem
 </style>

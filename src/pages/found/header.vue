@@ -23,7 +23,12 @@
           li[i].children[0].removeAttribute('class')
         }
         e.target.children[0].setAttribute('class', 'active')
-        this.$emit('tab', e.target.getAttribute('name'))
+        if (window.localStorage.sessionId) {
+          this.$emit('tab', e.target.getAttribute('name'))
+        } else {
+          alert('用户未登录，请先登录')
+          this.$router.push({path: '/my/login'})
+        }
       }
     }
   }
