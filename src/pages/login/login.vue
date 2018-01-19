@@ -94,7 +94,7 @@
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.login) {
           window.localStorage.sessionId = res.data.sessionId
-          this.$router.push({path: '/index'})
+          this.$router.go(-1)
         } else {
           this.topicText = '用户名或密码错误'
         }
