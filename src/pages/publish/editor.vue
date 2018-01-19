@@ -60,6 +60,8 @@
             })
             .then(this.handleSendPublishInfoDataSucc.bind(this))
             .catch(this.handleSendPublishInfoDataErr.bind(this))
+          } else {
+            this.$router.push({path: '/my/login'})
           }
         }
       },

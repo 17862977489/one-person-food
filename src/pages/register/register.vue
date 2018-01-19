@@ -87,6 +87,8 @@ export default {
         this.topicText = '手机号不正确'
       } else if (!authcodedata) {
         this.topicText = '验证码不能为空'
+      } else if (!this.authCodeStatus) {
+        this.topicText = '验证码没获取'
       } else if (!this.pwdData) {
         this.topicText = '密码不能为空'
       } else if (!this.pwdStatus) {
