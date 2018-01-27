@@ -58,10 +58,13 @@
         }
       },
       handleGetDraftsInfoDataSucc (res) {
-        this.pagination += 1
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.draftsInfoData) {
+          this.isShow = false
+          this.pagination += 1
           this.draftsInfo = this.draftsInfo.concat(JSON.parse(JSON.stringify(res.data.draftsInfoData)))
+        } else {
+          this.isShow = true
         }
       },
       handleGetDraftsInfoDataErr (error) {

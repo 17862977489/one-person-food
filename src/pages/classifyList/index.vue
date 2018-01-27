@@ -7,11 +7,11 @@
 
   	<div class="scroll-container" ref="scroller">
       <div class="content">
-        <div class="list-con" v-for="(item, index) in classifyInfo.lists">
+        <div class="list-con" v-for="(item, index) in classifyInfo.list">
           <div class="head-photo-con">
-            <img :src="item.merchantPhotoUrl" alt="" class="head-photo">
+            <img :src="item.img" alt="" class="head-photo">
           </div> 
-           <div class="user-name">{{item.merchantName}}</div>
+           <div class="user-name" v-if="item.merchantName ? item.merchantName : '1111' ">{{item.merchantName}}</div>
            <div class="user-con" v-if="(item.merchantCon)">{{item.merchantCon}}</div>
            <div class="user-con" v-if="(item.merchantAddress)">{{item.merchantAddress}}</div>
         </div>
@@ -44,8 +44,7 @@
       },
       handleGetClassifyInfoDataSucc (res) {
         this.pagination += 1
-        res && (res = res.data)
-        if (res && res.data && res.ret && res.data.classifyInfoData) {
+        if (res && res.data && res.data.classifyInfoData) {
           for (var item in res.data.classifyInfoData) {
             if (this.$route.params.id === item) {
               var obj = JSON.parse(JSON.stringify(res.data.classifyInfoData[item]))

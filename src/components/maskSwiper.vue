@@ -65,11 +65,12 @@
  }
  .hot-img-shows-img {
    width:100%;
-   height: 100%;
  }
  .hot-img-con {
    width:100%;
+   height: 8rem;
    line-height:8rem;
+   overflow: hidden
  }
  .hot-img-show-con {
    height:100%;

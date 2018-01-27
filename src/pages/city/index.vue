@@ -15,6 +15,7 @@
 </template>
 
 <script>
+  import citylist from '../../../static/citylist.json'
   import axios from 'axios'
   import BScroll from 'better-scroll'
   import Cityheader from './header'
@@ -47,9 +48,7 @@
           .catch(this.handleGetListErr.bind(this))
       },
       handleGetListSucc (res) {
-        res && (res = res.data)
         if (res && res.data) {
-          res.data.list && (this.list = res.data.list)
           res.data.hotcity && (this.hotcity = res.data.hotcity)
         } else {
           this.handleGetListErr()
@@ -78,6 +77,7 @@
         })
         this.bindEvents()
       })
+      this.list = citylist.list
     },
     activated () {
       this.scroll && this.scroll.refresh()

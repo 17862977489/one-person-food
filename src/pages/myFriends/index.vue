@@ -52,6 +52,7 @@
         }
       },
       handleGetFriendsInfoDataSucc (res) {
+        console.log(res)
         this.pagination += 1
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.fiendsInfoData) {

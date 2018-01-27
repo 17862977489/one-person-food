@@ -4,7 +4,7 @@
       <div class="sidebar-item"
            v-for="(item, index) in alphabet"
            :key="item"
-           @click="handleTouchStart($event, index)"
+           @click="handleTouchStart($event, item)"
            ref="side">
         {{item}}
        </div>
@@ -42,8 +42,8 @@
       }
     },
     methods: {
-      handleTouchStart (e, index) {
-        this.$emit('changeLetter', index)
+      handleTouchStart (e, item) {
+        this.$emit('changeLetter', item)
         for (let i = 0; i < this.alphabet.length; i++) {
           this.$refs.side[i].style.background = '#fff'
           this.$refs.side[i].style.color = '#333'

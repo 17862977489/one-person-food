@@ -3,7 +3,7 @@
     <div class="classify-wrapper" v-for="item in foodtype">
       <router-link :to="'/index/classifyList'+item.id" class="classify">
         <div class="img-wrapper">
-          <img :src="item.foodTypeImg" alt="" :class=item.foodTypeClassName>
+          <img :src="item.foodTypeImg" alt="" :class=item.foodTypeClassName class="img">
         </div>
         <span class="foodTypeName ellipsis">{{item.foodTypeName}}</span>
       </router-link>
@@ -36,22 +36,18 @@
         font-size: .20rem
         color: #333
         .img-wrapper
-          width: 100%
+          width: .7rem
+          height: .5rem
+          margin: 0 auto .1rem
           overflow: hidden
-          height: 0
-          padding-bottom: 54%
-          .baking
-            width: .38rem
-            height: .47rem
-          .chinese-food
-            width: .53rem
-            height: .43rem
-          .western-food
-            width: .47rem
-            height: .45rem
-          .drink
-            width: .52rem
-            height: .46rem
+          .img
+            width: 100%
+            height: 100%
+            overflow: hidden
         .foodTypeName
+          display:inline-block
+          width: 100%
           color:#3e3e3e
+          text-align:center
+          font-size: .26rem
 </style>

@@ -72,6 +72,7 @@
         margin-bottom: .4rem
       .img-wrapper
         height: 3.6rem
+        overflow:hidden
         .img
           width: 100%
 </style>

@@ -44,7 +44,7 @@
     methods: {
       getFootmarkInfoData () {
         if (window.localStorage.sessionId) {
-          axios.get('/api/getFootmarkInfoData.json', {
+          axios.get('/api/getFootMarkInfoData.json', {
             params: {
               sessionId: window.localStorage.sessionId,
               pagination: this.pagination

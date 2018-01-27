@@ -2,7 +2,7 @@
   <div class="guess">
     <div class="title-grounp">
       <span class="title ellipsis">猜你喜欢</span>
-      <router-link :to="'/index/classifyList'+'guessYouLike'" class="right iconfont">&#xe6f8;</router-link>
+      <router-link :to="'/index/classifyList'+'6'" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper">
       <div class="item" v-for="item in guessyoulike" :key="item.id" @click="handleGuessClick(item.id)">

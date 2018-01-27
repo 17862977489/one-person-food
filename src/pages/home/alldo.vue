@@ -2,7 +2,7 @@
   <div class="alldo">
     <div class="title-grounp">
       <span class="title ellipsis">大家都爱做</span>
-      <router-link :to="'/index/classifyList'+'allDo'" class="right iconfont">&#xe6f8;</router-link>
+      <router-link :to="'/index/classifyList'+'7'" class="right iconfont">&#xe6f8;</router-link>
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">

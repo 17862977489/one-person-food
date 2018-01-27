@@ -6,7 +6,8 @@
       <div class="publish" ref="determine" @click="handlePublishClick">确定</div>
     </div>
     <div class="editor-con">
-      <textarea class="editor-desc" v-model="editorCon" ref="textCon" placeholder='请输入文字...'></textarea>
+      <textarea class="editor-desc" v-model="editorCon" ref="textCon" placeholder='请输入文字...'
+      ></textarea>
     </div>
     <up-loader ref="uploader"></up-loader>
   </div>
@@ -47,10 +48,45 @@
         this.date = this.date.replace(/\//g, ' ')
       },
       handleBackClick () {
-        this.$router.go(-1)
+        if (this.publishFlag) {
+          if (this.$refs.uploader.getFormData()) {
+            if (window.localStorage.sessionId) {
+              console.log(this.editorCon)
+              axios.get('/api/sendDraftsInfoData.json', {
+                params: {
+                  sessionId: window.localStorage.sessionId,
+                  foodPhotoUrl: this.$refs.uploader.getFormData(),
+                  foodContent: this.editorCon,
+                  foodCompletion: '未完成'
+                }
+              })
+              .then(this.handleSaveDraftsInfoDataSucc.bind(this))
+              .catch(this.handleSaveDraftsInfoDataErr.bind(this))
+            } else {
+              alert('请先登录')
+              this.$router.push({path: '/my/login'})
+            }
+          } else {
+            alert('请至少上传一张图片哟~')
+          }
+        } else {
+          this.$router.go(-1)
+        }
+      },
+      handleSaveDraftsInfoDataSucc (res) {
+        res && (res = res.data)
+        if (res && res.data && res.ret && res.data.send) {
+          alert('保存到草稿成功')
+        } else {
+          alert('保存到草稿失败')
+        }
+        this.$router.push({path: '/my/myDrafts'})
+      },
+      handleSaveDraftsInfoDataErr (error) {
+        alert('服务器错误' + error)
       },
       handlePublishClick () {
-        if (this.publishFlag) {
+        if (this.publishFlag && this.$refs.uploader.getFormData()) {
           if (window.localStorage.sessionId) {
             axios.get('/api/sendPublishInfoData.json', {
               params: {
@@ -61,8 +97,11 @@
             .then(this.handleSendPublishInfoDataSucc.bind(this))
             .catch(this.handleSendPublishInfoDataErr.bind(this))
           } else {
+            alert('请先登录')
             this.$router.push({path: '/my/login'})
           }
+        } else {
+          alert('请至少上传一张图片和文字')
         }
       },
       handleSendPublishInfoDataSucc (res) {
@@ -121,15 +160,15 @@
         border-radius: .06rem
     .editor-con
       height: 1.88rem
-      overflow: auto
       margin: .32rem .2rem
       .editor-desc
-        width: 94%
+        width: 90%
         height: 1.88rem
         color: #666
         font-size: .32rem
         padding-right: .4rem
         border: 0
         resize: none
+        overflow: hidden
     
 </style>

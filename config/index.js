@@ -13,6 +13,9 @@ module.exports = {
     proxyTable: {
       '/api': {
         target: 'http://localhost:8080',
+        // target: 'http://10.9.164.58:80',
+        // target: 'http://10.9.164.68:8090',
+        // target: 'http://10.9.164.38:80',
         pathRewrite: {
           '^/api': '/static'
         }

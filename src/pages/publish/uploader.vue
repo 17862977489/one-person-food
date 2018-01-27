@@ -35,11 +35,14 @@ export default {
       if (!files.length) {
         return
       }
+      var date = new Date()
+      var dateTime = (date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds())
+      var com = ((date.getHours() > 17) ? '晚餐' : (date.getHours() > 11 ? '午餐' : '早餐'))
+      this.formData = new FormData()
+      this.formData.append('date', dateTime)
+      this.formData.append('foodName', com)
       if ((/(?:jpg|gif|png|jpeg)$/i.test(e.target.value))) {
-        this.formData = new FormData()
-        var date = new Date().toLocaleString()
         this.formData.append('imgs', files[0])
-        this.formData.append('date', date)
         this.createImage(files)
       } else {
         alert('只能上传图片')

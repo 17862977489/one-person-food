@@ -39,10 +39,11 @@
          .catch(this.handleDataError.bind(this))
       },
       handleGetDataSucc (res) {
+        console.log(res)
         res = res ? res.data : null
-        if (res && res.ret && res.data) {
-          res.data.nearby && (this.found = res.data.nearby)
-          res.data.focus && (this.focus = res.data.focus)
+        if (res) {
+          res.nearBy && (this.found = res.nearBy)
+          res.focus && (this.focus = res.focus)
         } else {
           this.handleDataError()
         }

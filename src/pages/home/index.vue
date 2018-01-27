@@ -62,7 +62,7 @@
       },
       handleGetDataSucc (res) {
         res = res ? res.data : null
-        if (res && res.ret && res.data) {
+        if (res && res.data) {
           res.data.Slider && (this.slider = res.data.Slider)
           res.data.foodType && (this.foodtype = res.data.foodType)
           res.data.allLoveTo && (this.allloveto = res.data.allLoveTo)

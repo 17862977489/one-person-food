@@ -3,10 +3,10 @@
 	"data":{
 		"draftsInfoData":[{
 			"id":"0001",
-			"foodPhotoUrl":"/static/images/found/foodimg2.png",
-			"foodName":"午餐",
+			"foodPhotoUrl":"/static/images/list/westernfood1.jpg",
+			"foodName":"晚餐",
 			"foodCompletion":"未完成",
-			"foodTime":"2018年1月14日08:00:25"
+			"foodTime":"2018年1月24日19:20:45"
 			}, {
 			"id":"0002",
 			"foodPhotoUrl":"/static/images/found/foodimg2.png",

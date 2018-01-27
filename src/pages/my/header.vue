@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="my-header border-bottom">我的</div>
-    <div class="my-infophoto" v-bind:style="{background:  '#e0e0e0 url('+ titlePhotoBjUrl +') no-repeat center center '}">
+    <div class="my-infophoto" v-bind:style="{background:  '#e0e0e0 url('+ titlePhotoBjUrl +') no-repeat center center / 100% 100%'}">
       <router-link class="info-box" @click.native="handelLogin" to="/my/login" tag="div">
         <img v-bind:src="headPhotoUrl" alt="" class="img-box">
         <div class="user-name ellipsis">{{userName}}</div>
@@ -78,8 +78,7 @@
     position: relative
     width: 100%
     height: 4.64rem
-    background: #e0e0e0
-    background-size: 100%
+    background-color: #e0e0e0
     .info-box
       text-align: center
       width: 1.62rem

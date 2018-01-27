@@ -34,7 +34,7 @@
         this.$router.push('/index')
       },
       setCityStart (e) {
-        const area = (e + 10).toString(36).toUpperCase()
+        const area = e
         this.$emit('scrollTo', {
           dom: this.$refs[area][0]
         })

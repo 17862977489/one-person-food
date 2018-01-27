@@ -3,7 +3,7 @@
     <div class="found-item" v-for="item in focus">
       <div class="con-header">
         <div class="img-wrapper">
-          <img :src="item.userImg" alt="" class="userimg">
+          <img :src="item.headPhotoUrl" alt="" class="userimg">
         </div>
         <div class="center">
           <div class="username">{{item.userId}}</div>
@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="desc">{{item.foodDesc}}</div>
-      <div class="img-wrapper">
+      <div class="img-wrapper" @click="handleDesClick(item.userId,item.headPhotoUrl,item.userSign,item.foodDesc,item.foodImg)">
         <img :src="item.foodImg" alt="" class="img">
       </div>
       <div class="date">{{item.date}} <i class="comments"></i> <i class="like"></i></div>
@@ -24,6 +24,11 @@
     name: 'focus',
     props: {
       focus: Array
+    },
+    methods: {
+      handleDesClick (id, userimg, sign, desc, foodimg) {
+        this.$router.push({name: 'foundDetail', params: {id: id, userimg: userimg, sign: sign, desc: desc, foodimg: foodimg}})
+      }
     }
   }
 </script>
@@ -62,8 +67,10 @@
           margin-bottom: .4rem
         .img-wrapper
           height: 3.6rem
+          overflow:hidden
           .img
             width: 100%
+            height: 100%
         .date
           margin-top: .3rem
           height: 0.24rem

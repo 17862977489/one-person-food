@@ -74,12 +74,10 @@ export default {
     handelRegisterClick () {
       var authcodedata = this.$refs.authcode.getAuthCodeData()
       if (authcodedata && this.usernameStatus && this.pwdStatus && this.authCodeStatus) {
-        axios.get('/api/register.json', {
-          params: {
-            username: this.usernameData,
-            authcodedata: authcodedata,
-            pwd: this.pwdData
-          }
+        axios.post('/api/register.json', {
+          phoneNum: this.usernameData,
+          authcodedata: authcodedata,
+          password: this.pwdData
         })
         .then(this.handelRegisterSucc.bind(this))
         .catch(this.handelRegisterError.bind(this))
@@ -96,11 +94,12 @@ export default {
       }
     },
     handelRegisterSucc (res) {
+      console.log(res)
       res && (res = res.data)
-      if (res && res.data && res.ret && res.data.register) {
+      if (res && res.data && res.data.register) {
         this.topicText = ''
         this.$router.push({path: '/my/login'})
-      } else if (res && res.data && res.ret && !res.data.register) {
+      } else if (res && res.data && !res.data.register) {
         this.topicText = '验证码不正确'
       }
     },

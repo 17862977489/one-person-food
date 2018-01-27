@@ -8,21 +8,21 @@
       <div class="comments-item" v-for="item in comments">
         <div class="userimg-wrapper">
           <div class="img-wrapper">
-            <img class="userimg" :src="item.userimg" alt="">
+            <img class="userimg" :src="item.user.headPhotoUrl" alt="">
           </div>
         </div>
         <div class="comments-con">
-          <div class="userid ellipsis">{{item.userid}}<span class="comments-date">{{item.commentsDate}}</span></div>
-          <div class="user-comments">{{item.commentsCon}}</div>
-          <div class="comments-img-list" v-if="item.commentsImg">
+          <div class="userid ellipsis">{{item.user.userName}}<span class="comments-date">{{item.time}}</span></div>
+          <div class="user-comments">{{item.content}}</div>
+          <div class="comments-img-list" v-if="item.imgs">
             <div class="img-wrapper">
-              <img class="img-item" :src="item.commentsImg" alt="">
+              <img class="img-item" :src="item.imgs" alt="">
             </div>
             <div class="img-wrapper">
-              <img class="img-item imgCenter" :src="item.commentsImg" alt="">
+              <img class="img-item imgCenter" :src="item.imgs" alt="">
             </div>
             <div class="img-wrapper">
-              <img class="img-item imgBottom" :src="item.commentsImg" alt="">
+              <img class="img-item imgBottom" :src="item.imgs" alt="">
             </div>
           </div>
         </div>
@@ -99,13 +99,7 @@
               height: 1.28rem
               overflow: hidden
               display: inline-block
-              position: relative
               .img-item
                 width: 100%
-                height: 300%
-                position: absolute
-              .imgCenter
-                top: -1.28rem
-              .imgBottom
-                top: -2.56rem
+                height: 100%
 </style>

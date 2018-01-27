@@ -5,11 +5,11 @@
 			"id":"0001",
 			"headPhoto":"/static/images/my/headPhoto.jpg",
 			"userName":"Alina",
-			"time":"2018年1月13日19:20:45",
-			"content":"天气很晴朗,美食很美味",
-			"imgs":["/static/images/found/foodimg1.png"
-					,"/static/images/alldo/alldo1.jpg"
-					,"/static/images/found/foodimg2.png"]
+			"time":"2018年1月24日19:20:45",
+			"content":"很好吃呦~",
+			"imgs":["/static/images/list/westernfood1.jpg"
+					,"/static/images/list/westernfood3.jpg"
+					,"/static/images/list/westernfood2.jpg"]
 		}, {
 			"id":"0002",
 			"headPhoto":"/static/images/my/headPhoto.jpg",

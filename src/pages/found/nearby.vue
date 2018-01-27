@@ -3,7 +3,7 @@
     <div class="found-item" v-for="item in found">
       <div class="con-header">
         <div class="img-wrapper">
-          <img :src="item.userImg" alt="" class="userimg">
+          <img :src="item.headPhotoUrl" alt="" class="userimg">
         </div>
         <div class="center">
           <div class="username">{{item.userId}}</div>
@@ -12,7 +12,7 @@
         <div class="focus" @click="handleFocusClick">+关注</div>
       </div>
       <div class="desc">{{item.foodDesc}}</div>
-      <div class="img-wrapper" @click="handleDesClick(item.userId,item.userImg,item.userSign,item.foodDesc,item.foodImg)">
+      <div class="img-wrapper" @click="handleDesClick(item.userId,item.headPhotoUrl,item.userSign,item.foodDesc,item.foodImg)">
         <img :src="item.foodImg" alt="" class="img">
       </div>
       <div class="date">{{item.date}} <i class="comments"></i> <i class="like"></i></div>
@@ -79,7 +79,7 @@
         line-height: .3rem
         margin-bottom: .4rem
       .img-wrapper
-        height: 3.6rem
+        // height: 3.6rem
         .img
           width: 100%
       .date

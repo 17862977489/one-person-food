@@ -74,11 +74,9 @@
       },
       getLoginData () {
         if (this.pwdStatus && this.userNameStatus) {
-          axios.get('/api/login.json', {
-            params: {
-              username: this.userNameDate,
-              pwd: this.pwdData
-            }
+          axios.post('/api/login.json', {
+            username: this.userNameDate,
+            pwd: this.pwdData
           })
           .then(this.handleGetLoginDataSucc.bind(this))
           .catch(this.handleGetLoginDataErr.bind(this))
@@ -91,10 +89,11 @@
         }
       },
       handleGetLoginDataSucc (res) {
+        console.log(res)
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.login) {
           window.localStorage.sessionId = res.data.sessionId
-          this.$router.go(-1)
+          this.$router.push({path: '/my'})
         } else {
           this.topicText = '用户名或密码错误'
         }
