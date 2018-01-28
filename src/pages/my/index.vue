@@ -80,7 +80,9 @@
       this.scroll = new BScroll(this.$refs.scroller, {click: true})
     },
     updated () {
-      this.scroll.refresh()
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     }
   }
 </script>

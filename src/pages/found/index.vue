@@ -65,7 +65,9 @@
       })
     },
     updated () {
-      this.scroll.refresh()
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     },
     created () {
       this.getIndexData()

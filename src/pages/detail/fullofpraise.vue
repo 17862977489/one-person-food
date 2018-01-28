@@ -21,23 +21,24 @@
 
 <style scoped lang="stylus">
   .fullofpraise
-    height: 9.5rem
-    overflow: hidden
     .praise
       margin: .3rem 0 .3rem .2rem
       color: #333
       font-size: .32rem
     .praise-img-list
       margin: 0 .2rem
+      display: flex
+      justify-content: space-around
+      flex-wrap: wrap
       .img-wrapper
-        display: inline-block
         width: 3.1rem
         height: 4rem
-        margin-left: .3rem
+        overflow: hidden
         margin-bottom: .3rem
         position: relative
         .praise-img
           width: 100%
+          height: 100%;
         .praise-title
           position: absolute
           bottom: 0
