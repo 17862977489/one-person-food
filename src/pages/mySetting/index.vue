@@ -7,6 +7,7 @@
       <div class="content">
         <div class="setting-con">
             <div class="line border-bottom">绑定账号</div>
+            <div class="line border-bottom" @click="handelChangePassword">修改密码</div>
             <div class="line border-bottom">消息设置</div>
             <div class="line border-bottom">意见反馈</div>
             <div class="line border-bottom">向朋友推荐</div>
@@ -15,6 +16,7 @@
             <div class="line border-bottom">关于我们</div>
         </div>
       </div>
+      <change-password v-show="show" class="change-pwd" v-on:changePwdClose="changePwdClose" ref="changePwd"></change-password>
     </div>
     <div class="log-out" @click="handelLogOut">退出账号</div>
   </div>
@@ -23,16 +25,28 @@
 
 <script>
   import BScroll from 'better-scroll'
+  import changePassword from './changePassword'
   export default {
     name: 'mySetting',
     data () {
       return {
+        show: false
       }
+    },
+    components: {
+      changePassword
     },
     methods: {
       handelLogOut () {
-        window.localStorage.removeItem('sessionId')
+        window.sessionStorage.removeItem('sessionId')
         this.$router.go(-1)
+      },
+      changePwdClose () {
+        this.show = false
+        this.$refs.changePwd.changeEnterWay()
+      },
+      handelChangePassword () {
+        this.show = true
       }
     },
     mounted () {

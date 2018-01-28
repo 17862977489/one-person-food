@@ -50,10 +50,10 @@
     },
     methods: {
       getLoginedData () {
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           axios.get('/api/getLoginedData.json', {
             params: {
-              sessionId: window.localStorage.sessionId
+              sessionId: window.sessionStorage.sessionId
             }
           })
           .then(this.handleGetLoginDataSucc.bind(this))
@@ -70,7 +70,7 @@
         console.log(error)
       },
       handelClick () {
-        if (!window.localStorage.sessionId) {
+        if (!window.sessionStorage.sessionId) {
           this.$router.push({path: '/my/login'})
         }
       }

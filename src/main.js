@@ -8,6 +8,7 @@ import 'style/base/reset.css'
 import 'style/base/border.css'
 import 'style/base/iconfont/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import 'animate.css'
 
 Vue.config.productionTip = false
 Fastclick.attach(document.body)

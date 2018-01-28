@@ -23,7 +23,7 @@
           li[i].children[0].removeAttribute('class')
         }
         e.target.children[0].setAttribute('class', 'active')
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           this.$emit('tab', e.target.getAttribute('name'))
         } else {
           alert('用户未登录，请先登录')

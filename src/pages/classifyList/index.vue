@@ -35,7 +35,7 @@
       getClassifyInfoData () {
         axios.get('/api/getClassifyInfoData.json', {
           params: {
-            sessionId: window.localStorage.sessionId,
+            sessionId: window.sessionStorage.sessionId,
             pagination: this.pagination
           }
         })

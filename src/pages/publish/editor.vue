@@ -50,11 +50,11 @@
       handleBackClick () {
         if (this.publishFlag) {
           if (this.$refs.uploader.getFormData()) {
-            if (window.localStorage.sessionId) {
+            if (window.sessionStorage.sessionId) {
               console.log(this.editorCon)
               axios.get('/api/sendDraftsInfoData.json', {
                 params: {
-                  sessionId: window.localStorage.sessionId,
+                  sessionId: window.sessionStorage.sessionId,
                   foodPhotoUrl: this.$refs.uploader.getFormData(),
                   foodContent: this.editorCon,
                   foodCompletion: '未完成'
@@ -87,10 +87,10 @@
       },
       handlePublishClick () {
         if (this.publishFlag && this.$refs.uploader.getFormData()) {
-          if (window.localStorage.sessionId) {
+          if (window.sessionStorage.sessionId) {
             axios.get('/api/sendPublishInfoData.json', {
               params: {
-                sessionId: window.localStorage.sessionId,
+                sessionId: window.sessionStorage.sessionId,
                 imgs: this.$refs.uploader.getFormData()
               }
             })

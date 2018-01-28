@@ -49,10 +49,10 @@
     },
     methods: {
       getPublishInfoData () {
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           axios.get('/api/getPublishInfoData.json', {
             params: {
-              sessionId: window.localStorage.sessionId,
+              sessionId: window.sessionStorage.sessionId,
               pagination: this.pagination
             }
           })

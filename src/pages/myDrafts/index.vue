@@ -46,10 +46,10 @@
     },
     methods: {
       getDraftsInfoData () {
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           axios.get('/api/getDraftsInfoData.json', {
             params: {
-              sessionId: window.localStorage.sessionId,
+              sessionId: window.sessionStorage.sessionId,
               pagination: this.pagination
             }
           })
@@ -89,7 +89,7 @@
       handelClearClick () {
         axios.get('/api/ClearDrafts.json', {
           params: {
-            sessionId: window.localStorage.sessionId
+            sessionId: window.sessionStorage.sessionId
           }
         })
         .then(this.handleClearDraftsSucc.bind(this))

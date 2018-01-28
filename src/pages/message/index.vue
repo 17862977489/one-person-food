@@ -30,7 +30,7 @@
       Friendmessage
     },
     created () {
-      if (window.localStorage.sessionId) {
+      if (window.sessionStorage.sessionId) {
         this.showfriend = true
       } else {
         this.showfriend = false

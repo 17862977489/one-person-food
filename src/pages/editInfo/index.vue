@@ -53,10 +53,10 @@
     },
     methods: {
       getEditInfoData () {
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           axios.get('/api/getEditInfoData.json', {
             params: {
-              sessionId: window.localStorage.sessionId
+              sessionId: window.sessionStorage.sessionId
             }
           })
           .then(this.handleGetEditInfoDataSucc.bind(this))
@@ -76,7 +76,7 @@
         if (this.genderStatus || this.signInputStatus || this.userInputStatus) {
           axios.get('/api/edit.json', {
             params: {
-              sessionId: window.localStorage.sessionId,
+              sessionId: window.sessionStorage.sessionId,
               userName: this.userInfo.userName,
               userSign: this.userInfo.userSign,
               gender: this.userInfo.gender

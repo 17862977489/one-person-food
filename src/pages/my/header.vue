@@ -61,7 +61,7 @@
         this.$emit('handelClick')
       },
       handelLogin () {
-        if (window.localStorage.sessionId) {
+        if (window.sessionStorage.sessionId) {
           this.$router.push({path: '/my/mySetting'})
         }
       }
