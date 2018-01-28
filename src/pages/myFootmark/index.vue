@@ -16,6 +16,7 @@
             </div>  
         </div>
       </div>
+      <div class="topic" v-show="isShow">暂无任何足迹~</div>
     </div>
   </div>
 
@@ -33,7 +34,8 @@
         smallStyle: false,
         isFreshing: false,
         isLoading: true,
-        pagination: 0
+        pagination: 0,
+        isShow: false
       }
     },
     computed: {
@@ -57,8 +59,10 @@
       handleGetFootmarkInfoDataSucc (res) {
         this.pagination += 1
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.footmarkInfoData) {
+        if (res && res.data && res.ret && res.data.footmarkInfoData.length) {
           this.footmarkInfo = this.footmarkInfo.concat(JSON.parse(JSON.stringify(res.data.footmarkInfoData)))
+        } else {
+          this.isShow = true
         }
       },
       handleGetFootmarkInfoDataErr (error) {
@@ -144,5 +148,10 @@
             .merchant-address
               color: #666
             .merchant-time
-              color: #999        
+              color: #999
+      .topic
+        font-size: .3rem
+        color: #999
+        margin-top: .2rem
+        text-align: center        
 </style>

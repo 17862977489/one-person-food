@@ -67,7 +67,7 @@
         } else if (!this.userNameStatus) {
           this.topicText = '用户名格式不正确'
         } else if (!this.pwdData || !this.pwdStatus) {
-          this.topicText = '密码不能为空'
+          this.topicText = '密码不正确'
         }
       },
       handleGetLoginDataSucc (res) {

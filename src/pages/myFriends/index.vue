@@ -13,6 +13,7 @@
             <div class="iconfont more-icon">&#xe6f8;</div>  
         </div>
       </div>
+      <div class="topic" v-show="isShow">暂无好友~</div>
     </div>
   </div>
 
@@ -30,7 +31,8 @@
         smallStyle: false,
         isFreshing: false,
         isLoading: true,
-        pagination: 0
+        pagination: 0,
+        isShow: false
       }
     },
     computed: {
@@ -55,8 +57,10 @@
         console.log(res)
         this.pagination += 1
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.fiendsInfoData) {
+        if (res && res.data && res.ret && res.data.fiendsInfoData.length) {
           this.friendsInfo = this.friendsInfo.concat(JSON.parse(JSON.stringify(res.data.fiendsInfoData)))
+        } else {
+          this.isShow = true
         }
       },
       handleGetFriendsInfoDataErr (error) {
@@ -137,5 +141,10 @@
             .head-photo
               width: 100%
               margin-right: .5rem
+      .topic
+        font-size: .3rem
+        color: #999
+        margin-top: .2rem
+        text-align: center
             
 </style>

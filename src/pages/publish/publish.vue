@@ -22,6 +22,7 @@
           </div>
         </div>
       </div>
+      <div class="topic" v-show="isShow">暂无任何发布信息~</div>
     </div>
   </div>
 
@@ -39,7 +40,8 @@
         smallStyle: false,
         isFreshing: false,
         isLoading: true,
-        pagination: 0
+        pagination: 0,
+        isShow: false
       }
     },
     computed: {
@@ -63,8 +65,10 @@
       handleGetPublishInfoDataSucc (res) {
         this.pagination += 1
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.publishInfoData) {
+        if (res && res.data && res.ret && res.data.publishInfoData.length) {
           this.publishInfo = this.publishInfo.concat(JSON.parse(JSON.stringify(res.data.publishInfoData)))
+        } else {
+          this.isShow = true
         }
       },
       handleGetPublishInfoDataErr (error) {
@@ -162,6 +166,11 @@
               .publish-imgs-small
                 width: 1.5rem
                 height: 1rem
+      .topic
+        font-size: .3rem
+        color: #999
+        margin-top: .2rem
+        text-align: center
                 
             
             

@@ -38,10 +38,10 @@
       },
       handelGetAuthCodeSucc (res) {
         res && (res = res.data)
-        if (res && res.data.ret && res.data.authCodeRes === 0) {
+        if (res && res.data.ret && (res.data.authCodeRes === 0)) {
           this.$emit('getAuthCodeSucc')
           this.timer = setInterval(this.handelTimeDown.bind(this), 1000)
-        } else if (res && res.data && res.ret && (res.data.authCodeRes !== 0)) {
+        } else if (res && res.data && res.data.ret && (res.data.authCodeRes !== 0)) {
           this.$emit('getAuthCodeErr', res.data.authCodeRes)
         }
       },

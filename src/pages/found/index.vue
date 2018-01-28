@@ -61,7 +61,7 @@
     },
     mounted () {
       this.$nextTick(() => {
-        this.scroll = new BScroll(this.$refs.scroller)
+        this.scroll = new BScroll(this.$refs.scroller, {click:true})
       })
     },
     updated () {

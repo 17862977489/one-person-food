@@ -67,7 +67,7 @@
               this.$router.push({path: '/my/login'})
             }
           } else {
-            alert('请至少上传一张图片哟~')
+            alert('请至少上传一张图片才能保存到草稿箱,如果不保存请将数据删掉哟~')
           }
         } else {
           this.$router.go(-1)
