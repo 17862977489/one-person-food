@@ -56,7 +56,7 @@
       },
       getLoginData () {
         if (this.pwdStatus && this.userNameStatus) {
-          axios.get('/api/login.json', {
+          axios.post('/api/login.json', {
             username: this.userNameDate,
             pwd: this.pwdData
           })
@@ -71,7 +71,6 @@
         }
       },
       handleGetLoginDataSucc (res) {
-        console.log(res)
         res && (res = res.data)
         if (res && res.data && res.ret && res.data.login) {
           window.sessionStorage.sessionId = res.data.sessionId
