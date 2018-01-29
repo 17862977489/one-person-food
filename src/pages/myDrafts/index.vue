@@ -9,7 +9,7 @@
       <div class="content">
         <div class="drafts-con" v-for="(item,index) in draftsInfo" >
           <div class="head-photo-con">
-            <img :src="item.foodPhotoUrl" alt="" class="head-photo">
+            <img :src="item.imgs" alt="" class="head-photo">
           </div>
           <div class="food-info">
             <div class="food-name">{{item.foodName}}</div>
@@ -156,7 +156,9 @@
           .head-photo-con
             // display: flex
             width: 2.5rem
-            // height: 2.5rem
+            height: 2rem
+            line-height: 2rem
+            overflow: hidden
             margin-right: .5rem
             .head-photo
               width: 100%

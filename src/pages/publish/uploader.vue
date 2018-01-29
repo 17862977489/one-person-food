@@ -69,6 +69,7 @@ export default {
     },
     handelImgDel (e) {
       this.imgList.splice(e.target.getAttribute('data-id'), 1)
+      this.imgArr.splice(e.target.getAttribute('data-id'), 1)
     }
   }
 }

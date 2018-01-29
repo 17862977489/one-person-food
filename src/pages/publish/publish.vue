@@ -1,4 +1,4 @@
-<template>
+v<template>
   <div class="container">
     <div class="header border-bottom">
       <router-link class="iconfont back" tag="div" to="/my">&#xe60f;</router-link>我的发布
@@ -15,9 +15,10 @@
           </div>
           <div class="publish-text">{{item.content}}</div>
           <div class="img-con">
-            <div class="publish-imgs-con" v-for="(itemImg,indexImg) in item.imgs" :key="indexImg">
-              <img :src="itemImg" alt="" class="publish-imgs-big" v-if="item.imgs.length < 2 ">
-              <img :src="itemImg" alt="" class="publish-imgs-small" v-else>
+            <div class="publish-imgs-con">
+              <img :src="item.imgs" alt="" class="publish-imgs-big">
+              <!-- <img :src="itemImg" alt="" class="publish-imgs-big" v-if="item.imgs.length < 2 "> -->
+              <!-- <img :src="itemImg" alt="" class="publish-imgs-small" v-else> -->
             </div>
           </div>
         </div>
