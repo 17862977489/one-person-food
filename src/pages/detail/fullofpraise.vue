@@ -38,7 +38,7 @@
         position: relative
         .praise-img
           width: 100%
-          height: 100%;
+          height: 100%
         .praise-title
           position: absolute
           bottom: 0
