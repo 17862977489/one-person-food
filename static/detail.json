@@ -36,15 +36,15 @@
   }],
   "nearby":[{
     "id": "0001",
-    "imgUrl":"/static/images/detail/nearby1.jpg"
+    "foodImg":"/static/images/detail/nearby1.jpg"
   }, {
     "id": "0002",
-    "imgUrl":"/static/images/detail/nearby2.jpg"
+    "foodImg":"/static/images/detail/nearby2.jpg"
   }, {
     "id": "0003",
-    "imgUrl":"/static/images/detail/nearby3.jpg"
+    "foodImg":"/static/images/detail/nearby3.jpg"
   }, {
     "id": "0004",
-    "imgUrl":"/static/images/detail/nearby4.jpg"
+    "foodImg":"/static/images/detail/nearby4.jpg"
   }]
 }

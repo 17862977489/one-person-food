@@ -10,7 +10,7 @@
           </router-link>
           <router-link class="my-friends" @click.native="handelClick" tag="dl" to="/my/myFriends">
             <dt class="friends-img"></dt>
-            <dd class="friends-text">我的好友</dd>
+            <dd class="friends-text">我的粉丝</dd>
           </router-link>
           <router-link class="my-footmark" @click.native="handelClick" tag="dl" to="/my/myFootmark">
             <dt class="footmark-img"></dt>

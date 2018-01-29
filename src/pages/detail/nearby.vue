@@ -5,7 +5,7 @@
     </div>
     <div class="item-wrapper" ref="scroller">
       <div class="item-con" ref="scroll">
-        <router-link to="/found" tag="div" class="item" v-for="item in nearby">
+        <router-link to="/found" tag="div" class="item" v-for="item in nearby" :key="item.id">
           <div class="img-wrapper">
             <img :src="item.foodImg" alt="" class="item-img">
           </div>

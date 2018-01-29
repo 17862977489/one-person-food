@@ -1,8 +1,8 @@
 <template>
   <div class="foundComments">
     <div class="comments-header">
-      <span class="comments">评论(234)</span>
-      <span class="praise">点赞(234)</span>
+      <span class="comments">评论(4)</span>
+      <span class="praise">点赞(4)</span>
     </div>
     <div class="comments-con">
       <div class="comments-item" v-for="item in comments">

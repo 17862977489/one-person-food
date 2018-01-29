@@ -17,6 +17,7 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
   import BScroll from 'better-scroll'
   export default {
     name: 'cityheader',
@@ -53,6 +54,11 @@
     methods: {
       handleBackClick () {
         this.$router.go(-1)
+      },
+      ...mapMutations(['changeCity']),
+      handleCityClick (city) {
+        this.changeCity(city)
+        this.$router.push('/index')
       },
       handleInputChange (e) {
         const value = e.target.value.toLowerCase()

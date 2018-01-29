@@ -6,13 +6,13 @@
           <img :src="item.headPhotoUrl" alt="" class="userimg">
         </div>
         <div class="center">
-          <div class="username">{{item.userId}}</div>
+          <div class="username">{{item.userName}}</div>
           <div class="sign">{{item.userSign}}</div>
         </div>
         <div class="focus" @click="handleFocusClick">+关注</div>
       </div>
       <div class="desc">{{item.foodDesc}}</div>
-      <div class="img-wrapper" @click="handleDesClick(item.userId,item.headPhotoUrl,item.userSign,item.foodDesc,item.foodImg)">
+      <div class="img-wrapper" @click="handleDesClick(item.userId,item.headPhotoUrl,item.userSign,item.foodDesc,item.foodImg,item.userName)">
         <img :src="item.foodImg" alt="" class="img">
       </div>
       <div class="date">{{item.date}} <i class="comments"></i> <i class="like"></i></div>

@@ -6,7 +6,7 @@
           <img :src="item.headPhotoUrl" alt="" class="userimg">
         </div>
         <div class="center">
-          <div class="username">{{item.userId}}</div>
+          <div class="username">{{item.userName}}</div>
           <div class="sign">{{item.userSign}}</div>
         </div>
       </div>

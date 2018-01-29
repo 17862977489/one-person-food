@@ -1,8 +1,10 @@
 <template>
   <div class="editor-img">
     <div class="img-wrapper" v-for="(item,index) in imgList"  :key="index" 
+    v-on:click="handelImgShowClick"
     >
-      <img :src="item" alt="" class="img" @click="handelImgShowClick" :data-index="index">
+      <img :src="item" alt="" class="img" :data-index="index">
+      <span class="del" v-on:click.stop="handelImgDel" :data-id="index">删除</span>
     </div>
     <div class="img-control">
       <div class="form-group">
@@ -26,7 +28,8 @@ export default {
       date: '',
       imgList: [],
       isShowAllImg: false,
-      initIndex: 0
+      initIndex: 0,
+      imgArr: []
     }
   },
   methods: {
@@ -35,14 +38,8 @@ export default {
       if (!files.length) {
         return
       }
-      var date = new Date()
-      var dateTime = (date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds())
-      var com = ((date.getHours() > 17) ? '晚餐' : (date.getHours() > 11 ? '午餐' : '早餐'))
-      this.formData = new FormData()
-      this.formData.append('date', dateTime)
-      this.formData.append('foodName', com)
       if ((/(?:jpg|gif|png|jpeg)$/i.test(e.target.value))) {
-        this.formData.append('imgs', files[0])
+        this.imgArr.push(files[0])
         this.createImage(files)
       } else {
         alert('只能上传图片')
@@ -68,7 +65,10 @@ export default {
       this.isShowAllImg = false
     },
     getFormData () {
-      return this.formData
+      return this.imgArr
+    },
+    handelImgDel (e) {
+      this.imgList.splice(e.target.getAttribute('data-id'), 1)
     }
   }
 }
@@ -93,9 +93,18 @@ export default {
         margin: 0 .16rem .16rem 0
         background: #f3f5f8
         text-align: center
+        position: relative
         .img
           width: 100%
           height: 100%
+        .del
+          position: absolute
+          left: 0
+          bottom: 0
+          line-height: .4rem
+          width: 100%
+          background: rgba(144,144,144,.5)
+          color: #fff
       .img-control
         .form-group
           position: relative

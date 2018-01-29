@@ -7,7 +7,7 @@
       <div class="content">
         <div class="publish-con" v-for="(item,index) in publishInfo" :key="item.id">
           <div class="publish-header">
-            <div class="head-photo-con"><img :src="item.headPhoto" alt="" class="head-photo"></div>
+            <div class="head-photo-con"><img :src="item.user.headPhotoUrl" alt="" class="head-photo"></div>
             <dl class="user-info">
               <dt class="user-name">{{publishInfo.userName}}</dt>
               <dd class="publish-time">{{item.time}}</dd>

@@ -21,6 +21,8 @@
 
 <style scoped lang="stylus">
   .fullofpraise
+    height: 9.5rem
+    overflow: hidden
     .praise
       margin: .3rem 0 .3rem .2rem
       color: #333
@@ -28,8 +30,9 @@
     .praise-img-list
       margin: 0 .2rem
       display: flex
-      justify-content: space-around
       flex-wrap: wrap
+      height: 8.6rem
+      overflow: hidden
       .img-wrapper
         width: 3.1rem
         height: 4rem

@@ -48,18 +48,21 @@
         this.date = this.date.replace(/\//g, ' ')
       },
       handleBackClick () {
+        var date = new Date()
+        var dateTime = (date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds())
+        var com = ((date.getHours() > 17) ? '晚餐' : (date.getHours() > 11 ? '午餐' : '早餐'))
+        var formData = new FormData()
+        formData.append('date', dateTime)
+        formData.append('foodName', com)
+        formData.append('content', this.editorCon)
+        formData.append('sessionId', window.sessionStorage.sessionId)
+        this.$refs.uploader.getFormData().forEach((value, item) => {
+          formData.append('imgs', value)
+        })
         if (this.publishFlag) {
-          if (this.$refs.uploader.getFormData()) {
+          if (this.$refs.uploader.getFormData().length) {
             if (window.sessionStorage.sessionId) {
-              console.log(this.editorCon)
-              axios.get('/api/sendDraftsInfoData.json', {
-                params: {
-                  sessionId: window.sessionStorage.sessionId,
-                  foodPhotoUrl: this.$refs.uploader.getFormData(),
-                  foodContent: this.editorCon,
-                  foodCompletion: '未完成'
-                }
-              })
+              axios.post('/api/sendDraftsInfoData.json', formData)
               .then(this.handleSaveDraftsInfoDataSucc.bind(this))
               .catch(this.handleSaveDraftsInfoDataErr.bind(this))
             } else {
@@ -86,14 +89,20 @@
         alert('服务器错误' + error)
       },
       handlePublishClick () {
-        if (this.publishFlag && this.$refs.uploader.getFormData()) {
+        var date = new Date()
+        var dateTime = (date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds())
+        var com = ((date.getHours() > 17) ? '晚餐' : (date.getHours() > 11 ? '午餐' : '早餐'))
+        var formData = new FormData()
+        formData.append('date', dateTime)
+        formData.append('foodName', com)
+        formData.append('content', this.editorCon)
+        formData.append('sessionId', window.sessionStorage.sessionId)
+        this.$refs.uploader.getFormData().forEach((value, item) => {
+          formData.append('imgs', value)
+        })
+        if (this.publishFlag && this.$refs.uploader.getFormData().length) {
           if (window.sessionStorage.sessionId) {
-            axios.get('/api/sendPublishInfoData.json', {
-              params: {
-                sessionId: window.sessionStorage.sessionId,
-                imgs: this.$refs.uploader.getFormData()
-              }
-            })
+            axios.post('/api/sendPublishInfoData.json', formData)
             .then(this.handleSendPublishInfoDataSucc.bind(this))
             .catch(this.handleSendPublishInfoDataErr.bind(this))
           } else {

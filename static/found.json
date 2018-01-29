@@ -3,6 +3,7 @@
     "userId":"小小的幸福",
     "headPhotoUrl":"/static/images/found/userimg1.png",
     "userSign":"去美丽的地方发现美丽的事物",
+    "userName":"1",
     "foodDesc":"橘香蜜汁火腿,超级美味,赞！赞！赞！",
     "foodImg":"/static/images/found/foodimg1.png",
     "date":"2018 1 9"
@@ -23,6 +24,7 @@
   }],
   "focus": [{
     "userId":"小小的幸福",
+    "userName":"1",
     "headPhotoUrl":"/static/images/found/userimg1.png",
     "userSign":"去美丽的地方发现美丽的事物",
     "foodDesc":"橘香蜜汁火腿,超级美味,赞！赞！赞！",
