@@ -94,7 +94,7 @@ export default {
       }
     },
     handelRegisterSucc (res) {
-      // res && (res = res.data)
+      res && (res = res.data)
       if (res && res.data && res.data.register) {
         this.topicText = ''
         this.$router.push({path: '/my/login'})
