@@ -62,12 +62,14 @@
   .container
     display: flex
     flex-direction:column
-    position: absolute
+    height: 100%
+    /*position: absolute
     top: 0
     left: 0
     bottom: 0
-    right: 0
+    right: 0*/
     .header
+      height: .88rem
       line-height: .88rem
       position: relative
       text-align: center
@@ -98,9 +100,7 @@
             &::before
               border-color: #666
     .log-out
-      position: absolute
-      left: 0
-      bottom: 0
+      height: .8rem
       line-height: .8rem
       width: 100%
       text-align: center
