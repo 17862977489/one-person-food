@@ -120,15 +120,15 @@
     justify-content: center
     width: 5.26rem
     align-items: center
-    margin: 4rem auto
+    margin: 2rem auto
     background: #fff
     padding: .5rem
     text-align: center
+    z-index: 10
     .topic
       width: 100%
       height: .24rem
       font-size: .24rem
-      margin-bottom: .61rem
       line-height: .24rem
       text-align: center
       color: #f15353
