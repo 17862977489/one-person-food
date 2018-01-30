@@ -74,7 +74,7 @@
       },
       handelScrollEvent (e) {
         if (((this.scroll.y) <= (this.scroll.maxScrollY - 50)) && this.isLoading) {
-          this.getMoreListInfo()
+          // this.getMoreListInfo()
           this.isLoading = false
         }
       },

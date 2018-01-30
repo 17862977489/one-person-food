@@ -18,16 +18,18 @@
     name: 'foundheader',
     methods: {
       handleClick (e) {
-        const li = this.$refs.title.children
-        for (var i = 0; i < li.length; i++) {
-          li[i].children[0].removeAttribute('class')
-        }
-        e.target.children[0].setAttribute('class', 'active')
         if (window.sessionStorage.sessionId) {
           this.$emit('tab', e.target.getAttribute('name'))
+          const li = this.$refs.title.children
+          for (var i = 0; i < li.length; i++) {
+            li[i].children[0].removeAttribute('class')
+          }
+          e.target.children[0].setAttribute('class', 'active')
         } else {
-          alert('用户未登录，请先登录')
-          this.$router.push({path: '/my/login'})
+          var con = confirm('登录后才能发布哟~')
+          if (con === true) {
+            this.$router.push({path: '/my/login'})
+          }
         }
       }
     }

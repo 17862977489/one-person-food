@@ -3,16 +3,16 @@
 	"data":{
 		"publishInfoData":[{
 			"id":"0001",
-			"headPhoto":"/static/images/my/headPhoto.jpg",
+			"user":{"headPhotoUrl":"/static/images/my/headPhoto.jpg"},
 			"userName":"Alina",
 			"time":"2018年1月24日19:20:45",
 			"content":"很好吃呦~",
-			"imgs":["/static/images/list/westernfood1.jpg"
+			"imgs":["/static/images/found/foodimg2.jpg"
 					,"/static/images/list/westernfood3.jpg"
 					,"/static/images/list/westernfood2.jpg"]
 		}, {
 			"id":"0002",
-			"headPhoto":"/static/images/my/headPhoto.jpg",
+			"user":{"headPhotoUrl":"/static/images/my/headPhoto.jpg"},
 			"userName":"Alina",
 			"time":"2018年1月13日13:32:05",
 			"content":"天气很晴朗,美食很美味",
@@ -24,14 +24,14 @@
 					,"/static/images/alldo/alldo3.jpg"]
 		}, {
 			"id":"0003",
-			"headPhoto":"/static/images/my/headPhoto.jpg",
+			"user":{"headPhotoUrl":"/static/images/my/headPhoto.jpg"},
 			"userName":"Alina",
 			"time":"2018年1月13日08:20:15",
 			"content":"天气很晴朗,美食很美味",
-			"imgs":["/static/images/found/foodimg1.png"]
+			"imgs":["/static/images/found/foodimg2.png"]
 		}, {
 			"id":"0004",
-			"headPhoto":"/static/images/my/headPhoto.jpg",
+			"user":{"headPhotoUrl":"/static/images/my/headPhoto.jpg"},
 			"userName":"Alina",
 			"time":"2018年1月13日13:32:05",
 			"content":"天气很晴朗,美食很美味",

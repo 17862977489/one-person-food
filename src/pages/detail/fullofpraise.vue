@@ -30,6 +30,7 @@
     .praise-img-list
       margin: 0 .2rem
       display: flex
+      justify-content: space-around
       flex-wrap: wrap
       height: 8.6rem
       overflow: hidden
@@ -48,7 +49,7 @@
           font-size: .32rem
           color: #333
           line-height: .5rem
-          padding-left: .3rem
-          width: 2.8rem
+          text-align: center
+          width: 100%
           background: rgba(255, 255, 255, 0.8)
 </style>

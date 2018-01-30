@@ -98,12 +98,13 @@ export default {
       if (res && res.data && res.data.register) {
         this.topicText = ''
         this.$router.push({path: '/my/login'})
-      } else if (res && res.data && !res.data.register) {
+      } else {
         this.topicText = '验证码不正确'
       }
     },
     handelRegisterError (error) {
-      console.log('注册时服务器错误' + error)
+      this.topicText = '服务器错误'
+      console.log(error)
     },
     handelBackClick () {
       this.$router.push({path: '/my/login'})

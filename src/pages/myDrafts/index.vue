@@ -59,7 +59,7 @@
       },
       handleGetDraftsInfoDataSucc (res) {
         res && (res = res.data)
-        if (res && res.data && res.ret && res.data.draftsInfoData) {
+        if (res && res.data && res.ret && res.data.draftsInfoData.length) {
           this.isShow = false
           this.pagination += 1
           this.draftsInfo = this.draftsInfo.concat(JSON.parse(JSON.stringify(res.data.draftsInfoData)))
@@ -76,7 +76,7 @@
       },
       handelScrollEvent (e) {
         if (((this.scroll.y) <= (this.scroll.maxScrollY - 50)) && this.isLoading) {
-          this.getMoreListInfo()
+          // this.getMoreListInfo()
           this.isLoading = false
         }
       },

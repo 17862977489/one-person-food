@@ -80,7 +80,7 @@
         }
       },
       handleGetLoginDataErr () {
-        console.log('服务器错误')
+        this.topicText = '服务器错误'
       }
     }
   }

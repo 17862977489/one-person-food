@@ -1,12 +1,12 @@
 <template>
   <div class="publishIndex">
-    <div class="con">
+    <div class="con" ref="scroller">
       <div class="title">爱记录的人都是天使</div>
-      <router-link to="/publish/editor" class="camera" tag="div">
+      <div class="camera" @click="handleCameraClick">
         <div class="img-wrapper">
           <img src="/static/images/icons/camera.png" alt="" class="camera-img">
         </div>
-      </router-link>
+      </div> 
     </div>
     <tabbar></tabbar>
   </div>
@@ -14,10 +14,35 @@
 
 <script>
   import Tabbar from '../../components/tabbar'
+  import BScroll from 'better-scroll'
   export default {
     name: 'publish',
     components: {
       Tabbar
+    },
+    methods: {
+      handleCameraClick () {
+        if (window.sessionStorage.sessionId) {
+          this.$router.push({path: '/publish/editor'})
+        } else {
+          var con = confirm('登录后才能发布哟~')
+          if (con === true) {
+            this.$router.push({path: '/my/login'})
+          }
+        }
+      }
+    },
+    mounted () {
+      this.$nextTick(() => {
+        this.scroll = new BScroll(this.$refs.scroller, {
+          click: true
+        })
+      })
+    },
+    updated () {
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     }
   }
 </script>

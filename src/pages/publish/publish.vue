@@ -81,7 +81,7 @@ v<template>
       },
       handelScrollEvent (e) {
         if (((this.scroll.y) <= (this.scroll.maxScrollY - 50)) && this.isLoading) {
-          this.getMoreListInfo()
+          // this.getMoreListInfo()
           this.isLoading = false
         }
       },
@@ -91,6 +91,11 @@ v<template>
       handleScrollEnd () {
         this.isLoading = true
       }
+    },
+    updated () {
+      this.$nextTick(() => {
+        this.scroll.refresh()
+      })
     },
     mounted () {
       // this.$nextTick(() => {
@@ -163,7 +168,6 @@ v<template>
               margin: 0 .2rem .2rem 0
               .publish-imgs-big
                 width: 5rem
-                // height: 100%
               .publish-imgs-small
                 width: 1.5rem
                 height: 1rem
